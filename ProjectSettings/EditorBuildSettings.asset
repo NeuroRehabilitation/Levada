@@ -23,4 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Caldeirao Verde.unity
     guid: 7fb5561f488e0c742bc18d4648830130
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 93f510c0c988fc8429a149aec951aab1,
+      type: 2}
