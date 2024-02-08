@@ -5,26 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes_kave/Main Menu.unity
     guid: 65ab8004a9f88d544bae798a96618e55
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes_kave/ComplexityLevel.unity
     guid: 58c4f768c84309841a12665917bb0552
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/25 Fontes.unity
     guid: c681168eb7097f94083a8636cd649913
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Pico Areeiro - Ruivo.unity
     guid: 7250d1aba50d15b4787b89fc1d1a8ee7
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/S Louren\xE7o.unity"
     guid: b9318ec85bf22e34fbf198b0f23c6ccd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Caldeirao Verde.unity
     guid: 7fb5561f488e0c742bc18d4648830130
+  - enabled: 1
+    path: Assets/ScenesHMD/25_Fontes_HMD.unity
+    guid: f3e45b709e1d5694db8bbdd8362388dc
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 93f510c0c988fc8429a149aec951aab1,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ebe4ab08c0b7ce4479e89353e991da9a,
       type: 2}
