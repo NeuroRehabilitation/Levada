@@ -23,9 +23,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Caldeirao Verde.unity
     guid: 7fb5561f488e0c742bc18d4648830130
-  - enabled: 1
+  - enabled: 0
     path: Assets/ScenesHMD/25_Fontes_HMD.unity
     guid: f3e45b709e1d5694db8bbdd8362388dc
+  - enabled: 0
+    path: "Assets/ScenesHMD/Sao_Louren\xE7o_HMD.unity"
+    guid: 8ef21c6307edc3249813d88c4e9c6ba6
+  - enabled: 0
+    path: Assets/ScenesHMD/Pico_Areeiro_Ruivo_HMD.unity
+    guid: e952fba7366887d44980655d9d944199
+  - enabled: 1
+    path: Assets/ScenesHMD/Caldeirao_Verde_HMD.unity
+    guid: 6fc3bcc9f8219d64db842059d13a41cc
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
       type: 2}
