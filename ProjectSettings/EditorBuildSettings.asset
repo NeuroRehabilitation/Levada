@@ -5,36 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes_kave/Main Menu.unity
     guid: 65ab8004a9f88d544bae798a96618e55
-  - enabled: 0
-    path: Assets/Scenes_kave/ComplexityLevel.unity
-    guid: 58c4f768c84309841a12665917bb0552
-  - enabled: 0
-    path: Assets/Scenes/25 Fontes.unity
-    guid: c681168eb7097f94083a8636cd649913
-  - enabled: 0
-    path: Assets/Scenes/Pico Areeiro - Ruivo.unity
-    guid: 7250d1aba50d15b4787b89fc1d1a8ee7
-  - enabled: 0
-    path: "Assets/Scenes/S Louren\xE7o.unity"
-    guid: b9318ec85bf22e34fbf198b0f23c6ccd
-  - enabled: 0
-    path: Assets/Scenes/Caldeirao Verde.unity
-    guid: 7fb5561f488e0c742bc18d4648830130
-  - enabled: 0
+  - enabled: 1
     path: Assets/ScenesHMD/25_Fontes_HMD.unity
     guid: f3e45b709e1d5694db8bbdd8362388dc
-  - enabled: 0
+  - enabled: 1
     path: "Assets/ScenesHMD/Sao_Louren\xE7o_HMD.unity"
     guid: 8ef21c6307edc3249813d88c4e9c6ba6
-  - enabled: 0
+  - enabled: 1
     path: Assets/ScenesHMD/Pico_Areeiro_Ruivo_HMD.unity
     guid: e952fba7366887d44980655d9d944199
-  - enabled: 1
-    path: Assets/ScenesHMD/Caldeirao_Verde_HMD.unity
-    guid: 6fc3bcc9f8219d64db842059d13a41cc
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
       type: 2}

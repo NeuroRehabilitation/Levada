@@ -89,12 +89,17 @@ public class Manager : MonoBehaviour
         randomIndex = random.Next(Scenes.Count);
     }
 
-    public void LoadScene()
+    private void LoadScene()
     {
       
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
         Scenes.RemoveAt(randomIndex);
+    }
+
+    public void SelectScene(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
     }
 
     public void CreateList()
