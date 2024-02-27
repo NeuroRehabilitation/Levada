@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes_kave/Main Menu.unity
-    guid: 65ab8004a9f88d544bae798a96618e55
+    path: Assets/ScenesHMD/Main_Menu_HMD.unity
+    guid: 2df394df12f4c1d459e2b62d33205529
   - enabled: 1
     path: Assets/ScenesHMD/25_Fontes_HMD.unity
     guid: f3e45b709e1d5694db8bbdd8362388dc
@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesHMD/Pico_Areeiro_Ruivo_HMD.unity
     guid: e952fba7366887d44980655d9d944199
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/ScenesHMD/Caldeirao_Verde_HMD.unity
+    guid: b9e68dabe333b804891993f78c81a4e7
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
       type: 2}

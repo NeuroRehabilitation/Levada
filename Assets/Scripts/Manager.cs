@@ -64,9 +64,30 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape) || currentRound > NumberRounds)
         {
             Quit();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("25_Fontes_HMD");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("Pico_Areeiro_Ruivo_HMD");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene("Sao_Lourenço_HMD");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene("Caldeirao_Verde_HMD");
         }
     }
 
