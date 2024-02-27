@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Samples/XR Plugin Management/4.2.1.meta
 guid: afd73b3305ecaad4aa395e61837e9afa
+========
+guid: 18efa55a70560774481f337ade90b1fe
+>>>>>>>> f1a8b7f (fix(Areeiro-Ruivo): fix lighting issue on Areeiro-Ruivo.):Assets/Samples/XR Plugin Management/4.2.0.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
