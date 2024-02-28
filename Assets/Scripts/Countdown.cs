@@ -27,6 +27,9 @@ public class Countdown : MonoBehaviour
         currentTime = countdownTime;
         RightHandController.SetActive(false);
         CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
+
+        if(!isCountdownStarted)
+            StartCountdown();
     }
 
     private void Update()
@@ -73,6 +76,7 @@ public class Countdown : MonoBehaviour
 
     public void StartCountdown()
     {
+        Debug.Log("ola");
         ResetCountdown();
         isCountdownStarted = true;
         

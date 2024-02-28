@@ -42,12 +42,12 @@ public class Manager : MonoBehaviour
 
     void Awake()
     {
-        //DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
         //CreateList();
 
         //CSV_writer = GetComponent<CSV>();
 
-        //StartButton.interactable = false;
+        StartButton.interactable = false;
     }
 
     private void Start()
