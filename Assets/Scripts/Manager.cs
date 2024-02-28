@@ -65,9 +65,12 @@ public class Manager : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) || currentRound > NumberRounds)
+        if (Input.GetKeyDown(KeyCode.Escape) )
         {
-            Quit();
+            if (SceneManager.GetActiveScene().name != "Main_Menu_HMD"  || currentRound > NumberRounds)
+                SceneManager.LoadScene("Main_Menu_HMD");
+            else
+                Quit();
         }
 
         else if (Input.GetKeyDown(KeyCode.Alpha1))

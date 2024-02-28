@@ -76,7 +76,6 @@ public class Countdown : MonoBehaviour
 
     public void StartCountdown()
     {
-        Debug.Log("ola");
         ResetCountdown();
         isCountdownStarted = true;
         
