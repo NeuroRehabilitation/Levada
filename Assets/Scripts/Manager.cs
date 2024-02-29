@@ -40,25 +40,37 @@ public class Manager : MonoBehaviour
     public LSLStreamer VAS;
     public LSLStreamer Markers;
 
+    private static Manager instance;
+
     void Awake()
     {
-        DontDestroyOnLoad(this);
-        //CreateList();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        //DontDestroyOnLoad(this);
+        CreateList();
 
         //CSV_writer = GetComponent<CSV>();
 
-        StartButton.interactable = false;
+        if (StartButton != null)
+            StartButton.interactable = false;
     }
 
     private void Start()
     {
-        //if (Scenes.Count > 0) { Shuffle(); }
+        if (Scenes.Count > 0) { Shuffle(); }
 
         //CSV_writer.AddData("Scene", "Valence", "Arousal", "Anger", "Fear", "Joy", "Sad");
 
-        //SAM.StartStream();
-        //VAS.StartStream();
-        //Markers.StartStream();
+        SAM.StartStream();
+        VAS.StartStream();
+        Markers.StartStream();
 
     }
 
@@ -94,7 +106,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void ActivateButton()
+    private void ActivateButton()
     {
         if (UserID.text != "")
             StartButton.interactable = true;
@@ -107,13 +119,13 @@ public class Manager : MonoBehaviour
         CSV_writer.filePath = CSV_writer.directory + CSV_writer.filename + ".csv";
     }
 
-    public void Shuffle()
+    private void Shuffle()
     {
         System.Random random = new System.Random();
         randomIndex = random.Next(Scenes.Count);
     }
 
-    private void LoadScene()
+    public void LoadScene()
     {
       
         SceneManager.LoadScene(Scenes[randomIndex]);
@@ -126,9 +138,9 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene(SceneName);
     }
 
-    public void CreateList()
+    private void CreateList()
     {
-        Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings - 3).ToList();
+        Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings).ToList();
     }
 
     public void WriteData()
