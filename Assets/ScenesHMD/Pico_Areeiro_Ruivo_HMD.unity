@@ -12546,6 +12546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861270974720715672, guid: 35e34a451e52bf14ab9db7c4f5c48b42,
         type: 3}
+      propertyPath: duration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861270974720715672, guid: 35e34a451e52bf14ab9db7c4f5c48b42,
+        type: 3}
       propertyPath: Countdown
       value: 
       objectReference: {fileID: 1644363397}

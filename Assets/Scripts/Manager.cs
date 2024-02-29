@@ -140,7 +140,7 @@ public class Manager : MonoBehaviour
 
     private void CreateList()
     {
-        Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings).ToList();
+        Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings-1).ToList();
     }
 
     public void WriteData()
