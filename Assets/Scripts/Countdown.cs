@@ -63,7 +63,6 @@ public class Countdown : MonoBehaviour
                 Manager.currentScene.Add("1");
                 Manager.Markers.StreamData(Manager.currentScene.ToArray());
                 StopCountdown();
-                //SceneManager.LoadScene("SAM");
                 Manager.ChangeScene();
             }
         }
