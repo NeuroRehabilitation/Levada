@@ -77,9 +77,9 @@ public class Manager : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) )
+        if (Input.GetKeyDown(KeyCode.Escape) || currentRound > NumberRounds)
         {
-            if (SceneManager.GetActiveScene().name != "Main_Menu_HMD"  || currentRound > NumberRounds)
+            if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
                 SceneManager.LoadScene("Main_Menu_HMD");
             else
                 Quit();
