@@ -9,7 +9,6 @@ public class LSLStreamer : MonoBehaviour
     public string StreamName;
     public string StreamType;
     public string StreamID;
-    // panquecas
     public int SampleRate;
 
     public TypeOfStream typeStream = new TypeOfStream();
@@ -19,11 +18,6 @@ public class LSLStreamer : MonoBehaviour
 
     private StreamOutlet Outlet;
     private bool Stream_On= true;
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(transform.parent);
-    }
 
     public void StartStream()
     {
@@ -95,7 +89,7 @@ public class LSLStreamer : MonoBehaviour
             //Debug.Log("Stream hasn't been started");
         }
     }
-    
+
     public void StopStream()
     {
         Outlet.Close();

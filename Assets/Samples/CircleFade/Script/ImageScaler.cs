@@ -4,20 +4,21 @@ using UnityEngine.UI;
 public class ImageScaler : MonoBehaviour
 {
     // Reference to the image component
-    public Image image;
+    [SerializeField]
+    private Image image;
 
     [Range(0.1f,2)]
     public float FOV_Multiplier = 1;
     private float current_Multiplier;
 
     // Speed at which the image scales
-    public float speed = 0.1f;
+    private float speed = 0.1f;
 
     // Maximum scale value
-    public float _max = 1.9f;
+    private float _max = 1.9f;
 
     // Minimum scale value
-    public float _min = 0.5f;
+    private float _min = 0.5f;
 
     // Variable to store the new scale
     Vector3 newScale = new Vector3();

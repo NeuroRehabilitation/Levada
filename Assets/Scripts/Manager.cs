@@ -42,6 +42,7 @@ public class Manager : MonoBehaviour
 
     private static Manager instance;
 
+
     void Awake()
     {
         if (instance == null)
@@ -53,7 +54,7 @@ public class Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //DontDestroyOnLoad(this);
+
         CreateList();
 
         //CSV_writer = GetComponent<CSV>();
@@ -169,11 +170,12 @@ public class Manager : MonoBehaviour
 
     public void Quit()
     {
-        //CSV_writer.WriteToCSV();
-        //CSV_writer.CloseCSV();
+        SAM.StopStream();
+        VAS.StopStream();
+        Markers.StopStream();
 
         //Comment this line below when you build the project
-        //UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
 
         Application.Quit();
     }
