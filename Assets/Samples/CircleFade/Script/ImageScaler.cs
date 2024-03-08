@@ -7,7 +7,7 @@ public class ImageScaler : MonoBehaviour
     [SerializeField]
     private Image image;
 
-    [Range(0.1f,2)]
+    [Range(0.1f,1)]
     public float FOV_Multiplier = 1;
     private float current_Multiplier;
 
@@ -15,7 +15,7 @@ public class ImageScaler : MonoBehaviour
     private float speed = 0.1f;
 
     // Maximum scale value
-    private float _max = 1.9f;
+    private float _max = 2.3f;
 
     // Minimum scale value
     private float _min = 0.5f;
@@ -38,9 +38,7 @@ public class ImageScaler : MonoBehaviour
         if(current_Multiplier != FOV_Multiplier)
         {
             // Set the new scale
-            newScale = new Vector3(image.transform.localScale.x * FOV_Multiplier, image.transform.localScale.y * FOV_Multiplier, image.transform.localScale.z * FOV_Multiplier);
-
-            Debug.Log(newScale);
+            newScale = new Vector3(start_scale.x * FOV_Multiplier, start_scale.y * FOV_Multiplier, start_scale.z * FOV_Multiplier);
 
             // Ensure real scale stays within bounds
             if (newScale.x > _max)
@@ -54,20 +52,10 @@ public class ImageScaler : MonoBehaviour
                 newScale.y = _min;
             }
 
-
-            // Calculate the difference in scale between current and target scale
-            //Vector3 scale_Now = newScale - image.transform.localScale;
-
-            // Normalize the scale difference vector
-            //scale_Now.Normalize();
-
             // Apply the scaled difference to the image transform with speed
-            image.transform.localScale = newScale; //* speed * Time.deltaTime;
-
+            image.transform.localScale = newScale;
 
             current_Multiplier = FOV_Multiplier;
         }
-
-        
     }
 }

@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Reflection;
+
 
 public class Manager : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class Manager : MonoBehaviour
     public int randomIndex;
 
     [Header("Number of Rounds")]
-    public int NumberRounds = 2;
+    public int NumberRounds = 1;
     public int currentRound = 1;
 
     [Header("CSV")]
@@ -40,7 +39,13 @@ public class Manager : MonoBehaviour
     public LSLStreamer VAS;
     public LSLStreamer Markers;
 
+    [Header("Game Variable")]
+    public GameObject FOV;
+    private Image FOV_Image;
+    private float FOV_multiplier;
+
     private static Manager instance;
+    private static LSLInput LSLInput;
 
 
     void Awake()
@@ -49,9 +54,11 @@ public class Manager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(FOV);
         }
         else
         {
+            Destroy(FOV);
             Destroy(gameObject);
         }
 
@@ -73,10 +80,15 @@ public class Manager : MonoBehaviour
         VAS.StartStream();
         Markers.StartStream();
 
+        FOV_Image = FOV.GetComponentInChildren<Image>();
+        FOV_Image.enabled = false;
+
     }
 
     private void Update()
     {
+        //if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
+        UpdateGameVariable();
 
         if (Input.GetKeyDown(KeyCode.Escape) || currentRound > NumberRounds)
         {
@@ -105,6 +117,18 @@ public class Manager : MonoBehaviour
         {
             SceneManager.LoadScene("Caldeirao_Verde_HMD");
         }
+    }
+
+    private void UpdateGameVariable()
+    {
+        //FOV_multiplier = FOV.GetComponent<ImageScaler>().FOV_Multiplier;
+        ////float updatedGameVariable = LSLInput.GameVariable;
+        //float updatedGameVariable = FOV_multiplier + 0.001f;
+
+        //if (FOV_multiplier != updatedGameVariable)
+        //{
+        //    FOV_multiplier = updatedGameVariable;
+        //}
     }
 
     private void ActivateButton()
@@ -136,6 +160,7 @@ public class Manager : MonoBehaviour
 
     public void SelectScene(string SceneName)
     {
+        Destroy(gameObject);
         SceneManager.LoadScene(SceneName);
     }
 

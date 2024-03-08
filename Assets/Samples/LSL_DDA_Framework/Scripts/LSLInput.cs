@@ -6,7 +6,6 @@ using TMPro;
 
 public class LSLInput : MonoBehaviour
 {
-    StreamInfo[] streamInfos;
     StreamInlet streamInlet;
 
     string[] channels;
@@ -21,7 +20,9 @@ public class LSLInput : MonoBehaviour
     private StreamInlet inlet;
 
     // We need buffers to pass to LSL when pulling data.
-    private float[] data_buffer;  
+    private float[] data_buffer;
+
+    public float GameVariable;
 
     void Start()
     {
@@ -65,7 +66,7 @@ public class LSLInput : MonoBehaviour
         if (inlet != null)
         {
             double samples_returned = inlet.pull_sample(data_buffer);
-            var sample = data_buffer[0];
+            GameVariable = data_buffer[0];
             // Debug.Log("Samples returned: " + samples_returned);
         }
     }
