@@ -63,15 +63,18 @@ public class Countdown : MonoBehaviour
              
             if (currentTime <= 0 && TimeController.isFinished)
             {
-                if(Manager != null)
+                if (Manager != null)
                 {
                     Manager.currentScene.RemoveAt(Manager.currentScene.Count - 1);
                     Manager.currentScene.Add("1");
                     Manager.Markers.StreamData(Manager.currentScene.ToArray());
                     Manager.ChangeScene();
                 }
+                else
+                    SceneManager.LoadScene("Main_Menu_HMD");
 
                 StopCountdown();
+               
             }
         }
 

@@ -54,11 +54,11 @@ public class Manager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(FOV);
+            
         }
         else
         {
-            Destroy(FOV);
+            
             Destroy(gameObject);
         }
 
@@ -81,6 +81,7 @@ public class Manager : MonoBehaviour
         Markers.StartStream();
 
         FOV_Image = FOV.GetComponentInChildren<Image>();
+        FOV_multiplier = FOV.GetComponentInChildren<ImageScaler>().FOV_Multiplier;
         FOV_Image.enabled = false;
 
     }
@@ -121,14 +122,14 @@ public class Manager : MonoBehaviour
 
     private void UpdateGameVariable()
     {
-        //FOV_multiplier = FOV.GetComponent<ImageScaler>().FOV_Multiplier;
-        ////float updatedGameVariable = LSLInput.GameVariable;
-        //float updatedGameVariable = FOV_multiplier + 0.001f;
+        
+        //float updatedGameVariable = LSLInput.GameVariable;
+        float updatedGameVariable = FOV_multiplier + 0.0001f;
 
-        //if (FOV_multiplier != updatedGameVariable)
-        //{
-        //    FOV_multiplier = updatedGameVariable;
-        //}
+        if (FOV_multiplier != updatedGameVariable)
+        {
+            FOV_multiplier = updatedGameVariable;
+        }
     }
 
     private void ActivateButton()
@@ -195,12 +196,13 @@ public class Manager : MonoBehaviour
 
     public void Quit()
     {
-        SAM.StopStream();
-        VAS.StopStream();
-        Markers.StopStream();
 
         //Comment this line below when you build the project
         UnityEditor.EditorApplication.isPlaying = false;
+
+        SAM.StopStream();
+        VAS.StopStream();
+        Markers.StopStream();
 
         Application.Quit();
     }

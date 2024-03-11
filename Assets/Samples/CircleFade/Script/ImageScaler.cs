@@ -11,9 +11,6 @@ public class ImageScaler : MonoBehaviour
     public float FOV_Multiplier = 1;
     private float current_Multiplier;
 
-    // Speed at which the image scales
-    private float speed = 0.1f;
-
     // Maximum scale value
     private float _max = 2.3f;
 
@@ -23,9 +20,6 @@ public class ImageScaler : MonoBehaviour
     // Variable to store the new scale
     Vector3 newScale = new Vector3();
     Vector3 start_scale = new Vector3();
-
-    // Variable to track time elapsed
-    private float timeElapsed;
 
     private void Start()
     {
