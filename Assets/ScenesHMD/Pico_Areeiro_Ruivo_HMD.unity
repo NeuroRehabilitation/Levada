@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 2070751}
   m_Layer: 6
   m_Name: Sphere (266)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 5278075}
   m_Layer: 6
   m_Name: Sphere (286)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 25124898}
   m_Layer: 6
   m_Name: Sphere (280)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 26322081}
   m_Layer: 6
   m_Name: Sphere (64)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 29572778}
   m_Layer: 6
   m_Name: Sphere (110)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1429,7 +1429,7 @@ GameObject:
   - component: {fileID: 30922006}
   m_Layer: 6
   m_Name: Sphere (41)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,7 +1613,7 @@ GameObject:
   - component: {fileID: 36731764}
   m_Layer: 6
   m_Name: Sphere (265)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1797,7 +1797,7 @@ GameObject:
   - component: {fileID: 36821511}
   m_Layer: 6
   m_Name: Sphere (242)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1981,7 +1981,7 @@ GameObject:
   - component: {fileID: 39863901}
   m_Layer: 6
   m_Name: Sphere (325)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: 47476209}
   m_Layer: 6
   m_Name: Sphere (235)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2441,7 +2441,7 @@ GameObject:
   - component: {fileID: 61750448}
   m_Layer: 6
   m_Name: Sphere (146)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2625,7 +2625,7 @@ GameObject:
   - component: {fileID: 62493523}
   m_Layer: 6
   m_Name: Sphere (69)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2901,7 +2901,7 @@ GameObject:
   - component: {fileID: 85664458}
   m_Layer: 6
   m_Name: Sphere (218)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3128,7 +3128,7 @@ GameObject:
   - component: {fileID: 96282607}
   m_Layer: 6
   m_Name: Sphere (27)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3312,7 +3312,7 @@ GameObject:
   - component: {fileID: 98664334}
   m_Layer: 6
   m_Name: Sphere (349)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3542,7 +3542,7 @@ GameObject:
   - component: {fileID: 100603038}
   m_Layer: 6
   m_Name: Sphere (237)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3726,7 +3726,7 @@ GameObject:
   - component: {fileID: 102694325}
   m_Layer: 6
   m_Name: Sphere (29)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3977,7 +3977,7 @@ GameObject:
   - component: {fileID: 118909402}
   m_Layer: 6
   m_Name: Sphere (155)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4161,7 +4161,7 @@ GameObject:
   - component: {fileID: 133171672}
   m_Layer: 6
   m_Name: Sphere (211)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4345,7 +4345,7 @@ GameObject:
   - component: {fileID: 151313071}
   m_Layer: 6
   m_Name: Sphere (358)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4529,7 +4529,7 @@ GameObject:
   - component: {fileID: 154285731}
   m_Layer: 6
   m_Name: Sphere (285)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4713,7 +4713,7 @@ GameObject:
   - component: {fileID: 179444435}
   m_Layer: 6
   m_Name: Sphere (161)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4897,7 +4897,7 @@ GameObject:
   - component: {fileID: 180341537}
   m_Layer: 6
   m_Name: Sphere (198)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5130,7 +5130,7 @@ GameObject:
   - component: {fileID: 190003420}
   m_Layer: 6
   m_Name: Sphere (131)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5314,7 +5314,7 @@ GameObject:
   - component: {fileID: 194383051}
   m_Layer: 6
   m_Name: Sphere (176)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5666,7 +5666,7 @@ GameObject:
   - component: {fileID: 203483198}
   m_Layer: 6
   m_Name: Sphere (279)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5850,7 +5850,7 @@ GameObject:
   - component: {fileID: 204737199}
   m_Layer: 6
   m_Name: Sphere (233)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6128,7 +6128,7 @@ GameObject:
   - component: {fileID: 226283200}
   m_Layer: 6
   m_Name: Sphere (62)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6312,7 +6312,7 @@ GameObject:
   - component: {fileID: 230560464}
   m_Layer: 6
   m_Name: Sphere (37)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6496,7 +6496,7 @@ GameObject:
   - component: {fileID: 236078281}
   m_Layer: 6
   m_Name: Sphere (148)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6680,7 +6680,7 @@ GameObject:
   - component: {fileID: 236859687}
   m_Layer: 6
   m_Name: Sphere (335)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6864,7 +6864,7 @@ GameObject:
   - component: {fileID: 246796725}
   m_Layer: 6
   m_Name: Sphere (166)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7048,7 +7048,7 @@ GameObject:
   - component: {fileID: 248983077}
   m_Layer: 6
   m_Name: Sphere (177)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7232,7 +7232,7 @@ GameObject:
   - component: {fileID: 249455988}
   m_Layer: 6
   m_Name: Sphere (276)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7416,7 +7416,7 @@ GameObject:
   - component: {fileID: 256013859}
   m_Layer: 6
   m_Name: Sphere (189)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7600,7 +7600,7 @@ GameObject:
   - component: {fileID: 257103915}
   m_Layer: 6
   m_Name: Sphere (231)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7828,7 +7828,7 @@ GameObject:
   - component: {fileID: 270942290}
   m_Layer: 6
   m_Name: Sphere (26)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8077,7 +8077,7 @@ GameObject:
   - component: {fileID: 277124954}
   m_Layer: 6
   m_Name: Sphere (90)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8261,7 +8261,7 @@ GameObject:
   - component: {fileID: 277948911}
   m_Layer: 6
   m_Name: Sphere (212)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8445,7 +8445,7 @@ GameObject:
   - component: {fileID: 292675994}
   m_Layer: 6
   m_Name: Sphere (354)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8629,7 +8629,7 @@ GameObject:
   - component: {fileID: 293071082}
   m_Layer: 6
   m_Name: Sphere (124)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8813,7 +8813,7 @@ GameObject:
   - component: {fileID: 294333433}
   m_Layer: 6
   m_Name: Sphere (389)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8997,7 +8997,7 @@ GameObject:
   - component: {fileID: 304104178}
   m_Layer: 6
   m_Name: Sphere (10)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9181,7 +9181,7 @@ GameObject:
   - component: {fileID: 308702854}
   m_Layer: 6
   m_Name: Sphere (163)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9365,7 +9365,7 @@ GameObject:
   - component: {fileID: 313338603}
   m_Layer: 6
   m_Name: Sphere (302)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9549,7 +9549,7 @@ GameObject:
   - component: {fileID: 314550534}
   m_Layer: 6
   m_Name: Sphere (329)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9733,7 +9733,7 @@ GameObject:
   - component: {fileID: 315920549}
   m_Layer: 6
   m_Name: Sphere (28)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9917,7 +9917,7 @@ GameObject:
   - component: {fileID: 315950196}
   m_Layer: 6
   m_Name: Sphere (120)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10101,7 +10101,7 @@ GameObject:
   - component: {fileID: 318950030}
   m_Layer: 6
   m_Name: Sphere (57)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10285,7 +10285,7 @@ GameObject:
   - component: {fileID: 329137109}
   m_Layer: 6
   m_Name: Sphere (367)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10561,7 +10561,7 @@ GameObject:
   - component: {fileID: 344065559}
   m_Layer: 6
   m_Name: Sphere (273)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10745,7 +10745,7 @@ GameObject:
   - component: {fileID: 345352765}
   m_Layer: 6
   m_Name: Sphere (378)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10929,7 +10929,7 @@ GameObject:
   - component: {fileID: 360518718}
   m_Layer: 6
   m_Name: Sphere (312)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11113,7 +11113,7 @@ GameObject:
   - component: {fileID: 364291355}
   m_Layer: 6
   m_Name: Sphere (206)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11297,7 +11297,7 @@ GameObject:
   - component: {fileID: 376482149}
   m_Layer: 6
   m_Name: Sphere (385)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11481,7 +11481,7 @@ GameObject:
   - component: {fileID: 382587442}
   m_Layer: 6
   m_Name: Sphere (21)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11665,7 +11665,7 @@ GameObject:
   - component: {fileID: 385640765}
   m_Layer: 6
   m_Name: Sphere (149)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11849,7 +11849,7 @@ GameObject:
   - component: {fileID: 391531617}
   m_Layer: 6
   m_Name: Sphere (291)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12128,7 +12128,7 @@ GameObject:
   - component: {fileID: 409518047}
   m_Layer: 6
   m_Name: Sphere (226)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12312,7 +12312,7 @@ GameObject:
   - component: {fileID: 413341789}
   m_Layer: 6
   m_Name: Sphere (101)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12594,7 +12594,7 @@ GameObject:
   - component: {fileID: 418626259}
   m_Layer: 6
   m_Name: Sphere (119)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12870,7 +12870,7 @@ GameObject:
   - component: {fileID: 420864177}
   m_Layer: 6
   m_Name: Sphere (380)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13054,7 +13054,7 @@ GameObject:
   - component: {fileID: 433396689}
   m_Layer: 6
   m_Name: Sphere (320)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13355,7 +13355,7 @@ GameObject:
   - component: {fileID: 443161730}
   m_Layer: 6
   m_Name: Sphere (150)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13639,7 +13639,7 @@ GameObject:
   - component: {fileID: 448315945}
   m_Layer: 6
   m_Name: Sphere (209)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13823,7 +13823,7 @@ GameObject:
   - component: {fileID: 450756421}
   m_Layer: 6
   m_Name: Sphere (65)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14007,7 +14007,7 @@ GameObject:
   - component: {fileID: 459139683}
   m_Layer: 6
   m_Name: Sphere (195)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14191,7 +14191,7 @@ GameObject:
   - component: {fileID: 471492150}
   m_Layer: 6
   m_Name: Sphere (282)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14375,7 +14375,7 @@ GameObject:
   - component: {fileID: 482105635}
   m_Layer: 6
   m_Name: Sphere (241)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14559,7 +14559,7 @@ GameObject:
   - component: {fileID: 488323554}
   m_Layer: 6
   m_Name: Sphere (295)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14743,7 +14743,7 @@ GameObject:
   - component: {fileID: 488828580}
   m_Layer: 6
   m_Name: Sphere (4)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15084,7 +15084,7 @@ GameObject:
   - component: {fileID: 492004687}
   m_Layer: 6
   m_Name: Sphere (337)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15268,7 +15268,7 @@ GameObject:
   - component: {fileID: 502671118}
   m_Layer: 6
   m_Name: Sphere (299)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15452,7 +15452,7 @@ GameObject:
   - component: {fileID: 510004638}
   m_Layer: 6
   m_Name: Sphere (256)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16209,7 +16209,7 @@ GameObject:
   - component: {fileID: 530001514}
   m_Layer: 6
   m_Name: Sphere (229)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16393,7 +16393,7 @@ GameObject:
   - component: {fileID: 539959450}
   m_Layer: 6
   m_Name: Sphere (159)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16577,7 +16577,7 @@ GameObject:
   - component: {fileID: 540375411}
   m_Layer: 6
   m_Name: Sphere (251)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16761,7 +16761,7 @@ GameObject:
   - component: {fileID: 542916329}
   m_Layer: 6
   m_Name: Sphere (262)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16945,7 +16945,7 @@ GameObject:
   - component: {fileID: 545046190}
   m_Layer: 6
   m_Name: Sphere (116)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17129,7 +17129,7 @@ GameObject:
   - component: {fileID: 546280061}
   m_Layer: 6
   m_Name: Sphere (190)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17405,7 +17405,7 @@ GameObject:
   - component: {fileID: 553869922}
   m_Layer: 6
   m_Name: Sphere (20)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17589,7 +17589,7 @@ GameObject:
   - component: {fileID: 554863240}
   m_Layer: 6
   m_Name: Sphere (45)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17773,7 +17773,7 @@ GameObject:
   - component: {fileID: 555317711}
   m_Layer: 6
   m_Name: Sphere (180)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17957,7 +17957,7 @@ GameObject:
   - component: {fileID: 557603015}
   m_Layer: 6
   m_Name: Sphere (384)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18141,7 +18141,7 @@ GameObject:
   - component: {fileID: 559221118}
   m_Layer: 6
   m_Name: Sphere (204)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18325,7 +18325,7 @@ GameObject:
   - component: {fileID: 559372184}
   m_Layer: 6
   m_Name: Sphere (118)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18509,7 +18509,7 @@ GameObject:
   - component: {fileID: 560782345}
   m_Layer: 6
   m_Name: Sphere (43)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18693,7 +18693,7 @@ GameObject:
   - component: {fileID: 571882906}
   m_Layer: 6
   m_Name: Sphere (375)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18877,7 +18877,7 @@ GameObject:
   - component: {fileID: 572693802}
   m_Layer: 6
   m_Name: Sphere (107)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19061,7 +19061,7 @@ GameObject:
   - component: {fileID: 576575412}
   m_Layer: 6
   m_Name: Sphere (115)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19245,7 +19245,7 @@ GameObject:
   - component: {fileID: 584333191}
   m_Layer: 6
   m_Name: Sphere (87)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19429,7 +19429,7 @@ GameObject:
   - component: {fileID: 588715886}
   m_Layer: 6
   m_Name: Sphere (50)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19613,7 +19613,7 @@ GameObject:
   - component: {fileID: 597329499}
   m_Layer: 6
   m_Name: Sphere (53)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19797,7 +19797,7 @@ GameObject:
   - component: {fileID: 598350108}
   m_Layer: 6
   m_Name: Sphere (135)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20073,7 +20073,7 @@ GameObject:
   - component: {fileID: 605707240}
   m_Layer: 6
   m_Name: Sphere (293)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20257,7 +20257,7 @@ GameObject:
   - component: {fileID: 605964816}
   m_Layer: 6
   m_Name: Sphere (32)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20441,7 +20441,7 @@ GameObject:
   - component: {fileID: 611412065}
   m_Layer: 6
   m_Name: Sphere (300)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20625,7 +20625,7 @@ GameObject:
   - component: {fileID: 613000797}
   m_Layer: 6
   m_Name: Sphere (296)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20809,7 +20809,7 @@ GameObject:
   - component: {fileID: 619111568}
   m_Layer: 6
   m_Name: Sphere (157)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21175,7 +21175,7 @@ GameObject:
   - component: {fileID: 628562084}
   m_Layer: 6
   m_Name: Sphere (252)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21359,7 +21359,7 @@ GameObject:
   - component: {fileID: 636934193}
   m_Layer: 6
   m_Name: Sphere (365)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21635,7 +21635,7 @@ GameObject:
   - component: {fileID: 639211359}
   m_Layer: 6
   m_Name: Sphere (82)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21819,7 +21819,7 @@ GameObject:
   - component: {fileID: 640567671}
   m_Layer: 6
   m_Name: Sphere (318)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22003,7 +22003,7 @@ GameObject:
   - component: {fileID: 642172414}
   m_Layer: 6
   m_Name: Sphere (213)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22187,7 +22187,7 @@ GameObject:
   - component: {fileID: 643247525}
   m_Layer: 6
   m_Name: Sphere (74)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22371,7 +22371,7 @@ GameObject:
   - component: {fileID: 659450464}
   m_Layer: 6
   m_Name: Sphere (309)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22555,7 +22555,7 @@ GameObject:
   - component: {fileID: 660949933}
   m_Layer: 6
   m_Name: Sphere (316)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22739,7 +22739,7 @@ GameObject:
   - component: {fileID: 664312817}
   m_Layer: 6
   m_Name: Sphere (98)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22923,7 +22923,7 @@ GameObject:
   - component: {fileID: 671194483}
   m_Layer: 6
   m_Name: Sphere (259)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23107,7 +23107,7 @@ GameObject:
   - component: {fileID: 674546267}
   m_Layer: 6
   m_Name: Sphere (49)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23291,7 +23291,7 @@ GameObject:
   - component: {fileID: 680128674}
   m_Layer: 6
   m_Name: Sphere (199)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23475,7 +23475,7 @@ GameObject:
   - component: {fileID: 681836487}
   m_Layer: 6
   m_Name: Sphere (350)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23659,7 +23659,7 @@ GameObject:
   - component: {fileID: 685656083}
   m_Layer: 6
   m_Name: Sphere (343)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23843,7 +23843,7 @@ GameObject:
   - component: {fileID: 689216627}
   m_Layer: 6
   m_Name: Sphere (306)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24027,7 +24027,7 @@ GameObject:
   - component: {fileID: 691721103}
   m_Layer: 6
   m_Name: Sphere (216)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24211,7 +24211,7 @@ GameObject:
   - component: {fileID: 695527805}
   m_Layer: 6
   m_Name: Sphere (225)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24395,7 +24395,7 @@ GameObject:
   - component: {fileID: 699022925}
   m_Layer: 6
   m_Name: Sphere (2)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24579,7 +24579,7 @@ GameObject:
   - component: {fileID: 704037740}
   m_Layer: 6
   m_Name: Sphere (144)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24763,7 +24763,7 @@ GameObject:
   - component: {fileID: 706167582}
   m_Layer: 6
   m_Name: Sphere (97)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25012,7 +25012,7 @@ GameObject:
   - component: {fileID: 710496964}
   m_Layer: 6
   m_Name: Sphere (5)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25196,7 +25196,7 @@ GameObject:
   - component: {fileID: 711244306}
   m_Layer: 6
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25380,7 +25380,7 @@ GameObject:
   - component: {fileID: 711900808}
   m_Layer: 6
   m_Name: Sphere (84)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25748,7 +25748,7 @@ GameObject:
   - component: {fileID: 727886138}
   m_Layer: 6
   m_Name: Sphere (35)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25932,7 +25932,7 @@ GameObject:
   - component: {fileID: 736661599}
   m_Layer: 6
   m_Name: Sphere (80)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26116,7 +26116,7 @@ GameObject:
   - component: {fileID: 738335363}
   m_Layer: 6
   m_Name: Sphere (184)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26300,7 +26300,7 @@ GameObject:
   - component: {fileID: 738516471}
   m_Layer: 6
   m_Name: Sphere (196)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26484,7 +26484,7 @@ GameObject:
   - component: {fileID: 740983374}
   m_Layer: 6
   m_Name: Sphere (340)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26668,7 +26668,7 @@ GameObject:
   - component: {fileID: 751880464}
   m_Layer: 6
   m_Name: Sphere (334)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26852,7 +26852,7 @@ GameObject:
   - component: {fileID: 755636225}
   m_Layer: 6
   m_Name: Sphere (377)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27036,7 +27036,7 @@ GameObject:
   - component: {fileID: 758683285}
   m_Layer: 6
   m_Name: Sphere (104)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27220,7 +27220,7 @@ GameObject:
   - component: {fileID: 761384843}
   m_Layer: 6
   m_Name: Sphere (253)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27404,7 +27404,7 @@ GameObject:
   - component: {fileID: 763789984}
   m_Layer: 6
   m_Name: Sphere (238)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27588,7 +27588,7 @@ GameObject:
   - component: {fileID: 767926751}
   m_Layer: 6
   m_Name: Sphere (60)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27772,7 +27772,7 @@ GameObject:
   - component: {fileID: 773998656}
   m_Layer: 6
   m_Name: Sphere (36)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27956,7 +27956,7 @@ GameObject:
   - component: {fileID: 779175075}
   m_Layer: 6
   m_Name: Sphere (151)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28140,7 +28140,7 @@ GameObject:
   - component: {fileID: 779322212}
   m_Layer: 6
   m_Name: Sphere (186)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28324,7 +28324,7 @@ GameObject:
   - component: {fileID: 781065420}
   m_Layer: 6
   m_Name: Sphere (376)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28508,7 +28508,7 @@ GameObject:
   - component: {fileID: 786414165}
   m_Layer: 6
   m_Name: Sphere (272)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28692,7 +28692,7 @@ GameObject:
   - component: {fileID: 787501996}
   m_Layer: 6
   m_Name: Sphere (249)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28876,7 +28876,7 @@ GameObject:
   - component: {fileID: 798659562}
   m_Layer: 6
   m_Name: Sphere (99)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29060,7 +29060,7 @@ GameObject:
   - component: {fileID: 800294526}
   m_Layer: 6
   m_Name: Sphere (311)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29244,7 +29244,7 @@ GameObject:
   - component: {fileID: 802819510}
   m_Layer: 6
   m_Name: Sphere (145)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29428,7 +29428,7 @@ GameObject:
   - component: {fileID: 803666842}
   m_Layer: 6
   m_Name: Sphere (326)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29612,7 +29612,7 @@ GameObject:
   - component: {fileID: 823146409}
   m_Layer: 6
   m_Name: Sphere (313)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29796,7 +29796,7 @@ GameObject:
   - component: {fileID: 825980342}
   m_Layer: 6
   m_Name: Sphere (3)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29980,7 +29980,7 @@ GameObject:
   - component: {fileID: 835973125}
   m_Layer: 6
   m_Name: Sphere (34)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30164,7 +30164,7 @@ GameObject:
   - component: {fileID: 847121413}
   m_Layer: 6
   m_Name: Sphere (338)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30348,7 +30348,7 @@ GameObject:
   - component: {fileID: 852039720}
   m_Layer: 6
   m_Name: Sphere (183)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30532,7 +30532,7 @@ GameObject:
   - component: {fileID: 854021315}
   m_Layer: 6
   m_Name: Sphere (324)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30716,7 +30716,7 @@ GameObject:
   - component: {fileID: 854451010}
   m_Layer: 6
   m_Name: Sphere (219)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30900,7 +30900,7 @@ GameObject:
   - component: {fileID: 857004590}
   m_Layer: 6
   m_Name: Sphere (31)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31084,7 +31084,7 @@ GameObject:
   - component: {fileID: 858405632}
   m_Layer: 6
   m_Name: Sphere (38)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31268,7 +31268,7 @@ GameObject:
   - component: {fileID: 865704997}
   m_Layer: 6
   m_Name: Sphere (66)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31452,7 +31452,7 @@ GameObject:
   - component: {fileID: 873986109}
   m_Layer: 6
   m_Name: Sphere (356)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31636,7 +31636,7 @@ GameObject:
   - component: {fileID: 874832963}
   m_Layer: 6
   m_Name: Sphere (40)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31820,7 +31820,7 @@ GameObject:
   - component: {fileID: 875305243}
   m_Layer: 6
   m_Name: Sphere (72)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32069,7 +32069,7 @@ GameObject:
   - component: {fileID: 887193945}
   m_Layer: 6
   m_Name: Sphere (386)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32253,7 +32253,7 @@ GameObject:
   - component: {fileID: 887526851}
   m_Layer: 6
   m_Name: Sphere (75)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32502,7 +32502,7 @@ GameObject:
   - component: {fileID: 892542443}
   m_Layer: 6
   m_Name: Sphere (202)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32843,7 +32843,7 @@ GameObject:
   - component: {fileID: 898296935}
   m_Layer: 6
   m_Name: Sphere (315)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33027,7 +33027,7 @@ GameObject:
   - component: {fileID: 903198574}
   m_Layer: 6
   m_Name: Sphere (172)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33303,7 +33303,7 @@ GameObject:
   - component: {fileID: 918594982}
   m_Layer: 6
   m_Name: Sphere (351)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33487,7 +33487,7 @@ GameObject:
   - component: {fileID: 929912902}
   m_Layer: 6
   m_Name: Sphere (94)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33671,7 +33671,7 @@ GameObject:
   - component: {fileID: 935442235}
   m_Layer: 6
   m_Name: Sphere (345)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33855,7 +33855,7 @@ GameObject:
   - component: {fileID: 936478838}
   m_Layer: 6
   m_Name: Sphere (284)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34039,7 +34039,7 @@ GameObject:
   - component: {fileID: 938109617}
   m_Layer: 6
   m_Name: Sphere (366)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34223,7 +34223,7 @@ GameObject:
   - component: {fileID: 940658605}
   m_Layer: 6
   m_Name: Sphere (305)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34407,7 +34407,7 @@ GameObject:
   - component: {fileID: 949123212}
   m_Layer: 6
   m_Name: Sphere (44)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34591,7 +34591,7 @@ GameObject:
   - component: {fileID: 950847096}
   m_Layer: 6
   m_Name: Sphere (54)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34775,7 +34775,7 @@ GameObject:
   - component: {fileID: 950992579}
   m_Layer: 6
   m_Name: Sphere (114)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36040,7 +36040,7 @@ GameObject:
   - component: {fileID: 970302525}
   m_Layer: 6
   m_Name: Sphere (17)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36224,7 +36224,7 @@ GameObject:
   - component: {fileID: 975661736}
   m_Layer: 6
   m_Name: Sphere (48)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36408,7 +36408,7 @@ GameObject:
   - component: {fileID: 1001767437}
   m_Layer: 6
   m_Name: Sphere (19)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36592,7 +36592,7 @@ GameObject:
   - component: {fileID: 1006085743}
   m_Layer: 6
   m_Name: Sphere (215)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36776,7 +36776,7 @@ GameObject:
   - component: {fileID: 1017023949}
   m_Layer: 6
   m_Name: Sphere (289)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36960,7 +36960,7 @@ GameObject:
   - component: {fileID: 1020002815}
   m_Layer: 6
   m_Name: Sphere (258)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37144,7 +37144,7 @@ GameObject:
   - component: {fileID: 1021637420}
   m_Layer: 6
   m_Name: Sphere (359)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37328,7 +37328,7 @@ GameObject:
   - component: {fileID: 1030318185}
   m_Layer: 6
   m_Name: Sphere (59)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37538,7 +37538,7 @@ GameObject:
   - component: {fileID: 1033384978}
   m_Layer: 6
   m_Name: Sphere (76)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37722,7 +37722,7 @@ GameObject:
   - component: {fileID: 1040937517}
   m_Layer: 6
   m_Name: Sphere (363)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37906,7 +37906,7 @@ GameObject:
   - component: {fileID: 1044331284}
   m_Layer: 6
   m_Name: Sphere (208)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38090,7 +38090,7 @@ GameObject:
   - component: {fileID: 1049597272}
   m_Layer: 6
   m_Name: Sphere (355)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38324,7 +38324,7 @@ GameObject:
   - component: {fileID: 1068017264}
   m_Layer: 6
   m_Name: Sphere (372)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38573,7 +38573,7 @@ GameObject:
   - component: {fileID: 1090818195}
   m_Layer: 6
   m_Name: Sphere (246)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38757,7 +38757,7 @@ GameObject:
   - component: {fileID: 1092255841}
   m_Layer: 6
   m_Name: Sphere (387)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38941,7 +38941,7 @@ GameObject:
   - component: {fileID: 1096135588}
   m_Layer: 6
   m_Name: Sphere (169)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39125,7 +39125,7 @@ GameObject:
   - component: {fileID: 1101680367}
   m_Layer: 6
   m_Name: Sphere (210)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39309,7 +39309,7 @@ GameObject:
   - component: {fileID: 1102772090}
   m_Layer: 6
   m_Name: Sphere (185)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39493,7 +39493,7 @@ GameObject:
   - component: {fileID: 1103990497}
   m_Layer: 6
   m_Name: Sphere (248)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39677,7 +39677,7 @@ GameObject:
   - component: {fileID: 1112058239}
   m_Layer: 6
   m_Name: Sphere (112)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39861,7 +39861,7 @@ GameObject:
   - component: {fileID: 1115139845}
   m_Layer: 6
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40162,7 +40162,7 @@ GameObject:
   - component: {fileID: 1133755524}
   m_Layer: 6
   m_Name: Sphere (341)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40346,7 +40346,7 @@ GameObject:
   - component: {fileID: 1139951396}
   m_Layer: 6
   m_Name: Sphere (123)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40729,7 +40729,7 @@ GameObject:
   - component: {fileID: 1159603404}
   m_Layer: 6
   m_Name: Sphere (234)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41005,7 +41005,7 @@ GameObject:
   - component: {fileID: 1169141629}
   m_Layer: 6
   m_Name: Sphere (317)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41189,7 +41189,7 @@ GameObject:
   - component: {fileID: 1179378116}
   m_Layer: 6
   m_Name: Sphere (58)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41373,7 +41373,7 @@ GameObject:
   - component: {fileID: 1179450495}
   m_Layer: 6
   m_Name: Sphere (86)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41557,7 +41557,7 @@ GameObject:
   - component: {fileID: 1185467540}
   m_Layer: 6
   m_Name: Sphere (321)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41741,7 +41741,7 @@ GameObject:
   - component: {fileID: 1190627782}
   m_Layer: 6
   m_Name: Sphere (200)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41925,7 +41925,7 @@ GameObject:
   - component: {fileID: 1199620925}
   m_Layer: 6
   m_Name: Sphere (39)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42109,7 +42109,7 @@ GameObject:
   - component: {fileID: 1219541480}
   m_Layer: 6
   m_Name: Sphere (239)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42293,7 +42293,7 @@ GameObject:
   - component: {fileID: 1226732649}
   m_Layer: 6
   m_Name: Sphere (271)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42512,7 +42512,7 @@ GameObject:
   - component: {fileID: 1232360596}
   m_Layer: 6
   m_Name: Sphere (361)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42696,7 +42696,7 @@ GameObject:
   - component: {fileID: 1232911331}
   m_Layer: 6
   m_Name: Sphere (88)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42880,7 +42880,7 @@ GameObject:
   - component: {fileID: 1233445551}
   m_Layer: 6
   m_Name: Sphere (382)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43064,7 +43064,7 @@ GameObject:
   - component: {fileID: 1237057424}
   m_Layer: 6
   m_Name: Sphere (47)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43248,7 +43248,7 @@ GameObject:
   - component: {fileID: 1237444937}
   m_Layer: 6
   m_Name: Sphere (7)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43478,7 +43478,7 @@ GameObject:
   - component: {fileID: 1245421437}
   m_Layer: 6
   m_Name: Sphere (137)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43662,7 +43662,7 @@ GameObject:
   - component: {fileID: 1252666443}
   m_Layer: 6
   m_Name: Sphere (255)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43846,7 +43846,7 @@ GameObject:
   - component: {fileID: 1258955392}
   m_Layer: 6
   m_Name: Sphere (106)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44451,7 +44451,7 @@ GameObject:
   - component: {fileID: 1263417147}
   m_Layer: 6
   m_Name: Sphere (179)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44635,7 +44635,7 @@ GameObject:
   - component: {fileID: 1269560523}
   m_Layer: 6
   m_Name: Sphere (134)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44819,7 +44819,7 @@ GameObject:
   - component: {fileID: 1269726749}
   m_Layer: 6
   m_Name: Sphere (15)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45003,7 +45003,7 @@ GameObject:
   - component: {fileID: 1271563242}
   m_Layer: 6
   m_Name: Sphere (67)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45187,7 +45187,7 @@ GameObject:
   - component: {fileID: 1271771604}
   m_Layer: 6
   m_Name: Sphere (156)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45371,7 +45371,7 @@ GameObject:
   - component: {fileID: 1273296351}
   m_Layer: 6
   m_Name: Sphere (121)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45555,7 +45555,7 @@ GameObject:
   - component: {fileID: 1283625128}
   m_Layer: 6
   m_Name: Sphere (243)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45739,7 +45739,7 @@ GameObject:
   - component: {fileID: 1283863233}
   m_Layer: 6
   m_Name: Sphere (142)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45923,7 +45923,7 @@ GameObject:
   - component: {fileID: 1289068866}
   m_Layer: 6
   m_Name: Sphere (348)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46107,7 +46107,7 @@ GameObject:
   - component: {fileID: 1291146118}
   m_Layer: 6
   m_Name: Sphere (136)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46291,7 +46291,7 @@ GameObject:
   - component: {fileID: 1292784784}
   m_Layer: 6
   m_Name: Sphere (78)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46475,7 +46475,7 @@ GameObject:
   - component: {fileID: 1294794651}
   m_Layer: 6
   m_Name: Sphere (374)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46659,7 +46659,7 @@ GameObject:
   - component: {fileID: 1298141391}
   m_Layer: 6
   m_Name: Sphere (63)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46891,7 +46891,7 @@ GameObject:
   - component: {fileID: 1307517261}
   m_Layer: 6
   m_Name: Sphere (171)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47140,7 +47140,7 @@ GameObject:
   - component: {fileID: 1312668398}
   m_Layer: 6
   m_Name: Sphere (158)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47324,7 +47324,7 @@ GameObject:
   - component: {fileID: 1315499804}
   m_Layer: 6
   m_Name: Sphere (257)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47508,7 +47508,7 @@ GameObject:
   - component: {fileID: 1316952683}
   m_Layer: 6
   m_Name: Sphere (165)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47692,7 +47692,7 @@ GameObject:
   - component: {fileID: 1317499016}
   m_Layer: 6
   m_Name: Sphere (56)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47876,7 +47876,7 @@ GameObject:
   - component: {fileID: 1322699614}
   m_Layer: 6
   m_Name: Sphere (270)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48060,7 +48060,7 @@ GameObject:
   - component: {fileID: 1326903448}
   m_Layer: 6
   m_Name: Sphere (197)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48244,7 +48244,7 @@ GameObject:
   - component: {fileID: 1328971970}
   m_Layer: 6
   m_Name: Sphere (303)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48428,7 +48428,7 @@ GameObject:
   - component: {fileID: 1345849442}
   m_Layer: 6
   m_Name: Sphere (333)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48612,7 +48612,7 @@ GameObject:
   - component: {fileID: 1347009422}
   m_Layer: 6
   m_Name: Sphere (147)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48796,7 +48796,7 @@ GameObject:
   - component: {fileID: 1351403556}
   m_Layer: 6
   m_Name: Sphere (42)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48980,7 +48980,7 @@ GameObject:
   - component: {fileID: 1351696700}
   m_Layer: 6
   m_Name: Sphere (322)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49256,7 +49256,7 @@ GameObject:
   - component: {fileID: 1355569133}
   m_Layer: 6
   m_Name: Sphere (173)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49440,7 +49440,7 @@ GameObject:
   - component: {fileID: 1361254000}
   m_Layer: 6
   m_Name: Sphere (274)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49624,7 +49624,7 @@ GameObject:
   - component: {fileID: 1361783476}
   m_Layer: 6
   m_Name: Sphere (224)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49808,7 +49808,7 @@ GameObject:
   - component: {fileID: 1364344922}
   m_Layer: 6
   m_Name: Sphere (223)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49992,7 +49992,7 @@ GameObject:
   - component: {fileID: 1365627657}
   m_Layer: 6
   m_Name: Sphere (160)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50241,7 +50241,7 @@ GameObject:
   - component: {fileID: 1371206460}
   m_Layer: 6
   m_Name: Sphere (130)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50610,7 +50610,7 @@ GameObject:
   - component: {fileID: 1377470175}
   m_Layer: 6
   m_Name: Sphere (308)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50794,7 +50794,7 @@ GameObject:
   - component: {fileID: 1378662136}
   m_Layer: 6
   m_Name: Sphere (127)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50978,7 +50978,7 @@ GameObject:
   - component: {fileID: 1380225724}
   m_Layer: 6
   m_Name: Sphere (217)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51254,7 +51254,7 @@ GameObject:
   - component: {fileID: 1385698009}
   m_Layer: 6
   m_Name: Sphere (369)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51503,7 +51503,7 @@ GameObject:
   - component: {fileID: 1397894939}
   m_Layer: 6
   m_Name: Sphere (301)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51687,7 +51687,7 @@ GameObject:
   - component: {fileID: 1404649404}
   m_Layer: 6
   m_Name: Sphere (339)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51871,7 +51871,7 @@ GameObject:
   - component: {fileID: 1406827416}
   m_Layer: 6
   m_Name: Sphere (222)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52222,7 +52222,7 @@ GameObject:
   - component: {fileID: 1415428775}
   m_Layer: 6
   m_Name: Sphere (328)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52406,7 +52406,7 @@ GameObject:
   - component: {fileID: 1430025204}
   m_Layer: 6
   m_Name: Sphere (68)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52590,7 +52590,7 @@ GameObject:
   - component: {fileID: 1434475239}
   m_Layer: 6
   m_Name: Sphere (221)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52774,7 +52774,7 @@ GameObject:
   - component: {fileID: 1434938439}
   m_Layer: 6
   m_Name: Sphere (357)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52979,7 +52979,7 @@ GameObject:
   - component: {fileID: 1440630515}
   m_Layer: 6
   m_Name: Sphere (167)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53163,7 +53163,7 @@ GameObject:
   - component: {fileID: 1451641247}
   m_Layer: 6
   m_Name: Sphere (109)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53347,7 +53347,7 @@ GameObject:
   - component: {fileID: 1452476754}
   m_Layer: 6
   m_Name: Sphere (290)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53531,7 +53531,7 @@ GameObject:
   - component: {fileID: 1454963316}
   m_Layer: 6
   m_Name: Sphere (330)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53715,7 +53715,7 @@ GameObject:
   - component: {fileID: 1455612104}
   m_Layer: 6
   m_Name: Sphere (138)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53899,7 +53899,7 @@ GameObject:
   - component: {fileID: 1456332617}
   m_Layer: 6
   m_Name: Sphere (332)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54083,7 +54083,7 @@ GameObject:
   - component: {fileID: 1471519156}
   m_Layer: 6
   m_Name: Sphere (275)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54267,7 +54267,7 @@ GameObject:
   - component: {fileID: 1484210164}
   m_Layer: 6
   m_Name: Sphere (182)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54451,7 +54451,7 @@ GameObject:
   - component: {fileID: 1486344337}
   m_Layer: 6
   m_Name: Sphere (9)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54635,7 +54635,7 @@ GameObject:
   - component: {fileID: 1491711618}
   m_Layer: 6
   m_Name: Sphere (188)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54819,7 +54819,7 @@ GameObject:
   - component: {fileID: 1499869127}
   m_Layer: 6
   m_Name: Sphere (268)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55003,7 +55003,7 @@ GameObject:
   - component: {fileID: 1502080619}
   m_Layer: 6
   m_Name: Sphere (236)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55187,7 +55187,7 @@ GameObject:
   - component: {fileID: 1503352858}
   m_Layer: 6
   m_Name: Sphere (360)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55371,7 +55371,7 @@ GameObject:
   - component: {fileID: 1506082306}
   m_Layer: 6
   m_Name: Sphere (192)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55555,7 +55555,7 @@ GameObject:
   - component: {fileID: 1506244563}
   m_Layer: 6
   m_Name: Sphere (122)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55739,7 +55739,7 @@ GameObject:
   - component: {fileID: 1513818826}
   m_Layer: 6
   m_Name: Sphere (175)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55923,7 +55923,7 @@ GameObject:
   - component: {fileID: 1515243609}
   m_Layer: 6
   m_Name: Sphere (362)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56107,7 +56107,7 @@ GameObject:
   - component: {fileID: 1515407210}
   m_Layer: 6
   m_Name: Sphere (227)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56291,7 +56291,7 @@ GameObject:
   - component: {fileID: 1518048803}
   m_Layer: 6
   m_Name: Sphere (91)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56475,7 +56475,7 @@ GameObject:
   - component: {fileID: 1518814087}
   m_Layer: 6
   m_Name: Sphere (288)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56659,7 +56659,7 @@ GameObject:
   - component: {fileID: 1520857523}
   m_Layer: 6
   m_Name: Sphere (70)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56843,7 +56843,7 @@ GameObject:
   - component: {fileID: 1521246545}
   m_Layer: 6
   m_Name: Sphere (381)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57119,7 +57119,7 @@ GameObject:
   - component: {fileID: 1524867748}
   m_Layer: 6
   m_Name: Sphere (230)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57303,7 +57303,7 @@ GameObject:
   - component: {fileID: 1529732296}
   m_Layer: 6
   m_Name: Sphere (277)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57487,7 +57487,7 @@ GameObject:
   - component: {fileID: 1530534996}
   m_Layer: 6
   m_Name: Sphere (55)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57671,7 +57671,7 @@ GameObject:
   - component: {fileID: 1531673321}
   m_Layer: 6
   m_Name: Sphere (292)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57855,7 +57855,7 @@ GameObject:
   - component: {fileID: 1532752448}
   m_Layer: 6
   m_Name: Sphere (93)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58039,7 +58039,7 @@ GameObject:
   - component: {fileID: 1532763082}
   m_Layer: 6
   m_Name: Sphere (323)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58274,7 +58274,7 @@ GameObject:
   - component: {fileID: 1546226400}
   m_Layer: 6
   m_Name: Sphere (364)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58550,7 +58550,7 @@ GameObject:
   - component: {fileID: 1550641790}
   m_Layer: 6
   m_Name: Sphere (267)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58734,7 +58734,7 @@ GameObject:
   - component: {fileID: 1564712352}
   m_Layer: 6
   m_Name: Sphere (81)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58918,7 +58918,7 @@ GameObject:
   - component: {fileID: 1571598804}
   m_Layer: 6
   m_Name: Sphere (139)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59102,7 +59102,7 @@ GameObject:
   - component: {fileID: 1573640262}
   m_Layer: 6
   m_Name: Sphere (100)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59286,7 +59286,7 @@ GameObject:
   - component: {fileID: 1574047112}
   m_Layer: 6
   m_Name: Sphere (260)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59470,7 +59470,7 @@ GameObject:
   - component: {fileID: 1575755110}
   m_Layer: 6
   m_Name: Sphere (105)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59654,7 +59654,7 @@ GameObject:
   - component: {fileID: 1584162919}
   m_Layer: 6
   m_Name: Sphere (193)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59881,7 +59881,7 @@ GameObject:
   - component: {fileID: 1603980299}
   m_Layer: 6
   m_Name: Sphere (16)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60065,7 +60065,7 @@ GameObject:
   - component: {fileID: 1614074555}
   m_Layer: 6
   m_Name: Sphere (228)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60249,7 +60249,7 @@ GameObject:
   - component: {fileID: 1627425436}
   m_Layer: 6
   m_Name: Sphere (203)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60433,7 +60433,7 @@ GameObject:
   - component: {fileID: 1629396685}
   m_Layer: 6
   m_Name: Sphere (373)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60617,7 +60617,7 @@ GameObject:
   - component: {fileID: 1631423734}
   m_Layer: 6
   m_Name: Sphere (8)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60888,7 +60888,7 @@ GameObject:
   - component: {fileID: 1633240291}
   m_Layer: 6
   m_Name: Sphere (283)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61072,7 +61072,7 @@ GameObject:
   - component: {fileID: 1641150000}
   m_Layer: 6
   m_Name: Sphere (6)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61467,7 +61467,7 @@ GameObject:
   - component: {fileID: 1652650216}
   m_Layer: 6
   m_Name: Sphere (125)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61651,7 +61651,7 @@ GameObject:
   - component: {fileID: 1655772773}
   m_Layer: 6
   m_Name: Sphere (92)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61835,7 +61835,7 @@ GameObject:
   - component: {fileID: 1655846903}
   m_Layer: 6
   m_Name: Sphere (336)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62019,7 +62019,7 @@ GameObject:
   - component: {fileID: 1673993217}
   m_Layer: 6
   m_Name: Sphere (205)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62203,7 +62203,7 @@ GameObject:
   - component: {fileID: 1674113822}
   m_Layer: 6
   m_Name: Sphere (370)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62387,7 +62387,7 @@ GameObject:
   - component: {fileID: 1674414939}
   m_Layer: 6
   m_Name: Sphere (347)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62571,7 +62571,7 @@ GameObject:
   - component: {fileID: 1676102249}
   m_Layer: 6
   m_Name: Sphere (89)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62944,7 +62944,7 @@ GameObject:
   - component: {fileID: 1688569827}
   m_Layer: 6
   m_Name: Sphere (113)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63128,7 +63128,7 @@ GameObject:
   - component: {fileID: 1689619540}
   m_Layer: 6
   m_Name: Sphere (178)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63404,7 +63404,7 @@ GameObject:
   - component: {fileID: 1698173805}
   m_Layer: 6
   m_Name: Sphere (52)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63588,7 +63588,7 @@ GameObject:
   - component: {fileID: 1699599097}
   m_Layer: 6
   m_Name: Sphere (278)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63772,7 +63772,7 @@ GameObject:
   - component: {fileID: 1701025969}
   m_Layer: 6
   m_Name: Sphere (368)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63956,7 +63956,7 @@ GameObject:
   - component: {fileID: 1703063366}
   m_Layer: 6
   m_Name: Sphere (247)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64140,7 +64140,7 @@ GameObject:
   - component: {fileID: 1704889308}
   m_Layer: 6
   m_Name: Sphere (245)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64324,7 +64324,7 @@ GameObject:
   - component: {fileID: 1715710614}
   m_Layer: 6
   m_Name: Sphere (23)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64508,7 +64508,7 @@ GameObject:
   - component: {fileID: 1716562335}
   m_Layer: 6
   m_Name: Sphere (383)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64692,7 +64692,7 @@ GameObject:
   - component: {fileID: 1717151825}
   m_Layer: 6
   m_Name: Sphere (18)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65179,7 +65179,7 @@ GameObject:
   - component: {fileID: 1725691745}
   m_Layer: 6
   m_Name: Sphere (14)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65438,7 +65438,7 @@ GameObject:
   - component: {fileID: 1733042616}
   m_Layer: 6
   m_Name: Sphere (12)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65622,7 +65622,7 @@ GameObject:
   - component: {fileID: 1737632418}
   m_Layer: 6
   m_Name: Sphere (33)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65806,7 +65806,7 @@ GameObject:
   - component: {fileID: 1753469260}
   m_Layer: 6
   m_Name: Sphere (79)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66082,7 +66082,7 @@ GameObject:
   - component: {fileID: 1760451653}
   m_Layer: 6
   m_Name: Sphere (11)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66266,7 +66266,7 @@ GameObject:
   - component: {fileID: 1766862090}
   m_Layer: 6
   m_Name: Sphere (327)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66450,7 +66450,7 @@ GameObject:
   - component: {fileID: 1771285943}
   m_Layer: 6
   m_Name: Sphere (133)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66634,7 +66634,7 @@ GameObject:
   - component: {fileID: 1776000651}
   m_Layer: 6
   m_Name: Sphere (298)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66910,7 +66910,7 @@ GameObject:
   - component: {fileID: 1779656205}
   m_Layer: 6
   m_Name: Sphere (342)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67094,7 +67094,7 @@ GameObject:
   - component: {fileID: 1790175150}
   m_Layer: 6
   m_Name: Sphere (390)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67278,7 +67278,7 @@ GameObject:
   - component: {fileID: 1800089896}
   m_Layer: 6
   m_Name: Sphere (174)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67462,7 +67462,7 @@ GameObject:
   - component: {fileID: 1800391279}
   m_Layer: 6
   m_Name: Sphere (73)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67646,7 +67646,7 @@ GameObject:
   - component: {fileID: 1803449373}
   m_Layer: 6
   m_Name: Sphere (264)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67830,7 +67830,7 @@ GameObject:
   - component: {fileID: 1811957383}
   m_Layer: 6
   m_Name: Sphere (331)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68014,7 +68014,7 @@ GameObject:
   - component: {fileID: 1819504808}
   m_Layer: 6
   m_Name: Sphere (220)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68198,7 +68198,7 @@ GameObject:
   - component: {fileID: 1822038910}
   m_Layer: 6
   m_Name: Sphere (111)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68382,7 +68382,7 @@ GameObject:
   - component: {fileID: 1822182595}
   m_Layer: 6
   m_Name: Sphere (154)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68566,7 +68566,7 @@ GameObject:
   - component: {fileID: 1827990421}
   m_Layer: 6
   m_Name: Sphere (314)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68750,7 +68750,7 @@ GameObject:
   - component: {fileID: 1828089655}
   m_Layer: 6
   m_Name: Sphere (240)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68934,7 +68934,7 @@ GameObject:
   - component: {fileID: 1829778408}
   m_Layer: 6
   m_Name: Sphere (46)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69118,7 +69118,7 @@ GameObject:
   - component: {fileID: 1830101744}
   m_Layer: 6
   m_Name: Sphere (304)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69302,7 +69302,7 @@ GameObject:
   - component: {fileID: 1839414603}
   m_Layer: 6
   m_Name: Sphere (71)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69486,7 +69486,7 @@ GameObject:
   - component: {fileID: 1843628987}
   m_Layer: 6
   m_Name: Sphere (168)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69670,7 +69670,7 @@ GameObject:
   - component: {fileID: 1848296197}
   m_Layer: 6
   m_Name: Sphere (344)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69854,7 +69854,7 @@ GameObject:
   - component: {fileID: 1848664910}
   m_Layer: 6
   m_Name: Sphere (61)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70038,7 +70038,7 @@ GameObject:
   - component: {fileID: 1850179186}
   m_Layer: 6
   m_Name: Sphere (297)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70222,7 +70222,7 @@ GameObject:
   - component: {fileID: 1858227014}
   m_Layer: 6
   m_Name: Sphere (254)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70471,7 +70471,7 @@ GameObject:
   - component: {fileID: 1866047720}
   m_Layer: 6
   m_Name: Sphere (214)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70655,7 +70655,7 @@ GameObject:
   - component: {fileID: 1869107277}
   m_Layer: 6
   m_Name: Sphere (319)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70904,7 +70904,7 @@ GameObject:
   - component: {fileID: 1882374872}
   m_Layer: 6
   m_Name: Sphere (263)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71088,7 +71088,7 @@ GameObject:
   - component: {fileID: 1887898390}
   m_Layer: 6
   m_Name: Sphere (103)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71272,7 +71272,7 @@ GameObject:
   - component: {fileID: 1889044775}
   m_Layer: 6
   m_Name: Sphere (187)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71456,7 +71456,7 @@ GameObject:
   - component: {fileID: 1889171623}
   m_Layer: 6
   m_Name: Sphere (346)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71640,7 +71640,7 @@ GameObject:
   - component: {fileID: 1890540434}
   m_Layer: 6
   m_Name: Sphere (207)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71824,7 +71824,7 @@ GameObject:
   - component: {fileID: 1891627638}
   m_Layer: 6
   m_Name: Sphere (30)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72041,7 +72041,7 @@ GameObject:
   - component: {fileID: 1903362064}
   m_Layer: 6
   m_Name: Sphere (95)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72225,7 +72225,7 @@ GameObject:
   - component: {fileID: 1905681548}
   m_Layer: 6
   m_Name: Sphere (201)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72409,7 +72409,7 @@ GameObject:
   - component: {fileID: 1906127765}
   m_Layer: 6
   m_Name: Sphere (194)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72593,7 +72593,7 @@ GameObject:
   - component: {fileID: 1906152850}
   m_Layer: 6
   m_Name: Sphere (85)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72777,7 +72777,7 @@ GameObject:
   - component: {fileID: 1907481872}
   m_Layer: 6
   m_Name: Sphere (162)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72961,7 +72961,7 @@ GameObject:
   - component: {fileID: 1919958653}
   m_Layer: 6
   m_Name: Sphere (108)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73145,7 +73145,7 @@ GameObject:
   - component: {fileID: 1927909499}
   m_Layer: 6
   m_Name: Sphere (141)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73329,7 +73329,7 @@ GameObject:
   - component: {fileID: 1932799054}
   m_Layer: 6
   m_Name: Sphere (51)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73513,7 +73513,7 @@ GameObject:
   - component: {fileID: 1934842872}
   m_Layer: 6
   m_Name: Sphere (83)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73697,7 +73697,7 @@ GameObject:
   - component: {fileID: 1936810171}
   m_Layer: 6
   m_Name: Sphere (129)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73881,7 +73881,7 @@ GameObject:
   - component: {fileID: 1944130560}
   m_Layer: 6
   m_Name: Sphere (287)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74065,7 +74065,7 @@ GameObject:
   - component: {fileID: 1948760917}
   m_Layer: 6
   m_Name: Sphere (352)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74249,7 +74249,7 @@ GameObject:
   - component: {fileID: 1949333794}
   m_Layer: 6
   m_Name: Sphere (153)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74433,7 +74433,7 @@ GameObject:
   - component: {fileID: 1953214880}
   m_Layer: 6
   m_Name: Sphere (22)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74617,7 +74617,7 @@ GameObject:
   - component: {fileID: 1956230500}
   m_Layer: 6
   m_Name: Sphere (181)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74801,7 +74801,7 @@ GameObject:
   - component: {fileID: 1964225640}
   m_Layer: 6
   m_Name: Sphere (191)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75077,7 +75077,7 @@ GameObject:
   - component: {fileID: 1974135728}
   m_Layer: 6
   m_Name: Sphere (102)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75353,7 +75353,7 @@ GameObject:
   - component: {fileID: 1975714283}
   m_Layer: 6
   m_Name: Sphere (25)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75537,7 +75537,7 @@ GameObject:
   - component: {fileID: 1983405938}
   m_Layer: 6
   m_Name: Sphere (132)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75721,7 +75721,7 @@ GameObject:
   - component: {fileID: 1985097465}
   m_Layer: 6
   m_Name: Sphere (261)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75905,7 +75905,7 @@ GameObject:
   - component: {fileID: 1987476552}
   m_Layer: 6
   m_Name: Sphere (13)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76089,7 +76089,7 @@ GameObject:
   - component: {fileID: 1989493946}
   m_Layer: 6
   m_Name: Sphere (281)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76419,7 +76419,7 @@ GameObject:
   - component: {fileID: 2004182719}
   m_Layer: 6
   m_Name: Sphere (388)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76603,7 +76603,7 @@ GameObject:
   - component: {fileID: 2004204571}
   m_Layer: 6
   m_Name: Sphere (371)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76787,7 +76787,7 @@ GameObject:
   - component: {fileID: 2007056025}
   m_Layer: 6
   m_Name: Sphere (143)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77155,7 +77155,7 @@ GameObject:
   - component: {fileID: 2018161051}
   m_Layer: 6
   m_Name: Sphere (128)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77339,7 +77339,7 @@ GameObject:
   - component: {fileID: 2020970517}
   m_Layer: 6
   m_Name: Sphere (170)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77523,7 +77523,7 @@ GameObject:
   - component: {fileID: 2051324232}
   m_Layer: 6
   m_Name: Sphere (310)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77707,7 +77707,7 @@ GameObject:
   - component: {fileID: 2053815891}
   m_Layer: 6
   m_Name: Sphere (379)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77891,7 +77891,7 @@ GameObject:
   - component: {fileID: 2055918849}
   m_Layer: 6
   m_Name: Sphere (250)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78075,7 +78075,7 @@ GameObject:
   - component: {fileID: 2067542197}
   m_Layer: 6
   m_Name: Sphere (269)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78259,7 +78259,7 @@ GameObject:
   - component: {fileID: 2074542187}
   m_Layer: 6
   m_Name: Sphere (232)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78443,7 +78443,7 @@ GameObject:
   - component: {fileID: 2074720793}
   m_Layer: 6
   m_Name: Sphere (77)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78666,7 +78666,7 @@ GameObject:
   - component: {fileID: 2088302983}
   m_Layer: 6
   m_Name: Sphere (294)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78850,7 +78850,7 @@ GameObject:
   - component: {fileID: 2097400136}
   m_Layer: 6
   m_Name: Sphere (24)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79126,7 +79126,7 @@ GameObject:
   - component: {fileID: 2113116107}
   m_Layer: 6
   m_Name: Sphere (140)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79310,7 +79310,7 @@ GameObject:
   - component: {fileID: 2118475028}
   m_Layer: 6
   m_Name: Sphere (152)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79494,7 +79494,7 @@ GameObject:
   - component: {fileID: 2119310319}
   m_Layer: 6
   m_Name: Sphere (244)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79678,7 +79678,7 @@ GameObject:
   - component: {fileID: 2124785914}
   m_Layer: 6
   m_Name: Sphere (117)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79862,7 +79862,7 @@ GameObject:
   - component: {fileID: 2132865554}
   m_Layer: 6
   m_Name: Sphere (96)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80046,7 +80046,7 @@ GameObject:
   - component: {fileID: 2137113437}
   m_Layer: 6
   m_Name: Sphere (307)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80230,7 +80230,7 @@ GameObject:
   - component: {fileID: 2140783019}
   m_Layer: 6
   m_Name: Sphere (126)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80414,7 +80414,7 @@ GameObject:
   - component: {fileID: 2147111609}
   m_Layer: 6
   m_Name: Sphere (353)
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
