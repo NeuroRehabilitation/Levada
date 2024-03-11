@@ -153,7 +153,7 @@ public class Manager : MonoBehaviour
 
     public void LoadScene()
     {
-      
+        FOV_Image.enabled = true;
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
         Scenes.RemoveAt(randomIndex);
@@ -184,6 +184,7 @@ public class Manager : MonoBehaviour
         {
             Shuffle();
             LoadScene();
+
         }
         else
         {
