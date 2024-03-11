@@ -25,6 +25,8 @@ public class ImageScaler : MonoBehaviour
     {
         start_scale = image.transform.localScale;
         current_Multiplier = FOV_Multiplier;
+
+        image.transform.localScale = start_scale * current_Multiplier;
     }
 
     private void Update()

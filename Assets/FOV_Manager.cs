@@ -17,8 +17,8 @@ public class FOV_Manager : MonoBehaviour
         }
         else
         {
-
             Destroy(gameObject);
         }
     }
+
 }

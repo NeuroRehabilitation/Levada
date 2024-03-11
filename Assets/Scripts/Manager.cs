@@ -20,6 +20,9 @@ public class Manager : MonoBehaviour
     public int NumberRounds = 1;
     public int currentRound = 1;
 
+    [Header("Duration (minutes)")]
+    public float duration = 0.2f; //duration of experiment in minutes.
+
     [Header("CSV")]
     public CSV CSV_writer;
 
@@ -40,7 +43,7 @@ public class Manager : MonoBehaviour
     public LSLStreamer Markers;
 
     [Header("Game Variable")]
-    public GameObject FOV;
+    private GameObject FOV;
     private Image FOV_Image;
     private float FOV_multiplier;
 
@@ -62,6 +65,7 @@ public class Manager : MonoBehaviour
             Destroy(gameObject);
         }
 
+
         CreateList();
 
         //CSV_writer = GetComponent<CSV>();
@@ -80,6 +84,7 @@ public class Manager : MonoBehaviour
         VAS.StartStream();
         Markers.StartStream();
 
+        FOV = GameObject.Find("FOV");
         FOV_Image = FOV.GetComponentInChildren<Image>();
         FOV_multiplier = FOV.GetComponentInChildren<ImageScaler>().FOV_Multiplier;
         FOV_Image.enabled = false;
@@ -88,13 +93,23 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        //if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
-        UpdateGameVariable();
+        if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
+            UpdateGameVariable();
 
-        if (Input.GetKeyDown(KeyCode.Escape) || currentRound > NumberRounds)
+        if (SceneManager.GetActiveScene().name != "Main_Menu_HMD" && currentRound > NumberRounds)
+        {
+            SceneManager.LoadScene("Main_Menu_HMD");
+            FOV_Image.enabled = false;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
+            {
                 SceneManager.LoadScene("Main_Menu_HMD");
+                FOV_Image.enabled = false;
+            }
             else
                 Quit();
         }
@@ -153,7 +168,6 @@ public class Manager : MonoBehaviour
 
     public void LoadScene()
     {
-        FOV_Image.enabled = true;
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
         Scenes.RemoveAt(randomIndex);
@@ -161,7 +175,7 @@ public class Manager : MonoBehaviour
 
     public void SelectScene(string SceneName)
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
         SceneManager.LoadScene(SceneName);
     }
 

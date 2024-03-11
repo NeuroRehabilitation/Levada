@@ -7,9 +7,24 @@ public class TimeController : MonoBehaviour
     private float elapsedTime;
     public bool isRunning;
     public bool isFinished = false;
-    public float duration = 0.2f; //duration of experiment in minutes.
+
+    public float minutes = 0.2f;
+    private float duration;
 
     public Countdown Countdown;
+    private Manager Manager;
+
+    private void Awake()
+    {
+        Manager = FindObjectOfType<Manager>();
+
+        if (Manager != null)
+        {
+            duration = Manager.duration * 60;
+        }
+        else
+            duration = minutes * 60;
+    }
 
     private void Update()
     {
@@ -19,7 +34,7 @@ public class TimeController : MonoBehaviour
             //Debug.Log(elapsedTime);
         }
 
-        if (isRunning && elapsedTime >= duration * 60)
+        if (isRunning && elapsedTime >= duration)
         {
             Countdown.countdownText.gameObject.SetActive(true);
             StopTimer();

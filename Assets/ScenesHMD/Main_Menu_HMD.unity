@@ -1921,6 +1921,7 @@ MonoBehaviour:
   randomIndex: 0
   NumberRounds: 1
   currentRound: 1
+  duration: 0.2
   CSV_writer: {fileID: 0}
   SAM_answers:
   - 
@@ -1936,7 +1937,6 @@ MonoBehaviour:
   SAM: {fileID: 653334897}
   VAS: {fileID: 2040433826}
   Markers: {fileID: 1706301467}
-  FOV: {fileID: 1214465712}
 --- !u!4 &478946629
 Transform:
   m_ObjectHideFlags: 0
@@ -4337,7 +4337,7 @@ PrefabInstance:
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: FOV_Multiplier
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}

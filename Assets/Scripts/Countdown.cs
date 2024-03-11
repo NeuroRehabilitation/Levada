@@ -15,6 +15,8 @@ public class Countdown : MonoBehaviour
     public GameObject RightHandController;
     private Manager Manager;
     GameObject CanvasPanel;
+    private GameObject FOV;
+    private Image FOV_Image;
 
 
     private void Awake()
@@ -24,6 +26,14 @@ public class Countdown : MonoBehaviour
     }
     private void Start()
     {
+        if(Manager != null)
+        {
+            FOV = GameObject.Find("FOV");
+            FOV_Image = FOV.GetComponentInChildren<Image>();
+            FOV_Image.enabled = true;
+
+        }
+
         currentTime = countdownTime;
         RightHandController.SetActive(false);
         CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
@@ -71,7 +81,10 @@ public class Countdown : MonoBehaviour
                     Manager.ChangeScene();
                 }
                 else
+                {
                     SceneManager.LoadScene("Main_Menu_HMD");
+                }
+
 
                 StopCountdown();
                
