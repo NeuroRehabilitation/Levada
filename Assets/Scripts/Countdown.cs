@@ -49,15 +49,19 @@ public class Countdown : MonoBehaviour
 
             currentTime -= Time.deltaTime;
 
+
+            //Show Countdown value - starts at 5 seconds.
             if ( currentTime <= 5f ) { countdownText.text = currentTime.ToString("0"); }
             
+            //When Countdown reaches 0 sec, show the Start text and activate XR Controller.
             if (currentTime < 1 && !TimeController.isFinished) 
             { 
                 countdownText.text = "Start!";
                 
                 RightHandController.SetActive(true);
             }
-
+            
+            //When everything is set to start
             if (currentTime <= 0 && !TimeController.isFinished)
             {
                 CanvasPanel.GetComponent<Image>().enabled = false;
@@ -71,6 +75,7 @@ public class Countdown : MonoBehaviour
                 TimeController.StartTimer();
             }
              
+            //When the duration of the experiment has reached the end.
             if (currentTime <= 0 && TimeController.isFinished)
             {
                 if (Manager != null)
@@ -91,11 +96,11 @@ public class Countdown : MonoBehaviour
             }
         }
 
-        if (!isCountdownStarted && TimeController.isFinished)
-        {
-            StartCountdown();
-            RightHandController.SetActive(false);
-        }
+        //if (!isCountdownStarted && TimeController.isFinished)
+        //{
+        //    StartCountdown();
+        //    RightHandController.SetActive(false);
+        //}
     }
 
     public void StartCountdown()

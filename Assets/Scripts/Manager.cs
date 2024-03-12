@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Reflection;
-
+using System.Collections;
 
 public class Manager : MonoBehaviour
 {
@@ -41,6 +41,8 @@ public class Manager : MonoBehaviour
     public LSLStreamer SAM;
     public LSLStreamer VAS;
     public LSLStreamer Markers;
+
+    private Vector3 lastWaypoint;
 
     [Header("Game Variable")]
     private GameObject FOV;
@@ -88,6 +90,8 @@ public class Manager : MonoBehaviour
         FOV_Image = FOV.GetComponentInChildren<Image>();
         FOV_multiplier = FOV.GetComponentInChildren<ImageScaler>().FOV_Multiplier;
         FOV_Image.enabled = false;
+
+        StartCoroutine(CheckXRPosition());
 
     }
 
@@ -144,6 +148,31 @@ public class Manager : MonoBehaviour
         if (FOV_multiplier != updatedGameVariable)
         {
             FOV_multiplier = updatedGameVariable;
+        }
+    }
+
+    private IEnumerator CheckXRPosition()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5.0f);
+
+            GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+
+            if (waypoints.Length > 0)
+            {
+                lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
+                Debug.Log(lastWaypoint);
+            }
+
+            if(lastWaypoint != null)
+            {
+                if(GameObject.Find("XR Origin").transform.position == lastWaypoint)
+                {
+                    Debug.Log("End of Levada.");
+                }
+            }
+
         }
     }
 
