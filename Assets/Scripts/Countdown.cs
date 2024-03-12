@@ -6,26 +6,35 @@ using UnityEngine.SceneManagement;
 public class Countdown : MonoBehaviour
 {
     public float countdownTime = 6f; // Time in seconds for the countdown
-    public TextMeshProUGUI countdownText; // Reference to the UI text element
+    private TextMeshProUGUI countdownText; // Reference to the UI text element
 
     private float currentTime = 0f;
     private bool isCountdownStarted = false;
+    private bool isFirstScene = true;
 
-    public TimeController TimeController;
-    public GameObject RightHandController;
     private Manager Manager;
     GameObject CanvasPanel;
     private GameObject FOV;
     private Image FOV_Image;
 
+    private static Countdown instance;
+
 
     private void Awake()
     {
-        countdownText.text = currentTime.ToString("Prepare to Start");
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else {Destroy(gameObject);}
+            
         Manager = FindObjectOfType<Manager>();
     }
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         if(Manager != null)
         {
             FOV = GameObject.Find("FOV");
@@ -35,16 +44,35 @@ public class Countdown : MonoBehaviour
         }
 
         currentTime = countdownTime;
-        RightHandController.SetActive(false);
-        CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
 
-        if(!isCountdownStarted)
-            StartCountdown();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name != "Main_Menu_HMD")
+        {
+            countdownText = GameObject.FindObjectOfType<TextMeshProUGUI>();
+            CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
+            if (isFirstScene)
+            {
+                if (countdownText != null)
+                {
+                    countdownText.enabled = true;
+                    countdownText.text = "Prepare to Start!";
+                }
+                if (CanvasPanel != null)
+                {
+                    CanvasPanel.GetComponent<Image>().enabled = true;
+                }
+                StartCountdown();
+            }
+        }
     }
 
     private void Update()
     {
-        if (isCountdownStarted)
+
+        if (isCountdownStarted && isFirstScene)
         {
 
             currentTime -= Time.deltaTime;
@@ -54,15 +82,13 @@ public class Countdown : MonoBehaviour
             if ( currentTime <= 5f ) { countdownText.text = currentTime.ToString("0"); }
             
             //When Countdown reaches 0 sec, show the Start text and activate XR Controller.
-            if (currentTime < 1 && !TimeController.isFinished) 
+            if (currentTime < 1) 
             { 
                 countdownText.text = "Start!";
-                
-                RightHandController.SetActive(true);
             }
             
             //When everything is set to start
-            if (currentTime <= 0 && !TimeController.isFinished)
+            if (currentTime <= 0)
             {
                 CanvasPanel.GetComponent<Image>().enabled = false;
                 if(Manager != null)
@@ -72,47 +98,22 @@ public class Countdown : MonoBehaviour
                 }
 
                 StopCountdown();
-                TimeController.StartTimer();
-            }
-             
-            //When the duration of the experiment has reached the end.
-            if (currentTime <= 0 && TimeController.isFinished)
-            {
-                if (Manager != null)
-                {
-                    Manager.currentScene.RemoveAt(Manager.currentScene.Count - 1);
-                    Manager.currentScene.Add("1");
-                    Manager.Markers.StreamData(Manager.currentScene.ToArray());
-                    Manager.ChangeScene();
-                }
-                else
-                {
-                    SceneManager.LoadScene("Main_Menu_HMD");
-                }
-
-
-                StopCountdown();
-               
             }
         }
-
-        //if (!isCountdownStarted && TimeController.isFinished)
-        //{
-        //    StartCountdown();
-        //    RightHandController.SetActive(false);
-        //}
     }
 
     public void StartCountdown()
     {
-        ResetCountdown();
+        //ResetCountdown();
         isCountdownStarted = true;
-        
+        isFirstScene = true;
     }
 
     public void StopCountdown()
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         isCountdownStarted = false;
+        isFirstScene = false;
         currentTime = 0;
         countdownText.gameObject.SetActive(false);
     }

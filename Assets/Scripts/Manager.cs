@@ -78,6 +78,7 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+
         if (Scenes.Count > 0) { Shuffle(); }
 
         //CSV_writer.AddData("Scene", "Valence", "Arousal", "Anger", "Fear", "Joy", "Sad");
@@ -170,9 +171,11 @@ public class Manager : MonoBehaviour
                 if(GameObject.Find("XR Origin").transform.position == lastWaypoint)
                 {
                     Debug.Log("End of Levada.");
+                    currentScene.RemoveAt(currentScene.Count - 1);
+                    currentScene.Add("1");
+                    ChangeScene();
                 }
             }
-
         }
     }
 
