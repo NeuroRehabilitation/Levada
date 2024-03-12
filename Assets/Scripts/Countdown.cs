@@ -35,14 +35,6 @@ public class Countdown : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        if(Manager != null)
-        {
-            FOV = GameObject.Find("FOV");
-            FOV_Image = FOV.GetComponentInChildren<Image>();
-            FOV_Image.enabled = true;
-
-        }
-
         currentTime = countdownTime;
 
     }
@@ -53,6 +45,9 @@ public class Countdown : MonoBehaviour
         {
             countdownText = GameObject.FindObjectOfType<TextMeshProUGUI>();
             CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
+            FOV = GameObject.Find("FOV");
+            FOV_Image = FOV.GetComponentInChildren<Image>();
+            FOV_Image.enabled = true;
             if (isFirstScene)
             {
                 if (countdownText != null)
@@ -72,23 +67,21 @@ public class Countdown : MonoBehaviour
     private void Update()
     {
 
-        if (isCountdownStarted && isFirstScene)
+        if (isCountdownStarted)
         {
-
             currentTime -= Time.deltaTime;
-
 
             //Show Countdown value - starts at 5 seconds.
             if ( currentTime <= 5f ) { countdownText.text = currentTime.ToString("0"); }
             
             //When Countdown reaches 0 sec, show the Start text and activate XR Controller.
-            if (currentTime < 1) 
+            if (currentTime < 1 && !Manager.isLastScene) 
             { 
                 countdownText.text = "Start!";
             }
             
             //When everything is set to start
-            if (currentTime <= 0)
+            if (currentTime <= 0 && !Manager.isLastScene)
             {
                 CanvasPanel.GetComponent<Image>().enabled = false;
                 if(Manager != null)
@@ -99,23 +92,35 @@ public class Countdown : MonoBehaviour
 
                 StopCountdown();
             }
+            else if(currentTime <= 0 && Manager.isLastScene)
+            {
+                SceneManager.LoadScene("Main_Menu_HMD");
+                FOV_Image.enabled = false;
+                StopCountdown();
+            }
+
+        }
+        if (Manager.isLastScene && !isCountdownStarted)
+        {
+            CanvasPanel.GetComponent<Image>().enabled = true;
+            countdownText.enabled = true;
+            countdownText.text = "Finishing in...";
+            StartCountdown();
         }
     }
 
     public void StartCountdown()
     {
-        //ResetCountdown();
+        ResetCountdown();
         isCountdownStarted = true;
-        isFirstScene = true;
     }
 
     public void StopCountdown()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Manager.isLastScene = false;
         isCountdownStarted = false;
         isFirstScene = false;
-        currentTime = 0;
-        countdownText.gameObject.SetActive(false);
+        countdownText.enabled = false;
     }
 
     public void ResetCountdown()

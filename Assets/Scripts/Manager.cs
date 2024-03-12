@@ -52,6 +52,8 @@ public class Manager : MonoBehaviour
     private static Manager instance;
     private static LSLInput LSLInput;
 
+    public static bool isLastScene = false;
+
 
     void Awake()
     {
@@ -156,23 +158,26 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(15.0f);
 
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
             if (waypoints.Length > 0)
             {
                 lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
-                Debug.Log(lastWaypoint);
             }
 
             if(lastWaypoint != null)
             {
-                if(GameObject.Find("XR Origin").transform.position == lastWaypoint)
+                Vector3 XROrigin = GameObject.Find("XR Origin").transform.position;
+                XROrigin = lastWaypoint;
+
+                if (XROrigin == lastWaypoint)
                 {
-                    Debug.Log("End of Levada.");
-                    currentScene.RemoveAt(currentScene.Count - 1);
-                    currentScene.Add("1");
+                    //currentScene.RemoveAt(currentScene.Count - 1);
+                    //currentScene.Add("1");
+                    if (Scenes.Count == 0 && currentRound == NumberRounds)
+                        isLastScene = true;
                     ChangeScene();
                 }
             }
@@ -207,7 +212,6 @@ public class Manager : MonoBehaviour
 
     public void SelectScene(string SceneName)
     {
-        //Destroy(gameObject);
         SceneManager.LoadScene(SceneName);
     }
 
@@ -226,18 +230,20 @@ public class Manager : MonoBehaviour
 
     public void ChangeScene()
     {
-        if (Scenes.Count > 0)
+        if (!isLastScene)
         {
-            Shuffle();
-            LoadScene();
-
-        }
-        else
-        {
-            currentRound++;
-            CreateList();
-            Shuffle();
-            LoadScene();
+            if (Scenes.Count > 0)
+            {
+                Shuffle();
+                LoadScene();
+            }
+            else
+            {
+                currentRound++;
+                CreateList();
+                Shuffle();
+                LoadScene();
+            }
         }
     }
 
