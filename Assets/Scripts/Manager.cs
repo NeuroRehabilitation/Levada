@@ -22,6 +22,9 @@ public class Manager : MonoBehaviour
 
     [Header("Duration (minutes)")]
     public float duration = 0.2f; //duration of experiment in minutes.
+    public static float elapsed_time = 0f;
+    private float startTime;
+    public static bool isRunning = false;
 
     [Header("CSV")]
     public CSV CSV_writer;
@@ -93,13 +96,15 @@ public class Manager : MonoBehaviour
         FOV_Image = FOV.GetComponentInChildren<Image>();
         FOV_multiplier = FOV.GetComponentInChildren<ImageScaler>().FOV_Multiplier;
         FOV_Image.enabled = false;
-
-        StartCoroutine(CheckXRPosition());
-
     }
 
     private void Update()
     {
+        if (isRunning)
+        {
+            StartCoroutine(TimerCoroutine());
+        }
+
         if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
             UpdateGameVariable();
 
@@ -154,6 +159,17 @@ public class Manager : MonoBehaviour
         }
     }
 
+    private IEnumerator TimerCoroutine()
+    {
+        while (isRunning && elapsed_time <= duration * 60)
+        {
+            elapsed_time = Time.realtimeSinceStartup-startTime;
+            Debug.Log(elapsed_time);
+            yield return null;
+        }
+        StopTimer();
+    }
+
     private IEnumerator CheckXRPosition()
     {
         while (true)
@@ -182,6 +198,26 @@ public class Manager : MonoBehaviour
                 }
             }
         }
+    }
+    public void StartTimer()
+    {
+        isRunning = true;
+        startTime = Time.realtimeSinceStartup;
+        StartCoroutine(CheckXRPosition());
+    }
+
+    public void StopTimer()
+    {
+        Debug.Log("Stop Timer");
+
+        isRunning = false;
+        isLastScene = true;
+        ResetTimer();
+    }
+
+    private void ResetTimer()
+    {
+        elapsed_time = 0;
     }
 
     private void ActivateButton()
@@ -232,6 +268,7 @@ public class Manager : MonoBehaviour
     {
         if (!isLastScene)
         {
+            Debug.Log("Change scene");
             if (Scenes.Count > 0)
             {
                 Shuffle();

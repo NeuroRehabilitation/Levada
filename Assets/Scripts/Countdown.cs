@@ -88,6 +88,8 @@ public class Countdown : MonoBehaviour
                 {
                     Manager.currentScene.Add("0");
                     Manager.Markers.StreamData(Manager.currentScene.ToArray());
+                    Manager.StartTimer();
+                     
                 }
 
                 StopCountdown();

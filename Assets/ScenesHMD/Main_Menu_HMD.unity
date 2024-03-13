@@ -1919,9 +1919,9 @@ MonoBehaviour:
   Scenes: 
   currentScene: []
   randomIndex: 0
-  NumberRounds: 1
+  NumberRounds: 5
   currentRound: 1
-  duration: 0.2
+  duration: 1
   CSV_writer: {fileID: 0}
   SAM_answers:
   - 
