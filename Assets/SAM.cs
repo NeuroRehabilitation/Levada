@@ -21,6 +21,8 @@ public class SAM : MonoBehaviour
 
     private Manager Manager;
 
+    public static bool submitButtonPressed = false;
+
     void Start()
     {
         Manager = FindObjectOfType<Manager>();
@@ -70,7 +72,7 @@ public class SAM : MonoBehaviour
             //answers[currentToggle] = float.Parse(selected.name);
             Manager.SAM_answers[currentToggle] = selected.name;
             Manager.SAM.StreamData(answers);
-            SceneManager.LoadScene("VAS");
+            submitButtonPressed = true;
         }
     }
 }

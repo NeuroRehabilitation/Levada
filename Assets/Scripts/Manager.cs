@@ -108,11 +108,11 @@ public class Manager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
             UpdateGameVariable();
 
-        if (SceneManager.GetActiveScene().name != "Main_Menu_HMD" && currentRound > NumberRounds)
-        {
-            SceneManager.LoadScene("Main_Menu_HMD");
-            FOV_Image.enabled = false;
-        }
+        //if (SceneManager.GetActiveScene().name != "Main_Menu_HMD" && currentRound > NumberRounds)
+        //{
+        //    SceneManager.LoadScene("Main_Menu_HMD");
+        //    FOV_Image.enabled = false;
+        //}
 
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -164,7 +164,6 @@ public class Manager : MonoBehaviour
         while (isRunning && elapsed_time <= duration * 60)
         {
             elapsed_time = Time.realtimeSinceStartup-startTime;
-            Debug.Log(elapsed_time);
             yield return null;
         }
         StopTimer();
@@ -174,7 +173,7 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(15.0f);
+            yield return new WaitForSeconds(60.0f);
 
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -190,10 +189,10 @@ public class Manager : MonoBehaviour
 
                 if (XROrigin == lastWaypoint)
                 {
-                    //currentScene.RemoveAt(currentScene.Count - 1);
-                    //currentScene.Add("1");
-                    if (Scenes.Count == 0 && currentRound == NumberRounds)
-                        isLastScene = true;
+                    currentScene.Add("1");
+                    currentScene.RemoveAt(currentScene.Count - 1);
+                    //if (Scenes.Count == 0 && currentRound == NumberRounds)
+                    //    isLastScene = true;
                     ChangeScene();
                 }
             }
