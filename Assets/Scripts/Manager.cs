@@ -77,7 +77,7 @@ public class Manager : MonoBehaviour
 
         CreateList();
 
-        //CSV_writer = GetComponent<CSV>();
+        CSV_writer = GetComponent<CSV>();
 
         if (StartButton != null)
             StartButton.interactable = false;
@@ -122,25 +122,25 @@ public class Manager : MonoBehaviour
                 Quit();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadScene("25_Fontes_HMD");
-        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SceneManager.LoadScene("25_Fontes_HMD");
+        //}
 
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SceneManager.LoadScene("Pico_Areeiro_Ruivo_HMD");
-        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    SceneManager.LoadScene("Pico_Areeiro_Ruivo_HMD");
+        //}
 
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SceneManager.LoadScene("Sao_Lourenço_HMD");
-        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    SceneManager.LoadScene("Sao_Lourenço_HMD");
+        //}
 
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SceneManager.LoadScene("Caldeirao_Verde_HMD");
-        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    SceneManager.LoadScene("Caldeirao_Verde_HMD");
+        //}
     }
 
     private void UpdateGameVariable()
@@ -160,7 +160,6 @@ public class Manager : MonoBehaviour
         while (isRunning && elapsed_time <= duration * 60)
         {
             elapsed_time = Time.realtimeSinceStartup-startTime;
-            Debug.Log(elapsed_time);
             yield return null;
         }
         StopTimer();
@@ -202,8 +201,6 @@ public class Manager : MonoBehaviour
 
     public void StopTimer()
     {
-        Debug.Log("Stop Timer");
-
         timerStarted = false;
         isRunning = false;
         isLastScene = true;
@@ -215,7 +212,7 @@ public class Manager : MonoBehaviour
         elapsed_time = 0;
     }
 
-    private void ActivateButton()
+    public void ActivateButton()
     {
         if (UserID.text != "")
             StartButton.interactable = true;
@@ -263,7 +260,6 @@ public class Manager : MonoBehaviour
     {
         if (!isLastScene)
         {
-            Debug.Log("Change scene");
             if (Scenes.Count > 0)
             {
                 Shuffle();
@@ -286,7 +282,7 @@ public class Manager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 
         SAM.StopStream();
-        VAS.StopStream();
+        //VAS.StopStream();
         Markers.StopStream();
 
         Application.Quit();
