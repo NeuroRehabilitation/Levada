@@ -29,7 +29,8 @@ public class Manager : MonoBehaviour
     [Header("CSV")]
     public CSV CSV_writer;
 
-    [Header("Scales Answers")]
+    [Header("SAM")]
+    public Canvas SAM_Canvas;
     public string[] SAM_answers = new string[2];
     public string[] VAS_answers = new string[4];
     public string[] DataToSave;
@@ -56,6 +57,7 @@ public class Manager : MonoBehaviour
     private static LSLInput LSLInput;
 
     public static bool isLastScene = false;
+    private bool timerStarted = false;
 
 
     void Awake()
@@ -100,9 +102,10 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        if (isRunning)
+        if (isRunning && !timerStarted)
         {
             StartCoroutine(TimerCoroutine());
+            timerStarted = true;
         }
 
         if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
@@ -167,7 +170,7 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(60.0f);
+            yield return new WaitForSeconds(10f);
 
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -181,12 +184,10 @@ public class Manager : MonoBehaviour
                 Vector3 XROrigin = GameObject.Find("XR Origin").transform.position;
                 XROrigin = lastWaypoint;
 
-                if (XROrigin == lastWaypoint)
+                if (XROrigin == lastWaypoint && SAM_Canvas.enabled == false)
                 {
                     currentScene.Add("1");
                     currentScene.RemoveAt(currentScene.Count - 1);
-                    //if (Scenes.Count == 0 && currentRound == NumberRounds)
-                    //    isLastScene = true;
                     ChangeScene();
                 }
             }
@@ -203,6 +204,7 @@ public class Manager : MonoBehaviour
     {
         Debug.Log("Stop Timer");
 
+        timerStarted = false;
         isRunning = false;
         isLastScene = true;
         ResetTimer();

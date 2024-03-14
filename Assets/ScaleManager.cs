@@ -69,7 +69,7 @@ public class ScaleManager : MonoBehaviour
     {
         while (Manager.isRunning)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(interval*60);
 
             while (!SAM.submitButtonPressed)
             {
