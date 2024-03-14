@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScaleManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ScaleManager : MonoBehaviour
 
     private Canvas scaleCanvas;
     private bool coroutineStarted = false;
+    private GameObject FOV;
+    private Image FOV_Image;
 
     void Awake()
     {
@@ -33,6 +36,8 @@ public class ScaleManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         scaleCanvas = gameObject.GetComponent<Canvas>();
+        FOV = GameObject.Find("FOV");
+        FOV_Image = FOV.GetComponentInChildren<Image>();
     }
 
     private void Update()
@@ -64,20 +69,18 @@ public class ScaleManager : MonoBehaviour
     {
         while (Manager.isRunning)
         {
-            Debug.Log("ola");
             yield return new WaitForSeconds(5.0f);
 
             while (!SAM.submitButtonPressed)
             {
-                Debug.Log("Waiting for Response");
+                FOV_Image.enabled = false;
                 scaleCanvas.enabled = true;
                 yield return new WaitUntil(() => SAM.submitButtonPressed);
             }
 
             scaleCanvas.enabled = false;
             SAM.submitButtonPressed = false;
-            Debug.Log("Disappear Canvas");
-
+            FOV_Image.enabled = true;
         }
     }
 }

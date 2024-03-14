@@ -55,7 +55,6 @@ public class SAM : MonoBehaviour
     {
         if(currentToggle == 0) 
         {
-            //answers[currentToggle] = float.Parse(selected.name);
             answers[0] = "Valence";
             answers[1] = selected.name;
             Manager.SAM_answers[currentToggle] = selected.name;
@@ -69,10 +68,32 @@ public class SAM : MonoBehaviour
         {
             answers[0] = "Arousal";
             answers[1] = selected.name;
-            //answers[currentToggle] = float.Parse(selected.name);
             Manager.SAM_answers[currentToggle] = selected.name;
             Manager.SAM.StreamData(answers);
             submitButtonPressed = true;
+            ResetToggleGroup();
         }
+    }
+
+    void ResetToggleGroup()
+    {
+        SAM_Items[currentToggle].SetActive(false); //Deactivate Arousal Scale
+
+        currentToggle = 0; //Restart from Valence Scale
+
+        SAM_Items[currentToggle].SetActive(true); //Activate Valence Scale
+
+        foreach (ToggleGroup scale in toggles)
+        {
+            // Get all toggles in the toggle group
+            Toggle[] toggles = scale.GetComponentsInChildren<Toggle>();
+
+            // Loop through each toggle and set isOn to false
+            foreach (Toggle toggle in toggles)
+            {
+                toggle.isOn = false;
+            }
+        }
+        
     }
 }

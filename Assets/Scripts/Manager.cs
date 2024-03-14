@@ -89,7 +89,7 @@ public class Manager : MonoBehaviour
         //CSV_writer.AddData("Scene", "Valence", "Arousal", "Anger", "Fear", "Joy", "Sad");
 
         SAM.StartStream();
-        VAS.StartStream();
+        //VAS.StartStream();
         Markers.StartStream();
 
         FOV = GameObject.Find("FOV");
@@ -107,13 +107,6 @@ public class Manager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
             UpdateGameVariable();
-
-        //if (SceneManager.GetActiveScene().name != "Main_Menu_HMD" && currentRound > NumberRounds)
-        //{
-        //    SceneManager.LoadScene("Main_Menu_HMD");
-        //    FOV_Image.enabled = false;
-        //}
-
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -164,6 +157,7 @@ public class Manager : MonoBehaviour
         while (isRunning && elapsed_time <= duration * 60)
         {
             elapsed_time = Time.realtimeSinceStartup-startTime;
+            Debug.Log(elapsed_time);
             yield return null;
         }
         StopTimer();
