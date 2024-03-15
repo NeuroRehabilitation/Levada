@@ -75,7 +75,7 @@ public class ScaleManager : MonoBehaviour
 
             Vector3 main_camera_position = mainCamera.transform.position;
             Vector3 new_position = new Vector3(main_camera_position.x, main_camera_position.y+1, main_camera_position.z + 5);
-            Quaternion desiredRotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
+            Quaternion desiredRotation = GameObject.Find("XR Origin").transform.rotation;
 
             scaleCanvas.transform.position = new_position;
             scaleCanvas.transform.rotation = desiredRotation;
