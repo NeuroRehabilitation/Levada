@@ -169,7 +169,7 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(1.0f);
 
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -181,7 +181,7 @@ public class Manager : MonoBehaviour
             if(lastWaypoint != null)
             {
                 Vector3 XROrigin = GameObject.Find("XR Origin").transform.position;
-                XROrigin = lastWaypoint;
+                //XROrigin = lastWaypoint;
 
                 if (XROrigin == lastWaypoint && SAM_Canvas.enabled == false)
                 {
@@ -279,7 +279,7 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
 
         SAM.StopStream();
         //VAS.StopStream();

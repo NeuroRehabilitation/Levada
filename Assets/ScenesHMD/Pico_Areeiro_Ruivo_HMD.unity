@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientIntensity: 0.95000017
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 980c935fd9e655a4a9b624f533125c13, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: be3b83c3a9fbe9f4989a310ce5c5ac1b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -62541,11 +62541,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 105892865}
     m_Modifications:
-    - target: {fileID: 2377999983485223049, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3494370882950547101, guid: 98baefdd242b0a9449b386b74eec3886,
         type: 3}
       propertyPath: m_Pivot.x
@@ -62589,21 +62584,6 @@ PrefabInstance:
     - target: {fileID: 3494370882950547101, guid: 98baefdd242b0a9449b386b74eec3886,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3494370882950547101, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3494370882950547101, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3494370882950547101, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3494370882950547101, guid: 98baefdd242b0a9449b386b74eec3886,
@@ -62666,46 +62646,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3604762261878994001, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 3604762261878994001, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 3604762261878994001, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.54
-      objectReference: {fileID: 0}
     - target: {fileID: 5864252035195849437, guid: 98baefdd242b0a9449b386b74eec3886,
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5864252035195849437, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7225168933839357932, guid: 98baefdd242b0a9449b386b74eec3886,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1410755413}
-    - target: {fileID: 7225168933839357932, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8230062756528314643, guid: 98baefdd242b0a9449b386b74eec3886,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 98baefdd242b0a9449b386b74eec3886, type: 3}
