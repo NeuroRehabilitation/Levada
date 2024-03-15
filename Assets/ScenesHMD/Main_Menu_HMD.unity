@@ -1651,24 +1651,15 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
-      propertyPath: interval
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6057687230266015420, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
@@ -1698,12 +1689,12 @@ PrefabInstance:
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
@@ -1769,11 +1760,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scale
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508809406593327065, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4573,12 +4559,12 @@ PrefabInstance:
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: _max
-      value: 1.73
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: _min
-      value: 0.5
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}

@@ -12,10 +12,12 @@ public class ImageScaler : MonoBehaviour
     private float current_Multiplier;
 
     // Maximum scale value
-    private float _max = 2.3f;
+    [Header("Maximum Scale")]
+    public float _max = 2.3f;
 
     // Minimum scale value
-    private float _min = 0.5f;
+    [Header("Minimum Scale")]
+    public float _min = 0.62f;
 
     // Variable to store the new scale
     Vector3 newScale = new Vector3();
