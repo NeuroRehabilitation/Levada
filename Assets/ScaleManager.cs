@@ -74,8 +74,13 @@ public class ScaleManager : MonoBehaviour
             yield return new WaitForSeconds(interval*60);
 
             Vector3 main_camera_position = mainCamera.transform.position;
-            Vector3 new_position = new Vector3(main_camera_position.x, main_camera_position.y+1, main_camera_position.z + 5);
+            Vector3 new_position = new Vector3(main_camera_position.x, main_camera_position.y, main_camera_position.z + 5);
             Quaternion desiredRotation = GameObject.Find("XR Origin").transform.rotation;
+
+            int layerIndex = LayerMask.NameToLayer("UI");
+            LayerMask layerMask = 1 << layerIndex;
+
+            mainCamera.GetComponent<Camera>().cullingMask = layerMask;
 
             scaleCanvas.transform.position = new_position;
             scaleCanvas.transform.rotation = desiredRotation;
@@ -89,6 +94,7 @@ public class ScaleManager : MonoBehaviour
             }
 
             scaleCanvas.enabled = false;
+            mainCamera.GetComponent<Camera>().cullingMask = ~(1 << layerIndex);
             SAM.submitButtonPressed = false;
             FOV_Image.enabled = true;
         }
