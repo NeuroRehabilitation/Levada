@@ -1651,6 +1651,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
+      propertyPath: interval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 57704153928823207, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_Layer
@@ -2133,7 +2137,7 @@ MonoBehaviour:
   randomIndex: 0
   NumberRounds: 10
   currentRound: 1
-  duration: 5
+  duration: 15
   CSV_writer: {fileID: 0}
   SAM_Canvas: {fileID: 900334548}
   SAM_answers:
