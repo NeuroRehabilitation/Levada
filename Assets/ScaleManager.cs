@@ -73,6 +73,48 @@ public class ScaleManager : MonoBehaviour
                 }
             }
         }
+    }   
+
+    private void AdjustCameraSettings(GameObject mainCamera, Canvas scaleCanvas)
+    {
+        int offset = 8;
+
+        Transform xr_origin = GameObject.Find("XR Origin").transform;
+
+        //Adjust the rotation of the Canvas according to the XR Origin rotation
+        Quaternion desiredRotation = xr_origin.rotation;
+
+        //Get current XR Origin maincamera position 
+        Vector3 xr_position = xr_origin.position;
+
+        //Get the forward direction from the maincamera
+        Vector3 xr_forward = xr_origin.forward.normalized * offset;
+        
+        //Get the size of the scale Canvas
+        Vector3 canvasSize = scaleCanvas.GetComponent<RectTransform>().sizeDelta;
+
+        //Calculate final position for the canvas
+        Vector3 new_position = new Vector3(xr_position.x + xr_forward.x, xr_position.y + xr_forward.y, xr_position.z + xr_forward.z);
+        
+
+
+        int layerIndex = LayerMask.NameToLayer("UI");
+        LayerMask layerMask = 1 << layerIndex;
+
+        mainCamera.GetComponent<Camera>().cullingMask = layerMask;
+        mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
+        mainCamera.GetComponent<Camera>().backgroundColor = Color.black;
+
+        scaleCanvas.transform.position = new_position;
+        scaleCanvas.transform.rotation = desiredRotation;
+    }
+
+    private void ResetCameraSettings(GameObject mainCamera)
+    {
+        int layerIndex = LayerMask.NameToLayer("UI");
+
+        mainCamera.GetComponent<Camera>().cullingMask = ~(1 << layerIndex);
+        mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
     }
 
     private IEnumerator ShowScale()
@@ -81,17 +123,7 @@ public class ScaleManager : MonoBehaviour
         {
             yield return new WaitForSeconds(interval*60);
 
-            Vector3 main_camera_position = mainCamera.transform.position;
-            Vector3 new_position = new Vector3(main_camera_position.x, main_camera_position.y+1, main_camera_position.z + 5);
-            Quaternion desiredRotation = GameObject.Find("XR Origin").transform.rotation;
-
-            int layerIndex = LayerMask.NameToLayer("UI");
-            LayerMask layerMask = 1 << layerIndex;
-
-            mainCamera.GetComponent<Camera>().cullingMask = layerMask;
-
-            scaleCanvas.transform.position = new_position;
-            scaleCanvas.transform.rotation = desiredRotation;
+            AdjustCameraSettings(mainCamera, scaleCanvas);
 
             while (!SAM.submitButtonPressed)
             {
@@ -103,8 +135,9 @@ public class ScaleManager : MonoBehaviour
             }
 
             SetTeleportController();
+            ResetCameraSettings(mainCamera);
+
             scaleCanvas.enabled = false;
-            mainCamera.GetComponent<Camera>().cullingMask = ~(1 << layerIndex);
             SAM.submitButtonPressed = false;
             FOV_Image.enabled = true;
         }
