@@ -16,6 +16,8 @@ public class ScaleManager : MonoBehaviour
     private GameObject FOV;
     private Image FOV_Image;
     private GameObject mainCamera;
+    private GameObject UI_Controller;
+    private GameObject Teleport_Controller;
 
     void Awake()
     {
@@ -55,6 +57,12 @@ public class ScaleManager : MonoBehaviour
         if (scene.name != "Main_Menu_HMD")
         {
             StartCoroutine(ShowScale());
+
+            UI_Controller = GameObject.FindGameObjectWithTag("UI_Controller");
+            Teleport_Controller = GameObject.FindGameObjectWithTag("Teleport_Controller");
+
+            SetTeleportController();
+
             GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
             foreach(GameObject camera in cameras)
             {
@@ -87,16 +95,34 @@ public class ScaleManager : MonoBehaviour
 
             while (!SAM.submitButtonPressed)
             {
+                SetUIController();
                 FOV_Image.enabled = false;
                 scaleCanvas.enabled = true;
-
+                
                 yield return new WaitUntil(() => SAM.submitButtonPressed);
             }
 
+            SetTeleportController();
             scaleCanvas.enabled = false;
             mainCamera.GetComponent<Camera>().cullingMask = ~(1 << layerIndex);
             SAM.submitButtonPressed = false;
             FOV_Image.enabled = true;
         }
+    }
+
+    private void SetUIController()
+    {
+        if(UI_Controller != null)
+            UI_Controller.SetActive(true);
+        if(Teleport_Controller != null)
+            Teleport_Controller.SetActive(false);
+    }
+
+    private void SetTeleportController()
+    {
+        if (UI_Controller != null)
+            UI_Controller.SetActive(false);
+        if (Teleport_Controller != null)
+            Teleport_Controller.SetActive(true);
     }
 }
