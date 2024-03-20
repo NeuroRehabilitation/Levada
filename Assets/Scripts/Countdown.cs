@@ -86,10 +86,7 @@ public class Countdown : MonoBehaviour
                 CanvasPanel.GetComponent<Image>().enabled = false;
                 if(Manager != null)
                 {
-                    Manager.currentScene.Add("0");
-                    Manager.Markers.StreamData(Manager.currentScene.ToArray());
-                    Manager.StartTimer();
-                     
+                    Manager.StartTimer();    
                 }
 
                 StopCountdown();

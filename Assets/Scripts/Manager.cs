@@ -88,7 +88,7 @@ public class Manager : MonoBehaviour
 
         if (Scenes.Count > 0) { Shuffle(); }
 
-        //CSV_writer.AddData("Scene", "Valence", "Arousal", "Anger", "Fear", "Joy", "Sad");
+        CSV_writer.AddData("Scene", "Valence", "Arousal");
 
         SAM.StartStream();
         //VAS.StartStream();
@@ -102,6 +102,7 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+
         if (isRunning && !timerStarted)
         {
             StartCoroutine(TimerCoroutine());
@@ -162,6 +163,11 @@ public class Manager : MonoBehaviour
             elapsed_time = Time.realtimeSinceStartup-startTime;
             yield return null;
         }
+
+        currentScene.Clear();
+        currentScene.Add("end");
+        currentScene.Add("0");
+        Markers.StreamData(currentScene.ToArray());
         StopTimer();
     }
 
@@ -169,7 +175,7 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(5.0f);
 
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -181,12 +187,13 @@ public class Manager : MonoBehaviour
             if(lastWaypoint != null)
             {
                 Vector3 XROrigin = GameObject.Find("XR Origin").transform.position;
-                //XROrigin = lastWaypoint;
+                XROrigin = lastWaypoint;
 
                 if (XROrigin == lastWaypoint && SAM_Canvas.enabled == false)
                 {
-                    currentScene.Add("1");
                     currentScene.RemoveAt(currentScene.Count - 1);
+                    currentScene.Add("1");
+                    Markers.StreamData(currentScene.ToArray());
                     ChangeScene();
                 }
             }
@@ -235,6 +242,8 @@ public class Manager : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
+        currentScene.Add("0");
+        Markers.StreamData(currentScene.ToArray());
         Scenes.RemoveAt(randomIndex);
     }
 
@@ -251,7 +260,7 @@ public class Manager : MonoBehaviour
     public void WriteData()
     {
 
-        DataToSave = currentScene.Concat(SAM_answers.Concat(VAS_answers).ToArray()).ToArray();
+        DataToSave = currentScene.Concat(SAM_answers).ToArray();
         CSV_writer.AddData(DataToSave);
         currentScene.Clear();
     }
@@ -260,6 +269,8 @@ public class Manager : MonoBehaviour
     {
         if (!isLastScene)
         {
+            currentScene.Clear();
+
             if (Scenes.Count > 0)
             {
                 Shuffle();
