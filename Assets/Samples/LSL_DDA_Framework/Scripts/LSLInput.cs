@@ -24,6 +24,22 @@ public class LSLInput : MonoBehaviour
 
     public float GameVariable;
 
+    private static LSLInput instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         if (!StreamName.Equals(""))
@@ -47,7 +63,7 @@ public class LSLInput : MonoBehaviour
             results = resolver.results();
         }
 
-        inlet = new StreamInlet(results[0]);
+        streamInlet = new StreamInlet(results[0]);
         channelCount = streamInlet.info().channel_count();
         channels = new string[channelCount];
         channelgroup = streamInlet.info().desc().child("channels").child("channel");
@@ -63,11 +79,11 @@ public class LSLInput : MonoBehaviour
 
     void Update()
     {
-        if (inlet != null)
+        if (streamInlet != null)
         {
-            double samples_returned = inlet.pull_sample(data_buffer);
+            double samples_returned = streamInlet.pull_sample(data_buffer);
             GameVariable = data_buffer[0];
-            // Debug.Log("Samples returned: " + samples_returned);
+            Debug.Log("GameVariable = " + GameVariable);
         }
     }
 }

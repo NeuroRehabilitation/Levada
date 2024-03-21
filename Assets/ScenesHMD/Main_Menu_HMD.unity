@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cd4892addc03b46b3fdd7ce2af08b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StreamName: biosignalsplux
+  StreamName: PID_Output
   GameVariable: 0
 --- !u!1 &48566729
 GameObject:
