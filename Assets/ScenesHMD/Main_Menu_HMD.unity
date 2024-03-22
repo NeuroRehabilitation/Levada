@@ -582,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StreamName: PID_Output
+  StreamType: PyflowStream
   GameVariable: 0
 --- !u!1 &48566729
 GameObject:
@@ -3122,7 +3123,6 @@ MonoBehaviour:
   UserID: {fileID: 640658761}
   StartButton: {fileID: 1992175824}
   SAM: {fileID: 653334897}
-  VAS: {fileID: 2040433826}
   Markers: {fileID: 1706301467}
 --- !u!4 &478946629
 Transform:
@@ -7734,18 +7734,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2040433824}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2040433826 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7675007392852524614, guid: 0d75832d969023948bf02aa34fe0670f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2040433824}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18ab845f61abee48a13f0b26167a88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2050114118
 GameObject:
   m_ObjectHideFlags: 0

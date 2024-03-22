@@ -68,7 +68,7 @@ public class VAS : MonoBehaviour
             answers[0] = "VAS";
             answers[1] = selected.name;
             Manager.VAS_answers[currentToggle] = selected.name;
-            Manager.VAS.StreamData(answers);
+            //Manager.VAS.StreamData(answers);
             Manager.WriteData();
             //Manager.CSV_writer.WriteToCSV();
             Manager.ChangeScene();

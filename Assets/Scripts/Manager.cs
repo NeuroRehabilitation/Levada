@@ -43,7 +43,6 @@ public class Manager : MonoBehaviour
 
     [Header("LSL Streams")]
     public LSLStreamer SAM;
-    public LSLStreamer VAS;
     public LSLStreamer Markers;
 
     private Vector3 lastWaypoint;
@@ -148,12 +147,11 @@ public class Manager : MonoBehaviour
     {
         
         //float updatedGameVariable = LSLInput.GameVariable;
-        float updatedGameVariable = FOV_multiplier + 0.0001f;
 
-        if (FOV_multiplier != updatedGameVariable)
-        {
-            FOV_multiplier = updatedGameVariable;
-        }
+        //if (FOV_multiplier != updatedGameVariable)
+        //{
+        //    FOV_multiplier += updatedGameVariable;
+        //}
     }
 
     private IEnumerator TimerCoroutine()
