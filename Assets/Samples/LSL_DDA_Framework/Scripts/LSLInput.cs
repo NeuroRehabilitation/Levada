@@ -79,7 +79,7 @@ public class LSLInput : MonoBehaviour
     {
         while(streamInlet != null)
         {
-            double timestamp = streamInlet.pull_sample(data_buffer,2.0);
+            double timestamp = streamInlet.pull_sample(data_buffer,1.0);
             
             if(timestamp != 0.0)
             {

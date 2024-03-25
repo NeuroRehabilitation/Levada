@@ -23,6 +23,8 @@ public class ImageScaler : MonoBehaviour
     [Header("Minimum Scale")]
     public float _min = 0.62f;
 
+    private float startTime;
+
     // Variable to store the new scale
     Vector3 newScale = new Vector3();
     Vector3 start_scale = new Vector3();
@@ -36,6 +38,8 @@ public class ImageScaler : MonoBehaviour
         image.transform.localScale = start_scale * current_Multiplier;
 
         image.enabled = false;
+
+        startTime = Time.time;
 
         StartCoroutine(UpdateScale());
     }
@@ -61,8 +65,10 @@ public class ImageScaler : MonoBehaviour
                 newScale.y = _min;
             }
 
-            // Apply the scaled difference to the image transform with speed
-            image.transform.localScale = newScale;
+            float t = (Time.time - startTime) / 0.5f;
+
+            //Gradually change between FOV
+            image.transform.localScale = Vector3.Lerp(image.transform.localScale, newScale, t);
 
             lastMultiplier = current_Multiplier;
         }
