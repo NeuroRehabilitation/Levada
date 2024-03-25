@@ -79,17 +79,15 @@ public class LSLInput : MonoBehaviour
     {
         while(streamInlet != null)
         {
-            double timestamp = streamInlet.pull_sample(data_buffer,1.0);
+            double timestamp = streamInlet.pull_sample(data_buffer,2.0);
             
             if(timestamp != 0.0)
             {
                 GameVariable = data_buffer[0];
-                Debug.Log("GameVariable = " + GameVariable);
+                //Debug.Log("GameVariable = " + GameVariable);
             }
 
             yield return new WaitForSeconds(1.0f);
-
-
         }
     }
 

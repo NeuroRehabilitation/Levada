@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,17 +31,20 @@ public class ImageScaler : MonoBehaviour
     {
         start_scale = image.transform.localScale;
         current_Multiplier = FOV_Multiplier;
+        lastMultiplier = current_Multiplier;
 
         image.transform.localScale = start_scale * current_Multiplier;
 
         image.enabled = false;
+
+        StartCoroutine(UpdateScale());
     }
 
-    private void Update()
+    private IEnumerator UpdateScale()
     {
-        Debug.Log("Current Multiplier = " + current_Multiplier);
-        if (current_Multiplier != lastMultiplier)
+        while (true)
         {
+            yield return new WaitUntil(() => current_Multiplier != lastMultiplier);
 
             // Set the new scale
             newScale = new Vector3(start_scale.x * current_Multiplier, start_scale.y * current_Multiplier, start_scale.z * current_Multiplier);

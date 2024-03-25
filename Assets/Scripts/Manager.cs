@@ -59,6 +59,7 @@ public class Manager : MonoBehaviour
 
     public static bool isLastScene = false;
     private bool timerStarted = false;
+    private bool startedLSL = false;
 
 
     void Awake()
@@ -95,8 +96,6 @@ public class Manager : MonoBehaviour
         SAM.StartStream();
         //VAS.StartStream();
         Markers.StartStream();
-
-
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -113,14 +112,18 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+
         if (isRunning && !timerStarted)
         {
             StartCoroutine(TimerCoroutine());
             timerStarted = true;
         }
 
-        if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
-            UpdateGameVariable();
+        if (SceneManager.GetActiveScene().name != "Main_Menu_HMD" && !startedLSL)
+        {
+            StartCoroutine(UpdateGameVariable());
+            startedLSL = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -154,16 +157,14 @@ public class Manager : MonoBehaviour
         //}
     }
 
-    private void UpdateGameVariable()
+    private IEnumerator UpdateGameVariable()
     {
-        FOV_multiplier = imageScaler.current_Multiplier;
-        float newGameVariable = LSLInput.GameVariable;
-
-        if (newGameVariable != lastGameVariable)
+        while (true)
         {
-            FOV_multiplier += newGameVariable;
-            imageScaler.current_Multiplier = FOV_multiplier;
-            lastGameVariable = newGameVariable;
+            yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
+
+            imageScaler.current_Multiplier += LSLInput.GameVariable;
+            lastGameVariable = LSLInput.GameVariable;
         }
     }
 
