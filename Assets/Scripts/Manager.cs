@@ -48,12 +48,14 @@ public class Manager : MonoBehaviour
     private Vector3 lastWaypoint;
 
     [Header("Game Variable")]
-    private GameObject FOV;
+    public GameObject FOV;
     private Image FOV_Image;
+    public ImageScaler imageScaler;
     private float FOV_multiplier;
 
     private static Manager instance;
-    private static LSLInput LSLInput;
+    private LSLInput LSLInput;
+    private float lastGameVariable = 0.0f;
 
     public static bool isLastScene = false;
     private bool timerStarted = false;
@@ -84,6 +86,7 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
         if (Scenes.Count > 0) { Shuffle(); }
 
@@ -93,14 +96,24 @@ public class Manager : MonoBehaviour
         //VAS.StartStream();
         Markers.StartStream();
 
-        FOV = GameObject.Find("FOV");
-        FOV_Image = FOV.GetComponentInChildren<Image>();
-        FOV_multiplier = FOV.GetComponentInChildren<ImageScaler>().FOV_Multiplier;
-        FOV_Image.enabled = false;
+
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "Main_Menu_HMD")
+        {
+            LSLInput = GameObject.FindObjectOfType<LSLInput>();
+
+            FOV_Image = FOV.GetComponentInChildren<Image>();
+            FOV_multiplier = imageScaler.current_Multiplier;
+        }
+    }
+
 
     private void Update()
     {
+        Debug.Log("Current Multiplier = " + FOV_multiplier);
 
         if (isRunning && !timerStarted)
         {
@@ -145,13 +158,15 @@ public class Manager : MonoBehaviour
 
     private void UpdateGameVariable()
     {
-        
-        //float updatedGameVariable = LSLInput.GameVariable;
+        FOV_multiplier = imageScaler.current_Multiplier;
+        float newGameVariable = LSLInput.GameVariable;
 
-        //if (FOV_multiplier != updatedGameVariable)
-        //{
-        //    FOV_multiplier += updatedGameVariable;
-        //}
+        if (newGameVariable != lastGameVariable)
+        {
+            Debug.Log("Updating FOV...");
+            FOV_multiplier += newGameVariable;
+            lastGameVariable = newGameVariable;
+        }
     }
 
     private IEnumerator TimerCoroutine()
@@ -173,7 +188,7 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(20.0f);
 
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 

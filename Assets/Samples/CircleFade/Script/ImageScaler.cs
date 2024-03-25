@@ -7,9 +7,11 @@ public class ImageScaler : MonoBehaviour
     [SerializeField]
     private Image image;
 
+    public static ImageScaler instance;
+
     [Range(0.1f,1)]
-    public float FOV_Multiplier = 1;
-    private float current_Multiplier;
+    public float FOV_Multiplier = 1.0f;
+    public float current_Multiplier;
 
     // Maximum scale value
     [Header("Maximum Scale")]
@@ -29,6 +31,8 @@ public class ImageScaler : MonoBehaviour
         current_Multiplier = FOV_Multiplier;
 
         image.transform.localScale = start_scale * current_Multiplier;
+
+        image.enabled = false;
     }
 
     private void Update()
