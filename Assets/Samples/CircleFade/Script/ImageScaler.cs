@@ -12,6 +12,7 @@ public class ImageScaler : MonoBehaviour
     [Range(0.1f,1)]
     public float FOV_Multiplier = 1.0f;
     public float current_Multiplier;
+    private float lastMultiplier = 0.0f;
 
     // Maximum scale value
     [Header("Maximum Scale")]
@@ -37,10 +38,12 @@ public class ImageScaler : MonoBehaviour
 
     private void Update()
     {
-        if(current_Multiplier != FOV_Multiplier)
+        Debug.Log("Current Multiplier = " + current_Multiplier);
+        if (current_Multiplier != lastMultiplier)
         {
+
             // Set the new scale
-            newScale = new Vector3(start_scale.x * FOV_Multiplier, start_scale.y * FOV_Multiplier, start_scale.z * FOV_Multiplier);
+            newScale = new Vector3(start_scale.x * current_Multiplier, start_scale.y * current_Multiplier, start_scale.z * current_Multiplier);
 
             // Ensure real scale stays within bounds
             if (newScale.x > _max)
@@ -57,7 +60,7 @@ public class ImageScaler : MonoBehaviour
             // Apply the scaled difference to the image transform with speed
             image.transform.localScale = newScale;
 
-            current_Multiplier = FOV_Multiplier;
+            lastMultiplier = current_Multiplier;
         }
     }
 }

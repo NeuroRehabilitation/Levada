@@ -51,7 +51,7 @@ public class Manager : MonoBehaviour
     public GameObject FOV;
     private Image FOV_Image;
     public ImageScaler imageScaler;
-    private float FOV_multiplier;
+    public float FOV_multiplier;
 
     private static Manager instance;
     private LSLInput LSLInput;
@@ -113,8 +113,6 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Current Multiplier = " + FOV_multiplier);
-
         if (isRunning && !timerStarted)
         {
             StartCoroutine(TimerCoroutine());
@@ -163,8 +161,8 @@ public class Manager : MonoBehaviour
 
         if (newGameVariable != lastGameVariable)
         {
-            Debug.Log("Updating FOV...");
             FOV_multiplier += newGameVariable;
+            imageScaler.current_Multiplier = FOV_multiplier;
             lastGameVariable = newGameVariable;
         }
     }
