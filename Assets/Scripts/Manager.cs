@@ -48,6 +48,7 @@ public class Manager : MonoBehaviour
     private Vector3 lastWaypoint;
     private Vector3 XROrigin;
     GameObject[] waypoints;
+    private GameObject mainCamera;
 
     [Header("Game Variable")]
     public GameObject FOV;
@@ -115,6 +116,21 @@ public class Manager : MonoBehaviour
             {
                 lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
             }
+
+            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+            foreach (GameObject camera in cameras)
+            {
+                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.Skybox)
+                {
+                    mainCamera = camera;
+                }
+            }
+
+            
+            LayerMask layerMask = -1; //Layer "Everything"
+
+            mainCamera.GetComponent<Camera>().cullingMask = layerMask;
+            mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
         }
     }
 
@@ -203,8 +219,8 @@ public class Manager : MonoBehaviour
                     XROrigin = GameObject.Find("XR Origin").transform.position;
                 }
                 float distance = Vector3.Distance(XROrigin, lastWaypoint);
-                Debug.Log("Distance = " + distance);
-                return distance <= 1.0f && SAM_Canvas.enabled == false;
+
+                return distance <= 0.5f && SAM_Canvas.enabled == false;
 
             });
 
@@ -255,7 +271,6 @@ public class Manager : MonoBehaviour
 
     public void LoadScene()
     {
-        Debug.Log("Load Scene");
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
         currentScene.Add("0");
@@ -285,13 +300,17 @@ public class Manager : MonoBehaviour
     {
         if (!isLastScene)
         {
-            Debug.Log("Change Scene");
             currentScene.Clear();
 
             if (Scenes.Count > 0)
             {
                 Shuffle();
                 LoadScene();
+                int layerIndex = LayerMask.NameToLayer("Nothing");
+                LayerMask layerMask = 1 << layerIndex;
+                mainCamera.GetComponent<Camera>().cullingMask = layerMask;
+                mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
+                mainCamera.GetComponent<Camera>().backgroundColor = Color.black;
             }
             else
             {
