@@ -46,6 +46,7 @@ public class Manager : MonoBehaviour
     public LSLStreamer Markers;
 
     private Vector3 lastWaypoint;
+    private Vector3 XROrigin;
 
     [Header("Game Variable")]
     public GameObject FOV;
@@ -163,7 +164,6 @@ public class Manager : MonoBehaviour
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
 
-            Debug.Log("Updating GameVariable");
             imageScaler.current_Multiplier += LSLInput.GameVariable;
             lastGameVariable = LSLInput.GameVariable;
         }
@@ -188,8 +188,6 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5.0f);
-
             GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
             if (waypoints.Length > 0)
@@ -197,19 +195,22 @@ public class Manager : MonoBehaviour
                 lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
             }
 
-            if(lastWaypoint != null)
+            yield return new WaitUntil(() =>
             {
-                Vector3 XROrigin = GameObject.Find("XR Origin").transform.position;
-                //XROrigin = lastWaypoint;
-
-                if (XROrigin == lastWaypoint && SAM_Canvas.enabled == false)
+                if (lastWaypoint != null)
                 {
-                    currentScene.RemoveAt(currentScene.Count - 1);
-                    currentScene.Add("1");
-                    Markers.StreamData(currentScene.ToArray());
-                    ChangeScene();
+                    XROrigin = GameObject.Find("XR Origin").transform.position;
                 }
-            }
+                float distance = Vector3.Distance(XROrigin, lastWaypoint);
+
+                return distance <= 0.5f && SAM_Canvas.enabled == false;
+
+            });
+
+            currentScene.RemoveAt(currentScene.Count - 1);
+            currentScene.Add("1");
+            Markers.StreamData(currentScene.ToArray());
+            ChangeScene();
         }
     }
     public void StartTimer()
@@ -253,6 +254,7 @@ public class Manager : MonoBehaviour
 
     public void LoadScene()
     {
+        Debug.Log("Load Scene");
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
         currentScene.Add("0");
@@ -282,6 +284,7 @@ public class Manager : MonoBehaviour
     {
         if (!isLastScene)
         {
+            Debug.Log("Change Scene");
             currentScene.Clear();
 
             if (Scenes.Count > 0)
