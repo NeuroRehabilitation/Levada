@@ -56,7 +56,6 @@ public class ScaleManager : MonoBehaviour
     {
         if (scene.name != "Main_Menu_HMD")
         {
-            StartCoroutine(ShowScale());
 
             UI_Controller = GameObject.FindGameObjectWithTag("UI_Controller");
             Teleport_Controller = GameObject.FindGameObjectWithTag("Teleport_Controller");
@@ -77,6 +76,7 @@ public class ScaleManager : MonoBehaviour
 
     private void AdjustCameraSettings(GameObject mainCamera, Canvas scaleCanvas)
     {
+        Debug.Log("ola");
         int offset = 8;
 
         Transform xr_origin = GameObject.Find("XR Origin").transform;
