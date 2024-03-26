@@ -47,6 +47,7 @@ public class Manager : MonoBehaviour
 
     private Vector3 lastWaypoint;
     private Vector3 XROrigin;
+    GameObject[] waypoints;
 
     [Header("Game Variable")]
     public GameObject FOV;
@@ -107,6 +108,13 @@ public class Manager : MonoBehaviour
 
             FOV_Image = FOV.GetComponentInChildren<Image>();
             FOV_multiplier = imageScaler.current_Multiplier;
+
+            waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+
+            if (waypoints.Length > 0)
+            {
+                lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
+            }
         }
     }
 
@@ -188,13 +196,6 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
-
-            if (waypoints.Length > 0)
-            {
-                lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
-            }
-
             yield return new WaitUntil(() =>
             {
                 if (lastWaypoint != null)
@@ -202,8 +203,8 @@ public class Manager : MonoBehaviour
                     XROrigin = GameObject.Find("XR Origin").transform.position;
                 }
                 float distance = Vector3.Distance(XROrigin, lastWaypoint);
-
-                return distance <= 0.5f && SAM_Canvas.enabled == false;
+                Debug.Log("Distance = " + distance);
+                return distance <= 1.0f && SAM_Canvas.enabled == false;
 
             });
 

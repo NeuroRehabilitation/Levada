@@ -90,9 +90,6 @@ public class ScaleManager : MonoBehaviour
         //Get the forward direction from the maincamera
         Vector3 xr_forward = xr_origin.forward.normalized * offset;
         
-        //Get the size of the scale Canvas
-        Vector3 canvasSize = scaleCanvas.GetComponent<RectTransform>().sizeDelta;
-
         //Calculate final position for the canvas
         Vector3 new_position = new Vector3(xr_position.x + xr_forward.x, xr_position.y + xr_forward.y, xr_position.z + xr_forward.z);
         
