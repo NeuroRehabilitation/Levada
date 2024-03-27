@@ -65,7 +65,7 @@ public class ImageScaler : MonoBehaviour
                 newScale.y = _min;
             }
 
-            float t = (Time.time - startTime) / 0.5f;
+            float t = (Time.time - startTime) / 2f;
 
             //Gradually change between FOV
             image.transform.localScale = Vector3.Lerp(image.transform.localScale, newScale, t);

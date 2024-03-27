@@ -76,8 +76,8 @@ public class ScaleManager : MonoBehaviour
 
     private void AdjustCameraSettings(GameObject mainCamera, Canvas scaleCanvas)
     {
-        Debug.Log("ola");
-        int offset = 8;
+
+        int offset = 10;
 
         Transform xr_origin = GameObject.Find("XR Origin").transform;
 
