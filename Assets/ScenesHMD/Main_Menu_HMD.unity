@@ -1653,7 +1653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: interval
-      value: 0.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 57704153928823207, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
@@ -5635,7 +5635,7 @@ PrefabInstance:
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: _max
-      value: 2.3
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
@@ -5650,12 +5650,17 @@ PrefabInstance:
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: FOV_Multiplier
-      value: 0.5
+      value: 0.478
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: _scaleMultiplier
       value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
+        type: 3}
+      propertyPath: current_Multiplier
+      value: 0.529
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
@@ -5670,17 +5675,17 @@ PrefabInstance:
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.3
+      value: 1.7000002
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3
+      value: 1.7000002
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3
+      value: 1.7000002
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}

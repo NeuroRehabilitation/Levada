@@ -10,14 +10,17 @@ public class ImageScaler : MonoBehaviour
 
     public static ImageScaler instance;
 
-    [Range(0.1f,1)]
-    public float FOV_Multiplier = 1.0f;
-    public float current_Multiplier;
+    [Range(0.26f,1)]
+    public float current_Multiplier = 0.5f;
+    //public float current_Multiplier;
     private float lastMultiplier = 0.0f;
+
+    private float max_multiplier = 1.0f;
+    private float min_multiplier = 0.26f;
 
     // Maximum scale value
     [Header("Maximum Scale")]
-    public float _max = 2.3f;
+    public float _max = 1.7f;
 
     // Minimum scale value
     [Header("Minimum Scale")]
@@ -32,7 +35,7 @@ public class ImageScaler : MonoBehaviour
     private void Start()
     {
         start_scale = image.transform.localScale;
-        current_Multiplier = FOV_Multiplier;
+        //current_Multiplier = FOV_Multiplier;
         lastMultiplier = current_Multiplier;
 
         image.transform.localScale = start_scale * current_Multiplier;
@@ -50,6 +53,11 @@ public class ImageScaler : MonoBehaviour
         {
             yield return new WaitUntil(() => current_Multiplier != lastMultiplier);
 
+            if (current_Multiplier >= max_multiplier)
+                current_Multiplier = max_multiplier;
+            if (current_Multiplier <= min_multiplier)
+                current_Multiplier = min_multiplier;
+
             // Set the new scale
             newScale = new Vector3(start_scale.x * current_Multiplier, start_scale.y * current_Multiplier, start_scale.z * current_Multiplier);
 
@@ -65,7 +73,7 @@ public class ImageScaler : MonoBehaviour
                 newScale.y = _min;
             }
 
-            float t = (Time.time - startTime) / 2f;
+            float t = (Time.time - startTime) / 5f;
 
             //Gradually change between FOV
             image.transform.localScale = Vector3.Lerp(image.transform.localScale, newScale, t);
