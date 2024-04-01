@@ -56,7 +56,7 @@ public class VAS : MonoBehaviour
             //answers[currentToggle] = float.Parse(selected.name);
             answers[0] = "VAS";
             answers[1] = selected.name;
-            Manager.VAS_answers[currentToggle] = selected.name;
+            //Manager.VAS_answers[currentToggle] = selected.name;
             VAS_Items[currentToggle].SetActive(false);
             currentToggle++;
             VAS_Items[currentToggle].SetActive(true);
@@ -67,7 +67,7 @@ public class VAS : MonoBehaviour
             //answers[currentToggle] = float.Parse(selected.name);
             answers[0] = "VAS";
             answers[1] = selected.name;
-            Manager.VAS_answers[currentToggle] = selected.name;
+            //Manager.VAS_answers[currentToggle] = selected.name;
             //Manager.VAS.StreamData(answers);
             Manager.WriteData();
             //Manager.CSV_writer.WriteToCSV();

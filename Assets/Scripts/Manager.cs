@@ -32,7 +32,7 @@ public class Manager : MonoBehaviour
     [Header("SAM")]
     public Canvas SAM_Canvas;
     public string[] SAM_answers = new string[2];
-    public string[] VAS_answers = new string[4];
+    //public string[] VAS_answers = new string[4];
     public string[] DataToSave;
 
     [Header("User ID")]
@@ -326,8 +326,10 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        //UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
         StopAllCoroutines();
+        CSV_writer.WriteToCSV();
+        CSV_writer.CloseCSV();
         SAM.StopStream();
         //VAS.StopStream();
         Markers.StopStream();

@@ -70,6 +70,7 @@ public class SAM : MonoBehaviour
             answers[1] = selected.name;
             Manager.SAM_answers[currentToggle] = selected.name;
             Manager.SAM.StreamData(answers);
+            Manager.WriteData();
             submitButtonPressed = true;
             ResetToggleGroup();
         }
