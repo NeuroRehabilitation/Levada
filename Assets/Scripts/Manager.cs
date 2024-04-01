@@ -10,15 +10,15 @@ using System.Collections;
 public class Manager : MonoBehaviour
 {
     [Header("Scenes")]
-    public List<int> Scenes;
+    private List<int> Scenes;
     public List<string> currentScene = new List<string>();
 
     [Header("Selected Scene Index")]
-    public int randomIndex;
+    private int randomIndex;
 
     [Header("Number of Rounds")]
-    public int NumberRounds = 1;
-    public int currentRound = 1;
+    private int NumberRounds = 1;
+    private int currentRound = 1;
 
     [Header("Duration (minutes)")]
     public float duration = 0.2f; //duration of experiment in minutes.
@@ -290,10 +290,13 @@ public class Manager : MonoBehaviour
 
     public void WriteData()
     {
+        string[] row_data = new string[3];
+        row_data[0] = currentScene[0];
+        row_data[1] = SAM_answers[0];
+        row_data[2] = SAM_answers[1];
 
-        DataToSave = currentScene.Concat(SAM_answers).ToArray();
+        DataToSave = row_data;
         CSV_writer.AddData(DataToSave);
-        currentScene.Clear();
     }
 
     public void ChangeScene()

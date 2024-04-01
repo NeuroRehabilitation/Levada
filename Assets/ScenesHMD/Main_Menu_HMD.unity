@@ -3102,23 +3102,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a09c945b5093b244a64e65e9215d818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scenes: 
   currentScene: []
-  randomIndex: 0
-  NumberRounds: 10
-  currentRound: 1
   duration: 2
   CSV_writer: {fileID: 0}
   SAM_Canvas: {fileID: 900334548}
   SAM_answers:
   - 
   - 
-  VAS_answers:
+  DataToSave:
   - 
   - 
   - 
-  - 
-  DataToSave: []
   UserID: {fileID: 640658761}
   StartButton: {fileID: 1992175824}
   SAM: {fileID: 653334897}
