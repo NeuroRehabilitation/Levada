@@ -39,7 +39,8 @@ public class Manager : MonoBehaviour
     public TMP_InputField UserID;
 
     [Header("Start Button")]
-    public Button StartButton;
+    public Button StartButton_Desktop;
+    public Button StartButton_HMD;
 
     [Header("LSL Streams")]
     public LSLStreamer SAM;
@@ -84,8 +85,10 @@ public class Manager : MonoBehaviour
 
         CSV_writer = GetComponent<CSV>();
 
-        if (StartButton != null)
-            StartButton.interactable = false;
+        if (StartButton_Desktop != null)
+            StartButton_Desktop.interactable = false;
+        if (StartButton_HMD != null)
+            StartButton_HMD.interactable = false;
     }
 
     private void Start()
@@ -140,6 +143,14 @@ public class Manager : MonoBehaviour
 
         if (isRunning && !timerStarted)
         {
+            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+            foreach (GameObject camera in cameras)
+            {
+                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.SolidColor)
+                {
+                    camera.GetComponent<Camera>().enabled = false;
+                }
+            }
             StartCoroutine(TimerCoroutine());
             timerStarted = true;
         }
@@ -253,8 +264,15 @@ public class Manager : MonoBehaviour
     public void ActivateButton()
     {
         if (UserID.text != "")
-            StartButton.interactable = true;
-        else StartButton.interactable = false;
+        {
+            StartButton_Desktop.interactable = true;
+            StartButton_HMD.interactable = true;
+        }
+        else
+        {
+            StartButton_Desktop.interactable = false;
+            StartButton_HMD.interactable = false;
+        }
     }
 
     public void GetUserID()
@@ -329,7 +347,7 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         StopAllCoroutines();
         CSV_writer.WriteToCSV();
         CSV_writer.CloseCSV();

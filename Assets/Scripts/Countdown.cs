@@ -101,6 +101,14 @@ public class Countdown : MonoBehaviour
         }
         if (Manager.isLastScene && !isCountdownStarted)
         {
+            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+            foreach (GameObject camera in cameras)
+            {
+                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.SolidColor)
+                {
+                    camera.GetComponent<Camera>().enabled = true;
+                }
+            }
             CanvasPanel.GetComponent<Image>().enabled = true;
             countdownText.enabled = true;
             countdownText.text = "Finishing in...";

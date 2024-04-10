@@ -1406,7 +1406,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 258180003}
   m_OnClick:
     m_PersistentCalls:
@@ -1588,7 +1588,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 324236888}
   m_OnClick:
     m_PersistentCalls:
@@ -1653,7 +1653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: interval
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 57704153928823207, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
@@ -3113,8 +3113,9 @@ MonoBehaviour:
   - 
   - 
   - 
-  UserID: {fileID: 1373772337}
-  StartButton: {fileID: 1503633265}
+  UserID: {fileID: 640658761}
+  StartButton_Desktop: {fileID: 1992175824}
+  StartButton_HMD: {fileID: 1503633265}
   SAM: {fileID: 653334897}
   Markers: {fileID: 1706301467}
   FOV: {fileID: 1214465712}
@@ -3282,7 +3283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &524206385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3651,7 +3652,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 607578650}
   m_OnClick:
     m_PersistentCalls:
@@ -6197,7 +6198,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1503633266}
   m_OnClick:
     m_PersistentCalls:
@@ -7208,7 +7209,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1905839399}
   m_OnClick:
     m_PersistentCalls:
