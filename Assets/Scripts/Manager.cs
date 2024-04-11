@@ -120,7 +120,15 @@ public class Manager : MonoBehaviour
                 lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
             }
 
-            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+            foreach (GameObject camera in cameras)
+            {
+                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.Skybox)
+                {
+                    mainCamera = camera;
+                }
+            }
+
             
             LayerMask layerMask = -1; //Layer "Everything"
 
@@ -252,6 +260,7 @@ public class Manager : MonoBehaviour
             StartButton_Desktop.interactable = true;
             StartButton_HMD.interactable = true;
         }
+
         else
         {
             StartButton_Desktop.interactable = false;
@@ -331,7 +340,7 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        //UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
         StopAllCoroutines();
         CSV_writer.WriteToCSV();
         CSV_writer.CloseCSV();
