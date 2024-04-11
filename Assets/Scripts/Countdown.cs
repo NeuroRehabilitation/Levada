@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Countdown : MonoBehaviour
 {
     public float countdownTime = 6f; // Time in seconds for the countdown
+    private GameObject countdown;
     private TextMeshProUGUI countdownText; // Reference to the UI text element
 
     private float currentTime = 0f;
@@ -44,27 +45,24 @@ public class Countdown : MonoBehaviour
     {
         if(scene.name != "Main_Menu_HMD")
         {
-            countdownText = GameObject.FindObjectOfType<TextMeshProUGUI>();
+            countdown = GameObject.FindGameObjectWithTag("CountdownText");
             CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
             FOV = GameObject.Find("FOV");
             FOV_Image = FOV.GetComponentInChildren<Image>();
             FOV_Image.enabled = true;
-            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
 
             if (isFirstScene)
             {
-                if (countdownText != null)
+                if (countdown != null)
                 {
-                    countdownText.enabled = true;
+                    countdownText = countdown.GetComponent<TextMeshProUGUI>();
                     countdownText.text = "Prepare to Start!";
                 }
                 if (CanvasPanel != null)
                 {
                     CanvasPanel.GetComponent<Image>().enabled = true;
                 }
-
-                ScaleManager.SetCameraToUI(mainCamera);
 
                 StartCountdown();
             }
@@ -90,7 +88,6 @@ public class Countdown : MonoBehaviour
             //When everything is set to start
             if (currentTime <= 0 && !Manager.isLastScene)
             {
-                ScaleManager.ResetCameraSettings(mainCamera);
                 CanvasPanel.GetComponent<Image>().enabled = false;
                 if(Manager != null)
                 {
