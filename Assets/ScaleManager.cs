@@ -62,15 +62,10 @@ public class ScaleManager : MonoBehaviour
 
             SetTeleportController();
 
-            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-            foreach(GameObject camera in cameras)
-            {
-                if(camera.GetComponent<Camera>().clearFlags == CameraClearFlags.Skybox)
-                {
-                    mainCamera = camera;
-                    gameObject.GetComponent<Canvas>().worldCamera = camera.GetComponent<Camera>();
-                }
-            }
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+
+            gameObject.GetComponent<Canvas>().worldCamera = mainCamera.GetComponent<Camera>();
+            
         }
     }   
 
@@ -92,26 +87,29 @@ public class ScaleManager : MonoBehaviour
         
         //Calculate final position for the canvas
         Vector3 new_position = new Vector3(xr_position.x + xr_forward.x, xr_position.y + xr_forward.y, xr_position.z + xr_forward.z);
-        
 
+        SetCameraToUI(mainCamera);
 
+        scaleCanvas.transform.position = new_position;
+        scaleCanvas.transform.rotation = desiredRotation;
+    }
+
+    public static void ResetCameraSettings(GameObject mainCamera)
+    {
+        int layerIndex = LayerMask.NameToLayer("UI");
+
+        mainCamera.GetComponent<Camera>().cullingMask = ~(1 << layerIndex);
+        mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
+    }
+
+    public static void SetCameraToUI(GameObject mainCamera)
+    {
         int layerIndex = LayerMask.NameToLayer("UI");
         LayerMask layerMask = 1 << layerIndex;
 
         mainCamera.GetComponent<Camera>().cullingMask = layerMask;
         mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
         mainCamera.GetComponent<Camera>().backgroundColor = Color.black;
-
-        scaleCanvas.transform.position = new_position;
-        scaleCanvas.transform.rotation = desiredRotation;
-    }
-
-    private void ResetCameraSettings(GameObject mainCamera)
-    {
-        int layerIndex = LayerMask.NameToLayer("UI");
-
-        mainCamera.GetComponent<Camera>().cullingMask = ~(1 << layerIndex);
-        mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
     }
 
     private IEnumerator ShowScale()

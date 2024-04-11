@@ -16,6 +16,7 @@ public class Countdown : MonoBehaviour
     GameObject CanvasPanel;
     private GameObject FOV;
     private Image FOV_Image;
+    private GameObject mainCamera;
 
     private static Countdown instance;
 
@@ -48,6 +49,9 @@ public class Countdown : MonoBehaviour
             FOV = GameObject.Find("FOV");
             FOV_Image = FOV.GetComponentInChildren<Image>();
             FOV_Image.enabled = true;
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+
+
             if (isFirstScene)
             {
                 if (countdownText != null)
@@ -59,6 +63,9 @@ public class Countdown : MonoBehaviour
                 {
                     CanvasPanel.GetComponent<Image>().enabled = true;
                 }
+
+                ScaleManager.SetCameraToUI(mainCamera);
+
                 StartCountdown();
             }
         }
@@ -83,6 +90,7 @@ public class Countdown : MonoBehaviour
             //When everything is set to start
             if (currentTime <= 0 && !Manager.isLastScene)
             {
+                ScaleManager.ResetCameraSettings(mainCamera);
                 CanvasPanel.GetComponent<Image>().enabled = false;
                 if(Manager != null)
                 {
@@ -101,14 +109,7 @@ public class Countdown : MonoBehaviour
         }
         if (Manager.isLastScene && !isCountdownStarted)
         {
-            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-            foreach (GameObject camera in cameras)
-            {
-                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.SolidColor)
-                {
-                    camera.GetComponent<Camera>().enabled = true;
-                }
-            }
+
             CanvasPanel.GetComponent<Image>().enabled = true;
             countdownText.enabled = true;
             countdownText.text = "Finishing in...";

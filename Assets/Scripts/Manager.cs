@@ -120,15 +120,7 @@ public class Manager : MonoBehaviour
                 lastWaypoint = waypoints[waypoints.Length - 1].gameObject.transform.position;
             }
 
-            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-            foreach (GameObject camera in cameras)
-            {
-                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.Skybox)
-                {
-                    mainCamera = camera;
-                }
-            }
-
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             
             LayerMask layerMask = -1; //Layer "Everything"
 
@@ -143,14 +135,6 @@ public class Manager : MonoBehaviour
 
         if (isRunning && !timerStarted)
         {
-            GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-            foreach (GameObject camera in cameras)
-            {
-                if (camera.GetComponent<Camera>().clearFlags == CameraClearFlags.SolidColor)
-                {
-                    camera.GetComponent<Camera>().enabled = false;
-                }
-            }
             StartCoroutine(TimerCoroutine());
             timerStarted = true;
         }
