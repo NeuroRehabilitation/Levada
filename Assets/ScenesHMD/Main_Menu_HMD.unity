@@ -5655,7 +5655,7 @@ PrefabInstance:
     - target: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: current_Multiplier
-      value: 0.5
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
@@ -5685,7 +5685,7 @@ PrefabInstance:
     - target: {fileID: 4949305318694719603, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4949305318694719605, guid: 575c141ef9d0372409ed5913f8429692,
         type: 3}

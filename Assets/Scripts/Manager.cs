@@ -93,6 +93,9 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+
+        Application.targetFrameRate = -1;
+
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         if (Scenes.Count > 0) { Shuffle(); }
@@ -223,7 +226,7 @@ public class Manager : MonoBehaviour
                 }
                 float distance = Vector3.Distance(XROrigin, lastWaypoint);
 
-                return distance <= 0.5f && SAM_Canvas.enabled == false;
+                return distance <= 1.5f && SAM_Canvas.enabled == false;
 
             });
 

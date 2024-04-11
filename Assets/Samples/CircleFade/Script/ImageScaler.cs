@@ -38,7 +38,22 @@ public class ImageScaler : MonoBehaviour
         //current_Multiplier = FOV_Multiplier;
         lastMultiplier = current_Multiplier;
 
-        image.transform.localScale = start_scale * current_Multiplier;
+        // Set the new scale
+        newScale = new Vector3(start_scale.x * current_Multiplier, start_scale.y * current_Multiplier, start_scale.z * current_Multiplier);
+
+        // Ensure real scale stays within bounds
+        if (newScale.x > _max)
+        {
+            newScale.x = _max;
+            newScale.y = _max;
+        }
+        else if (newScale.x < _min)
+        {
+            newScale.x = _min;
+            newScale.y = _min;
+        }
+
+        image.transform.localScale = newScale;
 
         image.enabled = false;
 
