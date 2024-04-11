@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Countdown : MonoBehaviour
 {
     public float countdownTime = 6f; // Time in seconds for the countdown
+    private GameObject CountdownCanvas;
     private GameObject countdown;
     private TextMeshProUGUI countdownText; // Reference to the UI text element
 
@@ -46,6 +47,7 @@ public class Countdown : MonoBehaviour
         if(scene.name != "Main_Menu_HMD")
         {
             countdown = GameObject.FindGameObjectWithTag("CountdownText");
+            CountdownCanvas = GameObject.FindGameObjectWithTag("CountdownCanvas");
             CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
             FOV = GameObject.Find("FOV");
             FOV_Image = FOV.GetComponentInChildren<Image>();
@@ -56,6 +58,7 @@ public class Countdown : MonoBehaviour
             {
                 if (countdown != null)
                 {
+                    CountdownCanvas.GetComponent<Canvas>().enabled = true;
                     countdownText = countdown.GetComponent<TextMeshProUGUI>();
                     countdownText.text = "Prepare to Start!";
                 }
@@ -88,6 +91,7 @@ public class Countdown : MonoBehaviour
             //When everything is set to start
             if (currentTime <= 0 && !Manager.isLastScene)
             {
+                CountdownCanvas.GetComponent<Canvas>().enabled = false;
                 CanvasPanel.GetComponent<Image>().enabled = false;
                 if(Manager != null)
                 {
@@ -106,7 +110,7 @@ public class Countdown : MonoBehaviour
         }
         if (Manager.isLastScene && !isCountdownStarted)
         {
-
+            CountdownCanvas.GetComponent<Canvas>().enabled = true;
             CanvasPanel.GetComponent<Image>().enabled = true;
             countdownText.enabled = true;
             countdownText.text = "Finishing in...";
