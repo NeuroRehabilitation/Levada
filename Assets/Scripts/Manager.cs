@@ -10,7 +10,7 @@ using System.Collections;
 public class Manager : MonoBehaviour
 {
     [Header("Scenes")]
-    private List<int> Scenes;
+    public List<int> Scenes;
     public List<string> currentScene = new List<string>();
 
     [Header("Selected Scene Index")]
@@ -25,6 +25,7 @@ public class Manager : MonoBehaviour
     public static float elapsed_time = 0f;
     private float startTime;
     public static bool isRunning = false;
+    private bool sceneChangeInProgress = false;
 
     [Header("CSV")]
     public CSV CSV_writer;
@@ -111,6 +112,8 @@ public class Manager : MonoBehaviour
     {
         if (scene.name != "Main_Menu_HMD")
         {
+            StartCoroutine(CheckXRPosition());
+
             LSLInput = GameObject.FindObjectOfType<LSLInput>();
 
             FOV_Image = FOV.GetComponentInChildren<Image>();
@@ -229,18 +232,18 @@ public class Manager : MonoBehaviour
                 return distance <= 1.5f && SAM_Canvas.enabled == false;
 
             });
-
+            StopCoroutine(CheckXRPosition());
             currentScene.RemoveAt(currentScene.Count - 1);
             currentScene.Add("1");
             Markers.StreamData(currentScene.ToArray());
             ChangeScene();
+            yield break;
         }
     }
     public void StartTimer()
     {
         isRunning = true;
         startTime = Time.realtimeSinceStartup;
-        StartCoroutine(CheckXRPosition());
     }
 
     public void StopTimer()
@@ -343,7 +346,7 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        //UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
         StopAllCoroutines();
         CSV_writer.WriteToCSV();
         CSV_writer.CloseCSV();
