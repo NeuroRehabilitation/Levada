@@ -112,6 +112,7 @@ public class Countdown : MonoBehaviour
         {
             CountdownCanvas.GetComponent<Canvas>().enabled = true;
             CanvasPanel.GetComponent<Image>().enabled = true;
+            countdownText = countdown.GetComponent<TextMeshProUGUI>();
             countdownText.enabled = true;
             countdownText.text = "Finishing in...";
             StartCountdown();

@@ -346,7 +346,7 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         StopAllCoroutines();
         CSV_writer.WriteToCSV();
         CSV_writer.CloseCSV();
