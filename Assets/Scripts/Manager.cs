@@ -197,8 +197,11 @@ public class Manager : MonoBehaviour
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
 
-            imageScaler.current_Multiplier += LSLInput.GameVariable;
-            lastGameVariable = LSLInput.GameVariable;
+            if (SAM_Canvas.enabled == false)
+            {
+                imageScaler.current_Multiplier += LSLInput.GameVariable;
+                lastGameVariable = LSLInput.GameVariable;
+            }
         }
     }
 
