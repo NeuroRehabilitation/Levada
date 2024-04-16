@@ -94,9 +94,6 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-
-        Application.targetFrameRate = -1;
-
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         if (Scenes.Count > 0) { Shuffle(); }
@@ -197,11 +194,8 @@ public class Manager : MonoBehaviour
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
 
-            if (SAM_Canvas.enabled == false)
-            {
-                imageScaler.current_Multiplier += LSLInput.GameVariable;
-                lastGameVariable = LSLInput.GameVariable;
-            }
+            imageScaler.current_Multiplier += LSLInput.GameVariable;
+            lastGameVariable = LSLInput.GameVariable;
         }
     }
 

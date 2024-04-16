@@ -17,7 +17,8 @@ public class LSLInput : MonoBehaviour
     ContinuousResolver resolver;
 
     // We need buffers to pass to LSL when pulling data.
-    private float[] data_buffer;
+    private float[,] data_buffer;
+    private double[] timestamp_buffer;
 
     public float GameVariable;
     private bool startedCoroutine = false;
@@ -70,23 +71,24 @@ public class LSLInput : MonoBehaviour
             channels[i] = channelgroup.child_value("label");
             channelgroup = channelgroup.next_sibling();
         }
-
-        data_buffer = new float[channelCount];
-        StopCoroutine(ResolveExpectedStream());
+        int buf_samples = 1;
+        data_buffer = new float[buf_samples,channelCount];
+        timestamp_buffer = new double[buf_samples];
     }
 
     IEnumerator PullSample()
     {
         while(streamInlet != null)
         {
-            double timestamp = streamInlet.pull_sample(data_buffer,0);
+            int samples_returned = streamInlet.pull_chunk(data_buffer,timestamp_buffer,0);
             
-            if(timestamp != 0.0)
+            if(samples_returned > 0)
             {
-                GameVariable = data_buffer[0];
+                GameVariable = data_buffer[0,0];
                 Debug.Log("GameVariable = " + GameVariable);
-                yield return new WaitForSeconds(5.0f);
+                
             }
+            yield return new WaitForSeconds(1.0f);
         }
     }
 
