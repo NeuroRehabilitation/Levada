@@ -10,21 +10,21 @@ public class ImageScaler : MonoBehaviour
 
     public static ImageScaler instance;
 
-    [Range(0.26f,1)]
+    [Range(0.0f,1.0f)]
     public float current_Multiplier = 0.5f;
     //public float current_Multiplier;
     private float lastMultiplier = 0.0f;
 
     private float max_multiplier = 1.0f;
-    private float min_multiplier = 0.26f;
+    private float min_multiplier = 0.01f;
 
     // Maximum scale value
     [Header("Maximum Scale")]
-    public float _max = 1.7f;
+    public float _max = 1.8f;
 
     // Minimum scale value
     [Header("Minimum Scale")]
-    public float _min = 0.62f;
+    public float _min = 0.15f;
 
     private float startTime;
 
