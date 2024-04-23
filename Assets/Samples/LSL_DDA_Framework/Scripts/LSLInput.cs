@@ -85,7 +85,7 @@ public class LSLInput : MonoBehaviour
             if(samples_returned > 0)
             {
                 GameVariable = data_buffer[0,0];
-                //Debug.Log("GameVariable = " + GameVariable);
+                Debug.Log("GameVariable = " + GameVariable);
                 
             }
             yield return new WaitForSeconds(1.0f);
