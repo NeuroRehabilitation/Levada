@@ -20,13 +20,13 @@ public class ImageScaler : MonoBehaviour
 
     // Maximum scale value
     [Header("Maximum Scale")]
-    public float _max = 10f;
+    public float _max = 4f;
 
     // Minimum scale value
     [Header("Minimum Scale")]
-    public float _min = 0.5f;
+    public float _min = 0.24f;
 
-    private int speed = 1;
+    private float speed = 0.5f;
 
     // Variable to store the new scale
     Vector3 newScale = new Vector3();
