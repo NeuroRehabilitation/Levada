@@ -36,7 +36,7 @@ public class TimeController : MonoBehaviour
 
         if (isRunning && elapsedTime >= duration)
         {
-            Countdown.countdownText.gameObject.SetActive(true);
+            //Countdown.countdownText.gameObject.SetActive(true);
             StopTimer();
         }
     }
@@ -48,7 +48,7 @@ public class TimeController : MonoBehaviour
 
     public void StopTimer()
     {
-        Countdown.countdownText.text = "Finishing in...";
+        //Countdown.countdownText.text = "Finishing in...";
         isFinished = true;
         isRunning = false;
         

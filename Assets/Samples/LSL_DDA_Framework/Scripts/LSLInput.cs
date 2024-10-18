@@ -16,13 +16,27 @@ public class LSLInput : MonoBehaviour
     public string StreamName;
     ContinuousResolver resolver;
 
-    // We need to keep track of the inlet once it is resolved.
-    private StreamInlet inlet;
-
     // We need buffers to pass to LSL when pulling data.
-    private float[] data_buffer;
+    private float[,] data_buffer;
+    private double[] timestamp_buffer;
 
     public float GameVariable;
+    private bool startedCoroutine = false;
+    private static LSLInput instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -39,15 +53,15 @@ public class LSLInput : MonoBehaviour
 
     IEnumerator ResolveExpectedStream()
     {
-
         var results = resolver.results();
         while (results.Length == 0)
         {
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(0.1f);
             results = resolver.results();
         }
 
-        inlet = new StreamInlet(results[0]);
+
+        streamInlet = new StreamInlet(results[0]);
         channelCount = streamInlet.info().channel_count();
         channels = new string[channelCount];
         channelgroup = streamInlet.info().desc().child("channels").child("channel");
@@ -57,17 +71,33 @@ public class LSLInput : MonoBehaviour
             channels[i] = channelgroup.child_value("label");
             channelgroup = channelgroup.next_sibling();
         }
+        int buf_samples = 1;
+        data_buffer = new float[buf_samples,channelCount];
+        timestamp_buffer = new double[buf_samples];
+    }
 
-        data_buffer = new float[channelCount];
+    IEnumerator PullSample()
+    {
+        while(streamInlet != null)
+        {
+            int samples_returned = streamInlet.pull_chunk(data_buffer,timestamp_buffer,0);
+            
+            if(samples_returned > 0)
+            {
+                GameVariable = data_buffer[0,0];
+                Debug.Log("GameVariable = " + GameVariable);
+                
+            }
+            yield return new WaitForSeconds(1.0f);
+        }
     }
 
     void Update()
     {
-        if (inlet != null)
+        if (streamInlet != null && !startedCoroutine)
         {
-            double samples_returned = inlet.pull_sample(data_buffer);
-            GameVariable = data_buffer[0];
-            // Debug.Log("Samples returned: " + samples_returned);
+            StartCoroutine(PullSample());
+            startedCoroutine = true;
         }
     }
 }
