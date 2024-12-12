@@ -118,6 +118,8 @@ public class ScaleManager : MonoBehaviour
         {
             yield return new WaitForSeconds(interval*60);
 
+            Manager.instance.PauseTimer();
+
             AdjustCameraSettings(mainCamera, scaleCanvas);
 
             while (!SAM.submitButtonPressed)
@@ -135,6 +137,8 @@ public class ScaleManager : MonoBehaviour
             scaleCanvas.enabled = false;
             SAM.submitButtonPressed = false;
             FOV_Image.enabled = true;
+
+            Manager.instance.ResumeTimer();
         }
     }
 
