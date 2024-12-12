@@ -26,6 +26,9 @@ public class Manager : MonoBehaviour
     private float startTime;
     public static bool isRunning = false;
     private bool sceneChangeInProgress = false;
+    private bool isPaused = false;
+    private float pauseStartTime;
+    private float pausedTime = 0f;
 
     [Header("CSV")]
     public CSV CSV_writer;
@@ -58,7 +61,7 @@ public class Manager : MonoBehaviour
     public ImageScaler imageScaler;
     public float FOV_multiplier;
 
-    private static Manager instance;
+    public static Manager instance;
     private LSLInput LSLInput;
     private float lastGameVariable = 0.0f;
 
@@ -203,7 +206,30 @@ public class Manager : MonoBehaviour
     {
         while (isRunning && elapsed_time <= duration * 60)
         {
-            elapsed_time = Time.realtimeSinceStartup-startTime;
+            if (isPaused)
+            {
+                if (pauseStartTime == 0f)
+                    pauseStartTime = Time.realtimeSinceStartup;
+
+                //Debug.Log("Elapsed time = " + elapsed_time + " seconds");
+
+                yield return null;
+            }
+            else 
+            {
+                if (pauseStartTime > 0f)
+                {
+                    pausedTime = Time.realtimeSinceStartup - pauseStartTime;
+                    pauseStartTime = 0f;
+                }
+               
+                
+                
+            }
+            //Debug.Log("Paused Time = " + pausedTime);
+            elapsed_time = Time.realtimeSinceStartup - startTime - pausedTime;
+            Debug.Log("Elapsed time = " + elapsed_time + " seconds");
+
             yield return null;
         }
 
@@ -241,6 +267,16 @@ public class Manager : MonoBehaviour
     {
         isRunning = true;
         startTime = Time.realtimeSinceStartup;
+    }
+
+    public void PauseTimer()
+    {
+        isPaused = true;
+    }
+
+    public void ResumeTimer()
+    {
+        isPaused = false;
     }
 
     public void StopTimer()

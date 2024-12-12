@@ -53,18 +53,7 @@ public class SAM : MonoBehaviour
 
     public void Submit()
     {
-        if(currentToggle == 0) 
-        {
-            answers[0] = "Valence";
-            answers[1] = selected.name;
-            Manager.SAM_answers[currentToggle] = selected.name;
-            Manager.SAM.StreamData(answers);
-            SAM_Items[currentToggle].SetActive(false);
-            currentToggle++;
-            SAM_Items[currentToggle].SetActive(true);
-            NextButton.interactable = false;
-        }
-        else
+        if(currentToggle == 0)
         {
             answers[0] = "Arousal";
             answers[1] = selected.name;
@@ -74,6 +63,27 @@ public class SAM : MonoBehaviour
             submitButtonPressed = true;
             ResetToggleGroup();
         }
+        //if(currentToggle == 0) 
+        //{
+        //    answers[0] = "Valence";
+        //    answers[1] = selected.name;
+        //    Manager.SAM_answers[currentToggle] = selected.name;
+        //    Manager.SAM.StreamData(answers);
+        //    SAM_Items[currentToggle].SetActive(false);
+        //    currentToggle++;
+        //    SAM_Items[currentToggle].SetActive(true);
+        //    NextButton.interactable = false;
+        //}
+        //else
+        //{
+        //    answers[0] = "Arousal";
+        //    answers[1] = selected.name;
+        //    Manager.SAM_answers[currentToggle] = selected.name;
+        //    Manager.SAM.StreamData(answers);
+        //    Manager.WriteData();
+        //    submitButtonPressed = true;
+        //    ResetToggleGroup();
+        //}
     }
 
     void ResetToggleGroup()
