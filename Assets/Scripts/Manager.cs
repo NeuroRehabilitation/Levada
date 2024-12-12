@@ -208,10 +208,11 @@ public class Manager : MonoBehaviour
         {
             if (isPaused)
             {
+                elapsed_time = Time.realtimeSinceStartup - startTime - pausedTime;
+
+
                 if (pauseStartTime == 0f)
                     pauseStartTime = Time.realtimeSinceStartup;
-
-                //Debug.Log("Elapsed time = " + elapsed_time + " seconds");
 
                 yield return null;
             }
@@ -222,12 +223,10 @@ public class Manager : MonoBehaviour
                     pausedTime = Time.realtimeSinceStartup - pauseStartTime;
                     pauseStartTime = 0f;
                 }
-               
-                
-                
+
+                elapsed_time = Time.realtimeSinceStartup - startTime - pausedTime;
+
             }
-            //Debug.Log("Paused Time = " + pausedTime);
-            elapsed_time = Time.realtimeSinceStartup - startTime - pausedTime;
             Debug.Log("Elapsed time = " + elapsed_time + " seconds");
 
             yield return null;
