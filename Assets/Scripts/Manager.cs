@@ -197,7 +197,7 @@ public class Manager : MonoBehaviour
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
 
-            imageScaler.current_Multiplier += LSLInput.GameVariable;
+            imageScaler.current_Multiplier += (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
             lastGameVariable = LSLInput.GameVariable;
         }
     }
@@ -226,6 +226,8 @@ public class Manager : MonoBehaviour
                     pauseStartTime = 0f;
                     pausedTime = 0f;
                 }
+                else
+                    elapsed_time = Time.realtimeSinceStartup - startTime;
             }
 
             Debug.Log("Elapsed time = " + elapsed_time + " seconds");

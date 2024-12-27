@@ -18,6 +18,8 @@ public class ScaleManager : MonoBehaviour
     private GameObject mainCamera;
     private GameObject UI_Controller;
     private GameObject Teleport_Controller;
+    private float distance = 2.0f;
+    private Vector3 offset = new Vector3(0,0,0);
 
     void Awake()
     {
@@ -50,6 +52,14 @@ public class ScaleManager : MonoBehaviour
             StartCoroutine(ShowScale());
             coroutineStarted = true;
         }
+
+        //if(Manager.isRunning && coroutineStarted)
+        //{
+        //    Vector3 targetPosition = mainCamera.transform.position + mainCamera.transform.forward * distance + offset;
+        //    transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
+        //    transform.LookAt(mainCamera.transform);
+        //    transform.Rotate(0, 180, 0); // Correct orientation if needed
+        //}
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

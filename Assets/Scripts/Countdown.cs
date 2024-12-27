@@ -110,6 +110,7 @@ public class Countdown : MonoBehaviour
         }
         if (Manager.isLastScene && !isCountdownStarted && !Manager.SAM_Canvas.enabled)
         {
+            
             CountdownCanvas.GetComponent<Canvas>().enabled = true;
             CanvasPanel.GetComponent<Image>().enabled = true;
             countdownText = countdown.GetComponent<TextMeshProUGUI>();
