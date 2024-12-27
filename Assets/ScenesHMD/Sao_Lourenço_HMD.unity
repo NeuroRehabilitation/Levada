@@ -108058,7 +108058,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.09850385, g: 0.09850385, b: 0.19845554, a: 1}
+    - _EdgeWaterColor: {r: 0.09850357, g: 0.09850357, b: 0.19845527, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -140462,6 +140462,11 @@ PrefabInstance:
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
