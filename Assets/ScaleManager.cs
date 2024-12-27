@@ -18,8 +18,9 @@ public class ScaleManager : MonoBehaviour
     private GameObject mainCamera;
     private GameObject UI_Controller;
     private GameObject Teleport_Controller;
-    private float distance = 2.0f;
-    private Vector3 offset = new Vector3(0,0,0);
+    public float distance = 2.0f;
+    public Vector3 offset;
+    public float smoothSpeed = 5f; // Speed for smooth positioning.
 
     void Awake()
     {
@@ -53,13 +54,20 @@ public class ScaleManager : MonoBehaviour
             coroutineStarted = true;
         }
 
-        //if(Manager.isRunning && coroutineStarted)
-        //{
-        //    Vector3 targetPosition = mainCamera.transform.position + mainCamera.transform.forward * distance + offset;
-        //    transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
-        //    transform.LookAt(mainCamera.transform);
-        //    transform.Rotate(0, 180, 0); // Correct orientation if needed
-        //}
+        if (Manager.isRunning && coroutineStarted)
+        {
+            // Calculate target position directly in the center of the XR camera's forward view.
+            Vector3 targetPosition = mainCamera.transform.position + mainCamera.transform.forward * distance + offset;
+
+            // Smoothly move the canvas to the target position.
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothSpeed);
+
+            // Ensure the canvas is always facing the XR camera.
+            transform.LookAt(mainCamera.transform);
+
+            // Adjust rotation to face the user properly (if needed, depending on your canvas setup).
+            transform.Rotate(0, 180, 0); // Rotates the canvas to face the user.
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -97828,6 +97828,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1607440743}
+    - target: {fileID: 3705747721586125377, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7112637891348131541, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -108058,7 +108063,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.09850357, g: 0.09850357, b: 0.19845527, a: 1}
+    - _EdgeWaterColor: {r: 0.0985027, g: 0.0985027, b: 0.19845435, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -140467,12 +140472,12 @@ PrefabInstance:
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4686571181147683081, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
