@@ -97827,11 +97827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1607440743}
+      objectReference: {fileID: 1607440745}
     - target: {fileID: 3705747721586125377, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
-      propertyPath: m_PlaneDistance
-      value: 10
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7112637891348131541, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
@@ -97871,12 +97871,12 @@ PrefabInstance:
     - target: {fileID: 7112637891348131541, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 7112637891348131541, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 7112637891348131541, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
@@ -108063,7 +108063,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.0985027, g: 0.0985027, b: 0.19845435, a: 1}
+    - _EdgeWaterColor: {r: 0.09848253, g: 0.09848253, b: 0.1984337, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -140466,7 +140466,17 @@ PrefabInstance:
       objectReference: {fileID: 1607440743}
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
       propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_PixelPerfect
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
@@ -140477,7 +140487,27 @@ PrefabInstance:
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_PlaneDistance
-      value: 10
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220926405894936982, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220926405894936982, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220926405894936982, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220926405894936982, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4686571181147683081, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
@@ -140534,6 +140564,16 @@ PrefabInstance:
       propertyPath: m_InteractionLayers.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5223492642011205245, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223492642011205245, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5393328467613991820, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_Enabled
@@ -140553,6 +140593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604201223117309336, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7771147833990839757, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
@@ -140634,6 +140679,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
+    - target: {fileID: 8057107906058326538, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057107906058326538, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7771147834593993281, guid: 4d9a9e2f212340a4e87aa7c40f741429,
@@ -140662,6 +140717,12 @@ Camera:
 --- !u!4 &1607440744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7771147834593993281, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+    type: 3}
+  m_PrefabInstance: {fileID: 1607440741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1607440745 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7771147833990839757, guid: 4d9a9e2f212340a4e87aa7c40f741429,
     type: 3}
   m_PrefabInstance: {fileID: 1607440741}
   m_PrefabAsset: {fileID: 0}
