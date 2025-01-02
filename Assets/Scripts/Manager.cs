@@ -222,10 +222,8 @@ public class Manager : MonoBehaviour
 
                 elapsed_time += Time.deltaTime;
                 
-                Debug.Log("Elapsed time = " + elapsed_time + " seconds");
+                //Debug.Log("Elapsed time = " + elapsed_time + " seconds");
             }
-
-            
 
             yield return null;
         }
