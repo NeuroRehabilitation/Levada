@@ -12,6 +12,7 @@ public class ScaleManager : MonoBehaviour
     public float interval = 1;
 
     private Canvas scaleCanvas;
+    private GameObject StressCanvas;
     private bool coroutineStarted = false;
     private GameObject FOV;
     private Image FOV_Image;
@@ -83,7 +84,9 @@ public class ScaleManager : MonoBehaviour
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
             gameObject.GetComponent<Canvas>().worldCamera = mainCamera.GetComponent<Camera>();
-            
+
+            StressCanvas = GameObject.FindGameObjectWithTag("StressCanvas");
+
         }
     }   
 
@@ -123,11 +126,12 @@ public class ScaleManager : MonoBehaviour
     public static void SetCameraToUI(GameObject mainCamera)
     {
         int layerIndex = LayerMask.NameToLayer("UI");
-        LayerMask layerMask = 1 << layerIndex;
+        //LayerMask layerMask = 1 << layerIndex;
+        LayerMask layerMask = 1;
 
         mainCamera.GetComponent<Camera>().cullingMask = layerMask;
-        mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
-        mainCamera.GetComponent<Camera>().backgroundColor = Color.black;
+        //mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
+        //mainCamera.GetComponent<Camera>().backgroundColor = Color.black;
     }
 
     private IEnumerator ShowScale()
@@ -137,6 +141,8 @@ public class ScaleManager : MonoBehaviour
             yield return new WaitForSeconds(interval*60);
 
             Manager.instance.PauseTimer();
+
+            StressCanvas.GetComponent<Canvas>().enabled = false;
 
             AdjustCameraSettings(mainCamera, scaleCanvas);
 
@@ -150,13 +156,15 @@ public class ScaleManager : MonoBehaviour
             }
 
             SetTeleportController();
-            ResetCameraSettings(mainCamera);
+            //ResetCameraSettings(mainCamera);
 
             scaleCanvas.enabled = false;
             SAM.submitButtonPressed = false;
             FOV_Image.enabled = true;
 
             Manager.instance.ResumeTimer();
+
+            StressCanvas.GetComponent<Canvas>().enabled = true;
         }
     }
 

@@ -7,6 +7,7 @@ public class Countdown : MonoBehaviour
 {
     public float countdownTime = 6f; // Time in seconds for the countdown
     private GameObject CountdownCanvas;
+    private GameObject StressCanvas;
     private GameObject countdown;
     private TextMeshProUGUI countdownText; // Reference to the UI text element
 
@@ -48,6 +49,7 @@ public class Countdown : MonoBehaviour
         {
             countdown = GameObject.FindGameObjectWithTag("CountdownText");
             CountdownCanvas = GameObject.FindGameObjectWithTag("CountdownCanvas");
+            StressCanvas = GameObject.FindGameObjectWithTag("StressCanvas");
             CanvasPanel = GameObject.FindGameObjectWithTag("Panel");
             FOV = GameObject.Find("FOV");
             FOV_Image = FOV.GetComponentInChildren<Image>();
@@ -59,6 +61,7 @@ public class Countdown : MonoBehaviour
                 if (countdown != null)
                 {
                     CountdownCanvas.GetComponent<Canvas>().enabled = true;
+                    StressCanvas.GetComponent<Canvas>().enabled = false;
                     countdownText = countdown.GetComponent<TextMeshProUGUI>();
                     countdownText.text = "Prepare to Start!";
                 }
@@ -93,6 +96,7 @@ public class Countdown : MonoBehaviour
             {
                 CountdownCanvas.GetComponent<Canvas>().enabled = false;
                 CanvasPanel.GetComponent<Image>().enabled = false;
+                StressCanvas.GetComponent<Canvas>().enabled = true;
                 if(Manager != null)
                 {
                     Manager.StartTimer();    
@@ -110,7 +114,7 @@ public class Countdown : MonoBehaviour
         }
         if (Manager.isLastScene && !isCountdownStarted && !Manager.SAM_Canvas.enabled)
         {
-            
+            StressCanvas.GetComponent<Canvas>().enabled = false;
             CountdownCanvas.GetComponent<Canvas>().enabled = true;
             CanvasPanel.GetComponent<Image>().enabled = true;
             countdownText = countdown.GetComponent<TextMeshProUGUI>();
