@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1553701012776305418}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -108063,7 +108063,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.09848019, g: 0.09848019, b: 0.19843134, a: 1}
+    - _EdgeWaterColor: {r: 0.09844998, g: 0.09844998, b: 0.19840029, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -140487,7 +140487,7 @@ PrefabInstance:
     - target: {fileID: 1124876351997281513, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_PlaneDistance
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1220926405894936982, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
@@ -140597,6 +140597,11 @@ PrefabInstance:
     - target: {fileID: 6604201223117309336, guid: 4d9a9e2f212340a4e87aa7c40f741429,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670876995081001349, guid: 4d9a9e2f212340a4e87aa7c40f741429,
+        type: 3}
+      propertyPath: m_OcclusionCulling
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7771147833990839757, guid: 4d9a9e2f212340a4e87aa7c40f741429,

@@ -142,7 +142,7 @@ public class ScaleManager : MonoBehaviour
 
             Manager.instance.PauseTimer();
 
-            StressCanvas.GetComponent<Canvas>().enabled = false;
+            StressCanvas.SetActive(false);
 
             AdjustCameraSettings(mainCamera, scaleCanvas);
 
@@ -164,7 +164,7 @@ public class ScaleManager : MonoBehaviour
 
             Manager.instance.ResumeTimer();
 
-            StressCanvas.GetComponent<Canvas>().enabled = true;
+            StressCanvas.SetActive(true);
         }
     }
 
