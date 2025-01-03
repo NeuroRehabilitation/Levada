@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientIntensity: 0.95000017
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 980c935fd9e655a4a9b624f533125c13, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 11f9a890b6e86384aaf4d69fbe79a6c1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -97827,11 +97827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1607440745}
+      objectReference: {fileID: 1607440743}
     - target: {fileID: 3705747721586125377, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: 660722409
       objectReference: {fileID: 0}
     - target: {fileID: 7112637891348131541, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
         type: 3}
@@ -108063,7 +108063,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.09848253, g: 0.09848253, b: 0.1984337, a: 1}
+    - _EdgeWaterColor: {r: 0.09848019, g: 0.09848019, b: 0.19843134, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -140717,12 +140717,6 @@ Camera:
 --- !u!4 &1607440744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7771147834593993281, guid: 4d9a9e2f212340a4e87aa7c40f741429,
-    type: 3}
-  m_PrefabInstance: {fileID: 1607440741}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &1607440745 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7771147833990839757, guid: 4d9a9e2f212340a4e87aa7c40f741429,
     type: 3}
   m_PrefabInstance: {fileID: 1607440741}
   m_PrefabAsset: {fileID: 0}
