@@ -33,13 +33,13 @@ public class StressBar_Manager : MonoBehaviour
     private void Update()
     {
         // Calculate target position directly in the center of the XR camera's forward view.
-        Vector3 targetPosition = mainCamera.transform.position + mainCamera.transform.forward * distance + offset;
+        Vector3 targetPosition = mainCamera.transform.GetChild(0).position + mainCamera.transform.GetChild(0).transform.forward * distance + offset;
 
         // Smoothly move the canvas to the target position.
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothSpeed);
 
         // Ensure the canvas is always facing the XR camera.
-        transform.LookAt(mainCamera.transform);
+        transform.LookAt(mainCamera.transform.GetChild(0).transform);
 
         // Adjust rotation to face the user properly (if needed, depending on your canvas setup).
         transform.Rotate(0, 180, 0); // Rotates the canvas to face the user.
