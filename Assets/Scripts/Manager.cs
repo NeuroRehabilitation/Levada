@@ -59,7 +59,9 @@ public class Manager : MonoBehaviour
     public GameObject FOV;
     private Image FOV_Image;
     public ImageScaler imageScaler;
+    private GameObject arrow;
     public float FOV_multiplier;
+    public float smoothSpeed = 5f;
 
     public static Manager instance;
     private LSLInput LSLInput;
@@ -115,6 +117,8 @@ public class Manager : MonoBehaviour
             StartCoroutine(CheckXRPosition());
 
             LSLInput = GameObject.FindObjectOfType<LSLInput>();
+
+            arrow = GameObject.FindGameObjectWithTag("arrow");
 
             FOV_Image = FOV.GetComponentInChildren<Image>();
             FOV_multiplier = imageScaler.current_Multiplier;
@@ -182,7 +186,7 @@ public class Manager : MonoBehaviour
 
         //else if (Input.GetKeyDown(KeyCode.Alpha3))
         //{
-        //    SceneManager.LoadScene("Sao_Lourenço_HMD");
+        //    SceneManager.LoadScene("Sao_Lourenï¿½o_HMD");
         //}
 
         //else if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -197,7 +201,27 @@ public class Manager : MonoBehaviour
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
 
-            imageScaler.current_Multiplier += (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
+            //imageScaler.current_Multiplier += (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
+            var currentStress = (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
+
+            Vector3 targetPosition;
+
+            if(currentStress == 0)
+            {
+                targetPosition = new Vector3(StressBar_Manager.greenPosition.transform.position.x, arrow.transform.position.y, arrow.transform.position.z);
+                arrow.transform.position = Vector3.Lerp(arrow.transform.position, targetPosition, Time.deltaTime * smoothSpeed);
+            }
+            else if(currentStress == 1)
+            {
+                targetPosition = new Vector3(StressBar_Manager.yellowPosition.transform.position.x, arrow.transform.position.y, arrow.transform.position.z);
+                arrow.transform.position = Vector3.Lerp(arrow.transform.position, targetPosition, Time.deltaTime * smoothSpeed);
+            }
+            else
+            {
+                targetPosition = new Vector3(StressBar_Manager.redPosition.transform.position.x, arrow.transform.position.y, arrow.transform.position.z);
+                arrow.transform.position = Vector3.Lerp(arrow.transform.position, targetPosition, Time.deltaTime * smoothSpeed);
+            }
+
             lastGameVariable = LSLInput.GameVariable;
         }
     }
