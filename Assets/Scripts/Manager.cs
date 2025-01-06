@@ -204,23 +204,6 @@ public class Manager : MonoBehaviour
             //imageScaler.current_Multiplier += (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
             var currentStress = (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
 
-            Vector3 targetPosition;
-
-            if(currentStress == 0)
-            {
-                targetPosition = new Vector3(StressBar_Manager.greenPosition.transform.position.x, arrow.transform.position.y, arrow.transform.position.z);
-                arrow.transform.position = Vector3.Lerp(arrow.transform.position, targetPosition, Time.deltaTime * smoothSpeed);
-            }
-            else if(currentStress == 1)
-            {
-                targetPosition = new Vector3(StressBar_Manager.yellowPosition.transform.position.x, arrow.transform.position.y, arrow.transform.position.z);
-                arrow.transform.position = Vector3.Lerp(arrow.transform.position, targetPosition, Time.deltaTime * smoothSpeed);
-            }
-            else
-            {
-                targetPosition = new Vector3(StressBar_Manager.redPosition.transform.position.x, arrow.transform.position.y, arrow.transform.position.z);
-                arrow.transform.position = Vector3.Lerp(arrow.transform.position, targetPosition, Time.deltaTime * smoothSpeed);
-            }
 
             lastGameVariable = LSLInput.GameVariable;
         }

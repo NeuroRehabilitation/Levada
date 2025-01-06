@@ -7,10 +7,7 @@ public class StressBar_Manager : MonoBehaviour
 {
     private static StressBar_Manager instance;
 
-    public transform redPosition;
-    public transform yellowPosition;
-    public transform greenPosition;
-    
+
     private GameObject mainCamera;
     public float distance = 2.0f;
     public Vector3 offset;
