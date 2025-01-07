@@ -1401,11 +1401,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
+    m_NormalTrigger: 
+    m_HighlightedTrigger: 
+    m_PressedTrigger: 
+    m_SelectedTrigger: 
+    m_DisabledTrigger: 
   m_Interactable: 0
   m_TargetGraphic: {fileID: 258180003}
   m_OnClick:
@@ -1413,7 +1413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 478946628}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-        m_MethodName: SelectScene
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1650,6 +1650,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
+      propertyPath: interval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
+      propertyPath: smoothSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_Pivot.x

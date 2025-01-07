@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StressBar_Manager : MonoBehaviour
 {
-    private static StressBar_Manager instance;
-
+    public static StressBar_Manager instance;
 
     private GameObject mainCamera;
     public float distance = 2.0f;
