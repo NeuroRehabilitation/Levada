@@ -97843,6 +97843,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8644572942913914407, guid: 95bc4d0f2a901a04c83cbc62cc87807b,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 95bc4d0f2a901a04c83cbc62cc87807b, type: 3}
@@ -107968,7 +107973,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.09843915, g: 0.09843915, b: 0.19838914, a: 1}
+    - _EdgeWaterColor: {r: 0.098438986, g: 0.098438986, b: 0.19838896, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}

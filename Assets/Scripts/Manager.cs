@@ -59,9 +59,9 @@ public class Manager : MonoBehaviour
     public GameObject FOV;
     private Image FOV_Image;
     public ImageScaler imageScaler;
-    private GameObject arrow;
+    private GameObject stressSlider;
     public float FOV_multiplier;
-    public float smoothSpeed = 5f;
+    private float smoothSpeed = 5f;
 
     public static Manager instance;
     private LSLInput LSLInput;
@@ -118,10 +118,9 @@ public class Manager : MonoBehaviour
 
             LSLInput = GameObject.FindObjectOfType<LSLInput>();
 
-            arrow = GameObject.FindGameObjectWithTag("arrow");
-
             FOV_Image = FOV.GetComponentInChildren<Image>();
             FOV_multiplier = imageScaler.current_Multiplier;
+            stressSlider = GameObject.FindGameObjectWithTag("StressSlider");
 
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -195,15 +194,17 @@ public class Manager : MonoBehaviour
         //}
     }
 
+
     private IEnumerator UpdateGameVariable()
     {
         while (true)
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
+            
+            float currentValue = stressSlider.GetComponent<Slider>().value;
 
             //imageScaler.current_Multiplier += (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
-            var currentStress = (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
-
+            stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, Time.deltaTime*smoothSpeed);
 
             lastGameVariable = LSLInput.GameVariable;
         }
