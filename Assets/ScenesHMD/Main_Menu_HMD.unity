@@ -1652,7 +1652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: interval
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: smoothSpeed
@@ -2870,7 +2870,7 @@ PrefabInstance:
     - target: {fileID: 7675007392852524614, guid: 0d75832d969023948bf02aa34fe0670f,
         type: 3}
       propertyPath: Channels.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7675007392852524614, guid: 0d75832d969023948bf02aa34fe0670f,
         type: 3}
@@ -2880,7 +2880,7 @@ PrefabInstance:
     - target: {fileID: 7675007392852524614, guid: 0d75832d969023948bf02aa34fe0670f,
         type: 3}
       propertyPath: Channels.Array.data[1]
-      value: Arousal
+      value: Value
       objectReference: {fileID: 0}
     - target: {fileID: 7675007392852524615, guid: 0d75832d969023948bf02aa34fe0670f,
         type: 3}
