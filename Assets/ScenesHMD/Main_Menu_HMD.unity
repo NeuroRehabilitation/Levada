@@ -1658,6 +1658,11 @@ PrefabInstance:
       propertyPath: smoothSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6057687230266015420, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6292622964390797651, guid: 77ef1cc95f2b01145852c0afa1aab4ee,
         type: 3}
       propertyPath: m_Pivot.x
