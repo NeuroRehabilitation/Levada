@@ -1652,7 +1652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: interval
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: smoothSpeed

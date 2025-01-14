@@ -203,8 +203,23 @@ public class Manager : MonoBehaviour
             
             float currentValue = stressSlider.GetComponent<Slider>().value;
 
-            //imageScaler.current_Multiplier += (LSLInput.GameVariable-Mathf.Floor(LSLInput.GameVariable));
-            stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, Time.deltaTime*smoothSpeed);
+            float elapsedTime = 0f;
+            float duration = 1f / smoothSpeed;
+
+            // Smoothly interpolate the slider value
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / duration; // Normalized time (0 to 1)
+                stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, t);
+                yield return null; // Wait until the next frame
+            }
+
+            stressSlider.GetComponent<Slider>().value = LSLInput.GameVariable;
+
+            //stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, Time.deltaTime*smoothSpeed);
+            //stressSlider.GetComponent<Slider>().value = LSLInput.GameVariable;
+            //Debug.Log("Slider = " + stressSlider.GetComponent<Slider>().value);
 
             lastGameVariable = LSLInput.GameVariable;
         }

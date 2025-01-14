@@ -109,7 +109,7 @@ public class ScaleManager : MonoBehaviour
         //Calculate final position for the canvas
         Vector3 new_position = new Vector3(xr_position.x + xr_forward.x, xr_position.y + xr_forward.y, xr_position.z + xr_forward.z);
 
-        SetCameraToUI(mainCamera);
+        //SetCameraToUI(mainCamera);
 
         scaleCanvas.transform.position = new_position;
         scaleCanvas.transform.rotation = desiredRotation;
@@ -126,8 +126,8 @@ public class ScaleManager : MonoBehaviour
     public static void SetCameraToUI(GameObject mainCamera)
     {
         int layerIndex = LayerMask.NameToLayer("UI");
-        //LayerMask layerMask = 1 << layerIndex;
-        LayerMask layerMask = 1;
+        LayerMask layerMask = 1 << layerIndex;
+        //LayerMask layerMask = 1;
 
         mainCamera.GetComponent<Camera>().cullingMask = layerMask;
         //mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
@@ -139,6 +139,8 @@ public class ScaleManager : MonoBehaviour
         while (Manager.isRunning)
         {
             yield return new WaitForSeconds(interval*60);
+            Debug.Log(LSLInput.number_samples);
+            //yield return new WaitUntil(() => LSLInput.number_samples > 6);
 
             Manager.instance.PauseTimer();
 
