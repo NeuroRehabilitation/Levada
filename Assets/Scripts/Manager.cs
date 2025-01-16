@@ -61,7 +61,7 @@ public class Manager : MonoBehaviour
     public ImageScaler imageScaler;
     private GameObject stressSlider;
     public float FOV_multiplier;
-    private float smoothSpeed = 5f;
+    private float smoothSpeed = 2f;
 
     public static Manager instance;
     private LSLInput LSLInput;
@@ -201,25 +201,24 @@ public class Manager : MonoBehaviour
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
             
-            float currentValue = stressSlider.GetComponent<Slider>().value;
-
-            float elapsedTime = 0f;
-            float duration = 1f / smoothSpeed;
-
-            // Smoothly interpolate the slider value
-            while (elapsedTime < duration)
+            if(SAM_Canvas.enabled == false)
             {
-                elapsedTime += Time.deltaTime;
-                float t = elapsedTime / duration; // Normalized time (0 to 1)
-                stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, t);
-                yield return null; // Wait until the next frame
+                float currentValue = stressSlider.GetComponent<Slider>().value;
+
+                float elapsedTime = 0f;
+                float duration = 1f / smoothSpeed;
+
+                // Smoothly interpolate the slider value
+                while (elapsedTime < duration)
+                {
+                    elapsedTime += Time.deltaTime;
+                    float t = elapsedTime / duration; // Normalized time (0 to 1)
+                    stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, t);
+                    yield return null; // Wait until the next frame
+                }
+
+                stressSlider.GetComponent<Slider>().value = LSLInput.GameVariable;
             }
-
-            stressSlider.GetComponent<Slider>().value = LSLInput.GameVariable;
-
-            //stressSlider.GetComponent<Slider>().value = Mathf.Lerp(currentValue, LSLInput.GameVariable, Time.deltaTime*smoothSpeed);
-            //stressSlider.GetComponent<Slider>().value = LSLInput.GameVariable;
-            //Debug.Log("Slider = " + stressSlider.GetComponent<Slider>().value);
 
             lastGameVariable = LSLInput.GameVariable;
         }

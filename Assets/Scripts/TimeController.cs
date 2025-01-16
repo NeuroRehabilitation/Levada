@@ -31,7 +31,7 @@ public class TimeController : MonoBehaviour
         if (isRunning)
         {
             elapsedTime += Time.deltaTime;
-            //Debug.Log(elapsedTime);
+            
         }
 
         if (isRunning && elapsedTime >= duration)

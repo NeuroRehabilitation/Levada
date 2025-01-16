@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StreamName: PID_Output
   GameVariable: 0
+  scaleSAM: {fileID: 900334548}
 --- !u!1 &48566729
 GameObject:
   m_ObjectHideFlags: 0

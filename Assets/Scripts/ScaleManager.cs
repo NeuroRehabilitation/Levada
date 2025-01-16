@@ -13,6 +13,7 @@ public class ScaleManager : MonoBehaviour
 
     private Canvas scaleCanvas;
     private GameObject StressCanvas;
+    private GameObject stressSlider;
     private bool coroutineStarted = false;
     private GameObject FOV;
     private Image FOV_Image;
@@ -45,6 +46,7 @@ public class ScaleManager : MonoBehaviour
         scaleCanvas = gameObject.GetComponent<Canvas>();
         FOV = GameObject.Find("FOV");
         FOV_Image = FOV.GetComponentInChildren<Image>();
+        
     }
 
     private void Update()
@@ -86,6 +88,7 @@ public class ScaleManager : MonoBehaviour
             gameObject.GetComponent<Canvas>().worldCamera = mainCamera.GetComponent<Camera>();
 
             StressCanvas = GameObject.FindGameObjectWithTag("StressCanvas");
+            stressSlider = GameObject.FindGameObjectWithTag("StressSlider");
 
         }
     }   
@@ -138,9 +141,11 @@ public class ScaleManager : MonoBehaviour
     {
         while (Manager.isRunning)
         {
-            yield return new WaitForSeconds(interval*60);
-            Debug.Log(LSLInput.number_samples);
-            //yield return new WaitUntil(() => LSLInput.number_samples > 6);
+            //yield return new WaitForSeconds(interval*60);
+
+            yield return new WaitUntil(() => (LSLInput.number_samples > 6 && stressSlider.GetComponent<Slider>().value >= 1.0f));
+
+            LSLInput.number_samples = 0;
 
             Manager.instance.PauseTimer();
 
