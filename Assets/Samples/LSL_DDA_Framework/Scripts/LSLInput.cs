@@ -23,6 +23,8 @@ public class LSLInput : MonoBehaviour
     public float GameVariable;
     private bool startedCoroutine = false;
     private static LSLInput instance;
+    public static int number_samples = 0;
+    public Canvas scaleSAM;
 
     void Awake()
     {
@@ -85,8 +87,12 @@ public class LSLInput : MonoBehaviour
             if(samples_returned > 0)
             {
                 GameVariable = data_buffer[0,0];
-                Debug.Log("GameVariable = " + GameVariable);
-                
+
+                if(scaleSAM.enabled == false)
+                {
+                    number_samples += 1;
+                    
+                }
             }
             yield return new WaitForSeconds(1.0f);
         }
