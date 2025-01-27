@@ -35,9 +35,9 @@ public class Manager : MonoBehaviour
 
     [Header("SAM")]
     public Canvas SAM_Canvas;
-    public string[] SAM_answers = new string[2];
+    private string[] SAM_answers = new string[2];
     //public string[] VAS_answers = new string[4];
-    public string[] DataToSave;
+    private string[] DataToSave;
 
     [Header("User ID")]
     public TMP_InputField UserID;
@@ -103,7 +103,7 @@ public class Manager : MonoBehaviour
 
         if (Scenes.Count > 0) { Shuffle(); }
 
-        CSV_writer.AddData("Scene", "Valence", "Arousal");
+        //CSV_writer.AddData("Scene", "Valence", "Arousal");
 
         SAM.StartStream();
         //VAS.StartStream();
@@ -218,6 +218,10 @@ public class Manager : MonoBehaviour
                 }
 
                 stressSlider.GetComponent<Slider>().value = LSLInput.GameVariable;
+                string[] saveData = new string[2];
+                saveData[0] = "Slider";
+                saveData[1] = (stressSlider.GetComponent<Slider>().value).ToString();
+                WriteData(saveData);
             }
 
             lastGameVariable = LSLInput.GameVariable;
@@ -341,6 +345,7 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene(Scenes[randomIndex]);
         currentScene.Add(SceneManager.GetSceneByBuildIndex(Scenes[randomIndex]).name);
         currentScene.Add("0");
+        WriteData(currentScene.ToArray());
         Markers.StreamData(currentScene.ToArray());
         Scenes.RemoveAt(randomIndex);
     }
@@ -355,14 +360,8 @@ public class Manager : MonoBehaviour
         Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings-1).ToList();
     }
 
-    public void WriteData()
+    public void WriteData(string[] DataToSave)
     {
-        string[] row_data = new string[3];
-        row_data[0] = currentScene[0];
-        row_data[1] = SAM_answers[0];
-        row_data[2] = SAM_answers[1];
-
-        DataToSave = row_data;
         CSV_writer.AddData(DataToSave);
     }
 
@@ -396,7 +395,7 @@ public class Manager : MonoBehaviour
     {
 
         //Comment this line below when you build the project
-        //UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
         StopAllCoroutines();
         CSV_writer.WriteToCSV();
         CSV_writer.CloseCSV();

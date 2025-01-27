@@ -57,9 +57,12 @@ public class SAM : MonoBehaviour
         {
             answers[0] = "Arousal";
             answers[1] = selected.name;
-            Manager.SAM_answers[currentToggle] = selected.name;
+            string[] saveData = new string[2];
+            saveData[0] = "Arousal";
+            saveData[1] = selected.name;
+            //Manager.SAM_answers[currentToggle] = selected.name;
             Manager.SAM.StreamData(answers);
-            Manager.WriteData();
+            Manager.WriteData(saveData);
             submitButtonPressed = true;
             ResetToggleGroup();
         }
