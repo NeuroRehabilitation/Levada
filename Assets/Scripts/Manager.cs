@@ -65,7 +65,7 @@ public class Manager : MonoBehaviour
 
     public static Manager instance;
     private LSLInput LSLInput;
-    private float lastGameVariable = 0.0f;
+    private float lastGameVariable = -1;
 
     public static bool isLastScene = false;
     private bool timerStarted = false;
@@ -121,6 +121,11 @@ public class Manager : MonoBehaviour
             FOV_Image = FOV.GetComponentInChildren<Image>();
             FOV_multiplier = imageScaler.current_Multiplier;
             stressSlider = GameObject.FindGameObjectWithTag("StressSlider");
+
+            if(lastGameVariable >= 0.0)
+            {
+                stressSlider.GetComponent<Slider>().value = lastGameVariable;
+            }
 
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
