@@ -20,7 +20,7 @@ public class CSV : MonoBehaviour
 
     // Add a new row of data to the CSV
     public void AddData(params string[] values)
-    {
+    {        
         rowData.Add(values);
     }
 
