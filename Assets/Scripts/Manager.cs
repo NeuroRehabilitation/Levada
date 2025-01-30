@@ -126,6 +126,7 @@ public class Manager : MonoBehaviour
             {
                 stressSlider.GetComponent<Slider>().value = lastGameVariable;
             }
+               
 
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -205,9 +206,10 @@ public class Manager : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
-            
-            if(SAM_Canvas.enabled == false)
+
+            if(SAM_Canvas.enabled == false && lastGameVariable > -1)
             {
+                
                 float currentValue = stressSlider.GetComponent<Slider>().value;
 
                 float elapsedTime = 0f;
@@ -230,6 +232,7 @@ public class Manager : MonoBehaviour
             }
 
             lastGameVariable = LSLInput.GameVariable;
+            
         }
     }
 
