@@ -352,7 +352,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.55
+  m_fontSize: 23.7
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -656,7 +656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92874213
 GameObject:
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 23.7
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1495,7 +1495,7 @@ Transform:
   - {fileID: 1706301466}
   - {fileID: 15936060}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &296740177
 MonoBehaviour:
@@ -3065,7 +3065,7 @@ RectTransform:
   m_Children:
   - {fileID: 1569344499}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3117,10 +3117,10 @@ MonoBehaviour:
   UserID: {fileID: 640658761}
   StartButton_Desktop: {fileID: 1992175824}
   StartButton_HMD: {fileID: 1503633265}
-  SAM: {fileID: 653334897}
-  Markers: {fileID: 1706301467}
+  SAM: {fileID: 0}
+  Markers: {fileID: 0}
   FOV: {fileID: 1214465712}
-  imageScaler: {fileID: 1852371866}
+  imageScaler: {fileID: 0}
   FOV_multiplier: 0
 --- !u!4 &478946629
 Transform:
@@ -3135,7 +3135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &478946630
 MonoBehaviour:
@@ -4008,18 +4008,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 653334895}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &653334897 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7675007392852524614, guid: 0d75832d969023948bf02aa34fe0670f,
-    type: 3}
-  m_PrefabInstance: {fileID: 653334895}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18ab845f61abee48a13f0b26167a88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &717115045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,7 +4965,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.8
+  m_fontSize: 23.7
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5112,7 +5100,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.9
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5339,7 +5327,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165540841
 GameObject:
@@ -5390,18 +5378,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 635897a6c6928b544985b3ae2bfab0df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1287160219 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5559871947530617207, guid: 5c1a4b4f71194104daf0439f65134cb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1312375694}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57390840a94688b4f8eb7bb144f77c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1312375694
@@ -6232,7 +6208,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1287160219}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Countdown, Assembly-CSharp
         m_MethodName: StartCountdown
         m_Mode: 1
@@ -6606,7 +6582,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 23.7
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6773,18 +6749,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1706301465}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1706301467 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7675007392852524614, guid: 0d75832d969023948bf02aa34fe0670f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706301465}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18ab845f61abee48a13f0b26167a88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1781606782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6823,18 +6787,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1852371866 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4949305318694719602, guid: 575c141ef9d0372409ed5913f8429692,
-    type: 3}
-  m_PrefabInstance: {fileID: 1366251551}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a5b34b3eda55c4db5865057de73775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1884157701
 GameObject:
   m_ObjectHideFlags: 0
@@ -7097,7 +7049,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.25
+  m_fontSize: 18
   m_fontSizeBase: 22.41
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7564,9 +7516,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1287160219}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Countdown, Assembly-CSharp
-        m_MethodName: StartCountdown
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7888,7 +7840,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85.75
+  m_fontSize: 29.4
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8002,5 +7954,5 @@ Transform:
   - {fileID: 1165540842}
   - {fileID: 370314839}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
