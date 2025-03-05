@@ -1653,7 +1653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: interval
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 900334542, guid: 77ef1cc95f2b01145852c0afa1aab4ee, type: 3}
       propertyPath: smoothSpeed
@@ -2056,13 +2056,6 @@ MonoBehaviour:
   duration: 15
   CSV_writer: {fileID: 0}
   SAM_Canvas: {fileID: 900334548}
-  SAM_answers:
-  - 
-  - 
-  DataToSave:
-  - 
-  - 
-  - 
   UserID: {fileID: 640658761}
   StartButton_Desktop: {fileID: 1992175824}
   StartButton_HMD: {fileID: 1503633265}

@@ -209,7 +209,7 @@ public class Manager : MonoBehaviour
 
             if(SAM_Canvas.enabled == false && lastGameVariable > -1)
             {
-                
+
                 float currentValue = stressSlider.GetComponent<Slider>().value;
 
                 float elapsedTime = 0f;
