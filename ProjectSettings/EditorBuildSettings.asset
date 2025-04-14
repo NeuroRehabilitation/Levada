@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/HMD or KAVE.unity
+    guid: be88481d3031a7f45b5c96797c67d9a1
+  - enabled: 1
     path: Assets/ScenesHMD/Main_Menu_HMD.unity
     guid: 2df394df12f4c1d459e2b62d33205529
   - enabled: 1
