@@ -72,23 +72,45 @@ public class PictureTaking : MonoBehaviour
         Debug.Log("Screenshot saved from hand view to: " + screenshotPath);
 
         float detectionDistance = 30f;
-        float coneAngle = 30f;
+        float coneAngle = 90f;
         List<string> detectedNames = new List<string>();
-        Collider[] nearbyColliders = Physics.OverlapSphere(handTransform.position, detectionDistance);
 
-        foreach (var col in nearbyColliders)
+        Terrain terrain = Terrain.activeTerrain;
+        if (terrain != null)
         {
-            Vector3 directionToObject = (col.transform.position - handTransform.position).normalized;
-            float angle = Vector3.Angle(handTransform.forward, directionToObject);
+            TerrainData data = terrain.terrainData;
+            Vector3 terrainPosition = terrain.transform.position;
 
-            if (angle < coneAngle)
+            foreach (TreeInstance tree in data.treeInstances)
             {
-                detectedNames.Add(col.gameObject.name);
+                Vector3 worldTreePos = Vector3.Scale(tree.position, data.size) + terrainPosition;
+
+                float distance = Vector3.Distance(handTransform.position, worldTreePos);
+                if (distance <= detectionDistance)
+                {
+                    Vector3 directionToTree = worldTreePos - handTransform.position;
+                    directionToTree.y = 0;
+                    Vector3 forwardFlat = handTransform.forward;
+                    forwardFlat.y = 0;
+
+                    float angle = Vector3.Angle(forwardFlat.normalized, directionToTree.normalized);
+                    if (angle <= coneAngle)
+                    {
+                        Debug.DrawLine(handTransform.position, worldTreePos, Color.green, 2f);
+
+                        string treeName = "Tree";
+                        int prototypeIndex = tree.prototypeIndex;
+                        if (prototypeIndex >= 0 && prototypeIndex < data.treePrototypes.Length)
+                        {
+                            var prefab = data.treePrototypes[prototypeIndex].prefab;
+                            if (prefab != null) treeName = prefab.name;
+                        }
+
+                        detectedNames.Add(treeName);
+                    }
+                }
             }
         }
-
-        Debug.DrawRay(handTransform.position, handTransform.forward * detectionDistance, Color.red, 2f);
-
 
         PictureMetadata metadata = new PictureMetadata
         {
