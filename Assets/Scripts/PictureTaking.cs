@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PictureTaking : MonoBehaviour
 {
@@ -71,7 +72,7 @@ public class PictureTaking : MonoBehaviour
 
         Debug.Log("Screenshot saved from hand view to: " + screenshotPath);
 
-        float detectionDistance = 30f;
+        float detectionDistance = 10f;
         float coneAngle = 90f;
         List<string> detectedNames = new List<string>();
 
@@ -96,7 +97,7 @@ public class PictureTaking : MonoBehaviour
                     float angle = Vector3.Angle(forwardFlat.normalized, directionToTree.normalized);
                     if (angle <= coneAngle)
                     {
-                        Debug.DrawLine(handTransform.position, worldTreePos, Color.green, 2f);
+                        //Debug.DrawLine(handTransform.position, worldTreePos, Color.green, 2f);
 
                         string treeName = "Tree";
                         int prototypeIndex = tree.prototypeIndex;
@@ -115,6 +116,7 @@ public class PictureTaking : MonoBehaviour
         PictureMetadata metadata = new PictureMetadata
         {
             timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            scene = SceneManager.GetActiveScene().name,
             position = handTransform.position,
             eulerRotation = handTransform.rotation.eulerAngles,
             forwardVector = handTransform.forward,
@@ -135,6 +137,7 @@ public class PictureTaking : MonoBehaviour
 public class PictureMetadata
 {
     public string timestamp;
+    public string scene;
     public Vector3 position;
     public Vector3 eulerRotation;
     public Vector3 forwardVector;
