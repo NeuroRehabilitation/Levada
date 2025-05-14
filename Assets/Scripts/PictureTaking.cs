@@ -9,6 +9,10 @@ public class PictureTaking : MonoBehaviour
     public InputActionProperty captureButton;
     public Transform handTransform;
 
+
+    private Shader depthShader;
+
+
     void OnEnable()
     {
         captureButton.action.Enable();
@@ -72,9 +76,40 @@ public class PictureTaking : MonoBehaviour
 
         Debug.Log("Screenshot saved from hand view to: " + screenshotPath);
 
+        //Depth map here
+        depthShader = Shader.Find("Hidden/CustomDepth");
+        if (depthShader == null)
+        {
+            Debug.LogError("Custom depth shader not found!");
+            yield break;
+        }
+
+        RenderTexture depthRT = new RenderTexture(width, height, 24, RenderTextureFormat.ARGB32);
+        Texture2D depthMap = new Texture2D(width, height, TextureFormat.RGB24, false);
+
+        tempCam.targetTexture = depthRT;
+        tempCam.clearFlags = CameraClearFlags.SolidColor;
+        tempCam.backgroundColor = Color.white;
+        tempCam.cullingMask = -1; 
+        tempCam.RenderWithShader(depthShader, "");
+
+        RenderTexture.active = depthRT;
+        depthMap.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        depthMap.Apply();
+
+        string depthPath = Application.persistentDataPath + "/" + baseFilename + "_depth.png";
+        System.IO.File.WriteAllBytes(depthPath, depthMap.EncodeToPNG());
+
+        RenderTexture.active = null;
+        depthRT.Release();
+        Destroy(depthRT);
+        Destroy(depthMap);
+
+
+        //Detect terrain here
         float detectionDistance = 10f;
         float coneAngle = 90f;
-        List<string> detectedNames = new List<string>();
+        List<DetectedObject> detectedNames = new List<DetectedObject>();
 
         Terrain terrain = Terrain.activeTerrain;
         if (terrain != null)
@@ -107,7 +142,14 @@ public class PictureTaking : MonoBehaviour
                             if (prefab != null) treeName = prefab.name;
                         }
 
-                        detectedNames.Add(treeName);
+                        Vector3 relativePosition = handTransform.InverseTransformPoint(worldTreePos);
+
+                        detectedNames.Add(new DetectedObject
+                        {
+                            name = treeName,
+                            relativePosition = relativePosition,
+                            distance = distance
+                        });
                     }
                 }
             }
@@ -141,5 +183,13 @@ public class PictureMetadata
     public Vector3 position;
     public Vector3 eulerRotation;
     public Vector3 forwardVector;
-    public string[] detectedObjects;
+    public DetectedObject[] detectedObjects;
+}
+
+[System.Serializable]
+public class DetectedObject
+{
+    public string name;
+    public Vector3 relativePosition;
+    public float distance;
 }
