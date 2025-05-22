@@ -88,6 +88,8 @@ public class LSLInput : MonoBehaviour
             {
                 GameVariable = data_buffer[0,0];
 
+                Debug.Log(GameVariable);
+
                 if(scaleSAM.enabled == false)
                 {
                     number_samples += 1;
