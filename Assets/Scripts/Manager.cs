@@ -122,7 +122,7 @@ public class Manager : MonoBehaviour
             FOV_multiplier = imageScaler.current_Multiplier;
             stressSlider = GameObject.FindGameObjectWithTag("StressSlider");
 
-            if(lastGameVariable >= 0.0)
+            if(lastGameVariable > -1)
             {
                 stressSlider.GetComponent<Slider>().value = lastGameVariable;
             }
