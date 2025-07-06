@@ -12,6 +12,12 @@ TagManager:
   - Synty Tree
   - Terrain
   - cube
+  - Waypoint
+  - AbstractFeedback
+  - left_thigh
+  - right_thigh
+  - right_knee
+  - left_knee
   layers:
   - Default
   - TransparentFX

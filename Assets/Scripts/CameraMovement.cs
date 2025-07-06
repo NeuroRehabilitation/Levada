@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        cameraCube.transform.position = handTransform.position;
+        cameraCube.transform.position = handTransform.position  + new Vector3(0f, 0.1f, 0f); //tmep
         cameraCube.transform.rotation = handTransform.rotation;
 
         miniCamera.transform.position = cameraCube.transform.position;

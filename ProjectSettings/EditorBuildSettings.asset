@@ -5,24 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HMD or KAVE.unity
     guid: be88481d3031a7f45b5c96797c67d9a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/ScenesHMD/Main_Menu_HMD.unity
     guid: 2df394df12f4c1d459e2b62d33205529
   - enabled: 1
-    path: Assets/ScenesHMD/25_Fontes_HMD.unity
-    guid: f3e45b709e1d5694db8bbdd8362388dc
-  - enabled: 1
-    path: "Assets/ScenesHMD/Sao_Louren\xE7o_HMD.unity"
-    guid: 8ef21c6307edc3249813d88c4e9c6ba6
-  - enabled: 1
-    path: Assets/ScenesHMD/Pico_Areeiro_Ruivo_HMD.unity
-    guid: e952fba7366887d44980655d9d944199
-  - enabled: 1
-    path: Assets/ScenesHMD/Caldeirao_Verde_HMD.unity
-    guid: b9e68dabe333b804891993f78c81a4e7
+    path: Assets/ScenesNew/KAVE/25 Fontes Walk In Place.unity
+    guid: 5b8a381a263a5a64b94f7d796f171579
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
       type: 2}

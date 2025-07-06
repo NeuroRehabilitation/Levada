@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ public class PictureTaking : MonoBehaviour
 
     public InputActionProperty captureButton;
     public Transform handTransform;
+    public GameObject flashOverlay;
 
 
     private Shader depthShader;
@@ -33,14 +35,14 @@ public class PictureTaking : MonoBehaviour
         }
     }
 
-    void TakeScreenshot()
+    /*void TakeScreenshot()
     {
         string screenshotPath = Application.persistentDataPath + "/Screenshot_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
         ScreenCapture.CaptureScreenshot(screenshotPath);
         Debug.Log("Screenshot saved to: " + screenshotPath);
-    }
+    }*/
 
-    private System.Collections.IEnumerator CaptureFromHandView()
+    private IEnumerator CaptureFromHandView()
     {
         yield return new WaitForEndOfFrame();
 
@@ -49,6 +51,17 @@ public class PictureTaking : MonoBehaviour
 
         GameObject tempCamGO = new GameObject("TempScreenshotCam");
         Camera tempCam = tempCamGO.AddComponent<Camera>();
+
+        string baseFilename = "Screenshot_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+        TakePicture(width, height, tempCamGO, tempCam, baseFilename);
+        CreateDepthMap(width, height, tempCamGO, tempCam, baseFilename);
+
+        saveToJson(DetectObjects(), baseFilename);
+    }
+
+    private void TakePicture(int width, int height, GameObject tempCamGO, Camera tempCam, string baseFilename)
+    {
 
         tempCamGO.transform.position = handTransform.position;
         tempCamGO.transform.rotation = handTransform.rotation;
@@ -70,18 +83,48 @@ public class PictureTaking : MonoBehaviour
         Destroy(rt);
         Destroy(tempCamGO);
 
-        string baseFilename = "Screenshot_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        StartCoroutine(SimulateSnapEffect());
+
         string screenshotPath = Application.persistentDataPath + "/" + baseFilename + ".png";
         System.IO.File.WriteAllBytes(screenshotPath, screenshot.EncodeToPNG());
 
         Debug.Log("Screenshot saved from hand view to: " + screenshotPath);
+    }
 
-        //Depth map here
+    private IEnumerator SimulateSnapEffect()
+{
+    Renderer renderer = flashOverlay.GetComponent<Renderer>();
+    if (renderer != null)
+    {
+        Material overlayMat = renderer.material;
+
+        Color originalColor = overlayMat.color;
+        float flashAlpha = 1f;
+        float fadeDuration = 0.2f;
+
+        overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, flashAlpha);
+        yield return new WaitForSeconds(0.05f);
+
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            float alpha = Mathf.Lerp(flashAlpha, 0f, timer / fadeDuration);
+            overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+    }
+}
+
+    private void CreateDepthMap(int width, int height, GameObject tempCamGO, Camera tempCam, string baseFilename)
+    {
         depthShader = Shader.Find("Hidden/CustomDepth");
         if (depthShader == null)
         {
             Debug.LogError("Custom depth shader not found!");
-            yield break;
+            return;
         }
 
         RenderTexture depthRT = new RenderTexture(width, height, 24, RenderTextureFormat.ARGB32);
@@ -90,7 +133,7 @@ public class PictureTaking : MonoBehaviour
         tempCam.targetTexture = depthRT;
         tempCam.clearFlags = CameraClearFlags.SolidColor;
         tempCam.backgroundColor = Color.white;
-        tempCam.cullingMask = -1; 
+        tempCam.cullingMask = -1;
         tempCam.RenderWithShader(depthShader, "");
 
         RenderTexture.active = depthRT;
@@ -104,12 +147,13 @@ public class PictureTaking : MonoBehaviour
         depthRT.Release();
         Destroy(depthRT);
         Destroy(depthMap);
+    }
 
-
-        //Detect terrain here
+    private List<DetectedObject> DetectObjects()
+    {
         float detectionDistance = 10f;
-        float coneAngle = 90f;
-        List<DetectedObject> detectedNames = new List<DetectedObject>();
+        float coneAngle = 65f;
+        List<DetectedObject> detectedObjects = new List<DetectedObject>();
 
         Terrain terrain = Terrain.activeTerrain;
         if (terrain != null)
@@ -117,11 +161,12 @@ public class PictureTaking : MonoBehaviour
             TerrainData data = terrain.terrainData;
             Vector3 terrainPosition = terrain.transform.position;
 
+            // Detect Trees
             foreach (TreeInstance tree in data.treeInstances)
             {
                 Vector3 worldTreePos = Vector3.Scale(tree.position, data.size) + terrainPosition;
-
                 float distance = Vector3.Distance(handTransform.position, worldTreePos);
+
                 if (distance <= detectionDistance)
                 {
                     Vector3 directionToTree = worldTreePos - handTransform.position;
@@ -132,8 +177,6 @@ public class PictureTaking : MonoBehaviour
                     float angle = Vector3.Angle(forwardFlat.normalized, directionToTree.normalized);
                     if (angle <= coneAngle)
                     {
-                        //Debug.DrawLine(handTransform.position, worldTreePos, Color.green, 2f);
-
                         string treeName = "Tree";
                         int prototypeIndex = tree.prototypeIndex;
                         if (prototypeIndex >= 0 && prototypeIndex < data.treePrototypes.Length)
@@ -144,17 +187,75 @@ public class PictureTaking : MonoBehaviour
 
                         Vector3 relativePosition = handTransform.InverseTransformPoint(worldTreePos);
 
-                        detectedNames.Add(new DetectedObject
+                        detectedObjects.Add(new DetectedObject
                         {
                             name = treeName,
                             relativePosition = relativePosition,
+                            worldPosition = worldTreePos,
                             distance = distance
                         });
                     }
                 }
             }
-        }
 
+            // Detect Details
+            int detailWidth = data.detailWidth;
+            int detailHeight = data.detailHeight;
+            float cellSizeX = data.size.x / detailWidth;
+            float cellSizeZ = data.size.z / detailHeight;
+
+            for (int layer = 0; layer < data.detailPrototypes.Length; layer++)
+            {
+                int[,] layerMap = data.GetDetailLayer(0, 0, detailWidth, detailHeight, layer);
+                string detailName = data.detailPrototypes[layer].prototype != null
+                                    ? data.detailPrototypes[layer].prototype.name
+                                    : $"Detail_{layer}";
+
+                for (int x = 0; x < detailWidth; x++)
+                {
+                    for (int y = 0; y < detailHeight; y++)
+                    {
+                        if (layerMap[y, x] > 0)
+                        {
+                            Vector3 worldDetailPos = new Vector3(
+                                x * cellSizeX + terrainPosition.x,
+                                terrain.SampleHeight(new Vector3(x * cellSizeX, 0, y * cellSizeZ) + terrainPosition),
+                                y * cellSizeZ + terrainPosition.z
+                            );
+
+                            float distance = Vector3.Distance(handTransform.position, worldDetailPos);
+                            if (distance <= detectionDistance)
+                            {
+                                Vector3 directionToDetail = worldDetailPos - handTransform.position;
+                                directionToDetail.y = 0;
+                                Vector3 forwardFlat = handTransform.forward;
+                                forwardFlat.y = 0;
+
+                                float angle = Vector3.Angle(forwardFlat.normalized, directionToDetail.normalized);
+                                if (angle <= coneAngle)
+                                {
+                                    Vector3 relativePosition = handTransform.InverseTransformPoint(worldDetailPos);
+
+                                    detectedObjects.Add(new DetectedObject
+                                    {
+                                        name = detailName,
+                                        relativePosition = relativePosition,
+                                        worldPosition = worldDetailPos,
+                                        distance = distance
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return detectedObjects;
+    }
+
+
+    private void saveToJson(List<DetectedObject> detectedNames, string baseFilename)
+    {
         PictureMetadata metadata = new PictureMetadata
         {
             timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
@@ -191,5 +292,6 @@ public class DetectedObject
 {
     public string name;
     public Vector3 relativePosition;
+    public Vector3 worldPosition;
     public float distance;
 }
