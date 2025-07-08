@@ -296,6 +296,7 @@ public class _2mStepTest_Manager : MonoBehaviour
                 NextButton.onClick.RemoveAllListeners();
                 NextButton.onClick.AddListener(OnRestartButton);
                 NextButton.interactable = true;
+                NextButton.transform.parent.gameObject.SetActive(true); //NEW
                 NextButton.GetComponentInChildren<Text>().text = "Restart";
 
                 _subState = SubState.Idle;
@@ -392,6 +393,7 @@ public class _2mStepTest_Manager : MonoBehaviour
                     _subState = SubState.Update;
                     _nextSubState = SubState.Update;
                     NextButton.interactable = false;
+                    NextButton.transform.parent.gameObject.SetActive(false); //NEW
                     _gesturePause = false;
                 }
                 if (start_counter > 3)
