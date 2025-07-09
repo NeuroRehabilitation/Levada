@@ -12,12 +12,12 @@ TagManager:
   - Synty Tree
   - Terrain
   - cube
+  - Teleport_Controller
   - Waypoint
-  - AbstractFeedback
-  - left_thigh
-  - right_thigh
-  - right_knee
-  - left_knee
+  - CountdownCanvas
+  - UI_Controller
+  - Panel
+  - CountdownText
   layers:
   - Default
   - TransparentFX
@@ -54,4 +54,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 660722409
     locked: 0
