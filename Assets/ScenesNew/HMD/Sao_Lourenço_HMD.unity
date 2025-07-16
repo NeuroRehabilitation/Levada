@@ -107888,7 +107888,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.098499976, g: 0.098499976, b: 0.19845158, a: 1}
+    - _EdgeWaterColor: {r: 0.098499395, g: 0.098499395, b: 0.19845101, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -116367,7 +116367,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
