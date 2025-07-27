@@ -66,6 +66,14 @@ public class Manager : MonoBehaviour
     private bool timerStarted = false;
     private bool startedLSL = false;
 
+    private List<string> testScenes = new List<string>
+{
+    "25 Fontes Walk In Place HMD Test",
+    "Caldeirao_Verde_HMD Test",
+    "Pico Areeiro - Ruivo Walk in Place Test",
+    "S Lourenço Non Walk Test"
+};
+
 
     void Awake()
     {
@@ -73,11 +81,11 @@ public class Manager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            
+
         }
         else
         {
-            
+
             Destroy(gameObject);
         }
 
@@ -132,7 +140,7 @@ public class Manager : MonoBehaviour
                 }
             }
 
-            
+
             LayerMask layerMask = -1; //Layer "Everything"
 
             mainCamera.GetComponent<Camera>().cullingMask = layerMask;
@@ -165,6 +173,17 @@ public class Manager : MonoBehaviour
             }
             else
                 Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            int index = testScenes.IndexOf(currentScene);
+
+            if (index >= 0 && index < testScenes.Count - 1)
+            {
+                SceneManager.LoadScene(testScenes[index + 1]);
+            }
         }
 
         //else if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -203,7 +222,7 @@ public class Manager : MonoBehaviour
     {
         while (isRunning && elapsed_time <= duration * 60)
         {
-            elapsed_time = Time.realtimeSinceStartup-startTime;
+            elapsed_time = Time.realtimeSinceStartup - startTime;
             yield return null;
         }
 
@@ -299,7 +318,7 @@ public class Manager : MonoBehaviour
 
     private void CreateList()
     {
-        Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings-1).ToList();
+        Scenes = Enumerable.Range(1, SceneManager.sceneCountInBuildSettings - 1).ToList();
     }
 
     public void WriteData()
