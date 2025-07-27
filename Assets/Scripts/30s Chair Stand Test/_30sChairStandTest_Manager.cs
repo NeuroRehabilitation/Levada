@@ -150,7 +150,7 @@ public class _30sChairStandTest_Manager : MonoBehaviour
 		{
 			OnNextButton ();
 			Debug.Log("fire2 called");
-		}else if (Input.GetButtonUp ("Fire2") || Input.GetKeyUp(KeyCode.S)) {
+		}else if (/*Input.GetButtonUp ("Fire2") ||*/ Input.GetKeyUp(KeyCode.S)) {
 			OnAbortButton ();
 			Debug.Log ("fire two called");
 		}

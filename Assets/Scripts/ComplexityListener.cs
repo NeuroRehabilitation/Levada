@@ -26,7 +26,7 @@ public class ComplexityListener : MonoBehaviour
         }
         */
 
-        if (Input.GetButtonUp("Fire2") || Input.GetKeyUp(KeyCode.S))
+        if (/*Input.GetButtonUp("Fire2") ||*/ Input.GetKeyUp(KeyCode.S))
         {
             hike_level = 1;
             Debug.Log("env selection"+ env_selection);

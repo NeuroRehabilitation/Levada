@@ -31426,7 +31426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1127678
+  m_Name: pb_Mesh2612164
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -32568,7 +32568,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1133292
+  m_Name: pb_Mesh2620906
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -34891,7 +34891,8 @@ MonoBehaviour:
   NextButton: {fileID: 755666264}
   AbortButton: {fileID: 1578892630}
   GuitText: {fileID: 801305047}
-  BackgroundDark: {fileID: 2104551984}
+  DarkBackground: {fileID: 2104551984}
+  Levada: {fileID: 1066040362}
   AbstractFeedbackLeft: {fileID: 74745904}
   AbstractFeedbackRight: {fileID: 1754795588}
 --- !u!114 &273456592
@@ -44696,7 +44697,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1134280
+  m_Name: pb_Mesh2622602
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -90047,7 +90048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1066040363
 Transform:
   m_ObjectHideFlags: 0
@@ -95373,7 +95374,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.099720664, g: 0.099720664, b: 0.1997169, a: 1}
+    - _EdgeWaterColor: {r: 0.09971913, g: 0.09971913, b: 0.19971529, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -96231,7 +96232,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1130514
+  m_Name: pb_Mesh2616634
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -133641,7 +133642,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1129122
+  m_Name: pb_Mesh2614488
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -150042,9 +150043,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.3, y: 1}
-  m_AnchoredPosition: {x: 116.5, y: 0}
-  m_SizeDelta: {x: -39, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 4.5, y: 0}
+  m_SizeDelta: {x: -1341, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934645944
 MonoBehaviour:
@@ -159877,7 +159878,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 500}
+  m_SizeDelta: {x: 2000, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2106220429
 GameObject:

@@ -100,6 +100,8 @@ public class _2mStepTest_Manager : MonoBehaviour
     public Button NextButton;
     public Button AbortButton;
     public Text GuitText;
+    public GameObject DarkBackground;
+    public GameObject Levada;
 
     // FeedBack
     public AbstractFeedbackScale AbstractFeedbackLeft;
@@ -224,7 +226,7 @@ public class _2mStepTest_Manager : MonoBehaviour
 
 
         }
-        if (Input.GetButtonUp ("Fire2")|| Input.GetKeyUp(KeyCode.S)) {
+        if (/*Input.GetButtonUp ("Fire2")||*/ Input.GetKeyUp(KeyCode.S)) {
 
             Time.timeScale = 1;
             OnAbortButton();
@@ -297,6 +299,8 @@ public class _2mStepTest_Manager : MonoBehaviour
                 NextButton.onClick.AddListener(OnRestartButton);
                 NextButton.interactable = true;
                 NextButton.transform.parent.gameObject.SetActive(true); //NEW
+                DarkBackground.transform.gameObject.SetActive(true); //NEW
+                Levada.transform.gameObject.SetActive(false); //NEW
                 NextButton.GetComponentInChildren<Text>().text = "Restart";
 
                 _subState = SubState.Idle;
@@ -394,6 +398,8 @@ public class _2mStepTest_Manager : MonoBehaviour
                     _nextSubState = SubState.Update;
                     NextButton.interactable = false;
                     NextButton.transform.parent.gameObject.SetActive(false); //NEW
+                    DarkBackground.transform.gameObject.SetActive(false); //NEW
+                    Levada.transform.gameObject.SetActive(true); //NEW
                     _gesturePause = false;
                 }
                 if (start_counter > 3)
@@ -477,8 +483,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             case SubState.Start:
                 GuitText.text = "Instruções:\n\n" +
                                 "Ao sinal sonoro comece a dar passos no lugar (sem correr)\n\n" +
-                                "Levante os joelhos até a altura indicada de maneira alternada\n\n" +
-                                "Tem 2 minutos para dar o maior número de passos.";
+                                "Levante os joelhos até a altura indicada de maneira alternada\n\n";
                 _subState = SubState.Idle;
                 break;
 

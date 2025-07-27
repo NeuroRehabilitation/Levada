@@ -158,10 +158,10 @@ public class Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (SceneManager.GetActiveScene().name != "Main_Menu_HMD")
+            if (SceneManager.GetActiveScene().name != "HMD or KAVE")
             {
-                SceneManager.LoadScene("Main_Menu_HMD");
-                FOV_Image.enabled = false;
+                SceneManager.LoadScene("HMD or KAVE");
+                //FOV_Image.enabled = false;
             }
             else
                 Quit();
@@ -179,7 +179,7 @@ public class Manager : MonoBehaviour
 
         //else if (Input.GetKeyDown(KeyCode.Alpha3))
         //{
-        //    SceneManager.LoadScene("Sao_Lourenço_HMD");
+        //    SceneManager.LoadScene("Sao_Lourenï¿½o_HMD");
         //}
 
         //else if (Input.GetKeyDown(KeyCode.Alpha4))
