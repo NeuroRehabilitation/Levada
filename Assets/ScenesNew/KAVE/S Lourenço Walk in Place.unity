@@ -58416,6 +58416,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin Kinect
       objectReference: {fileID: 0}
+    - target: {fileID: 7639407095884599356, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_CameraYOffset
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7639407095884599357, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: m_RootOrder
@@ -58485,6 +58490,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096389454094, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096389454094, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096389454094, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 7639407096731211326, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}

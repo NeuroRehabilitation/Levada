@@ -8,6 +8,20 @@ public class DisableXRDisplay : MonoBehaviour
 
     void Awake()
     {
+        FixDisplay();
+    }
+
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            FixDisplay();
+        }
+    }
+
+    void FixDisplay()
+    {
         var displays = new List<XRDisplaySubsystem>();
         SubsystemManager.GetInstances(displays);
 
