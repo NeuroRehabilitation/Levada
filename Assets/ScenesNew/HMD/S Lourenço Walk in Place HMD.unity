@@ -31404,7 +31404,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh2159512
+  m_Name: pb_Mesh28304
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -32540,7 +32540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh2168266
+  m_Name: pb_Mesh37064
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -44675,7 +44675,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh2169962
+  m_Name: pb_Mesh38760
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -94548,6 +94548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin Kinect
       objectReference: {fileID: 0}
+    - target: {fileID: 7639407095884599356, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_CameraYOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7639407095884599357, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: m_RootOrder
@@ -94617,6 +94622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211326, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -95413,7 +95423,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.099716, g: 0.099716, b: 0.19971204, a: 1}
+    - _EdgeWaterColor: {r: 0.099714644, g: 0.099714644, b: 0.19971064, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -96271,7 +96281,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh2163990
+  m_Name: pb_Mesh32788
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -133636,7 +133646,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh2161842
+  m_Name: pb_Mesh30640
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -208386,7 +208396,7 @@ MonoBehaviour:
   m_planarReflections: {fileID: 0}
   m_weatherSystemPresent: 0
   m_ableToRender: 1
-  m_sceneProfileExists: 1
+  m_sceneProfileExists: 0
   m_reflectionTexture: {fileID: 0}
   m_reflectionCamera: {fileID: 0}
   m_gaiaSession: {fileID: 0}

@@ -44763,6 +44763,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1580836408053841402, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: m_CameraYOffset
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1580836408053841404, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
       propertyPath: m_Name
@@ -89663,7 +89668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490a01b43adb0f14dbde9200de471191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHMD: 1
+  isHMD: 0
 --- !u!4 &686966056
 Transform:
   m_ObjectHideFlags: 0
