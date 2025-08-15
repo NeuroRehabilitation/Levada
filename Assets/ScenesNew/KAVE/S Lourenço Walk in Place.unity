@@ -34889,6 +34889,26 @@ MonoBehaviour:
   FloorLevel: {fileID: 272739705}
   TargetLevel: {fileID: 1103588879}
   NextButton: {fileID: 755666264}
+  HmdNextButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Hmd Next Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7fe109c2-5ee7-4260-b5dd-0e700f79a893
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 572a0a4e-d858-4dfd-b8b7-1d65bc8f35d3
+        m_Path: <XRController>{RightHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Hmd Next Button
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   AbortButton: {fileID: 1578892630}
   GuitText: {fileID: 801305047}
   DarkBackground: {fileID: 2104551984}

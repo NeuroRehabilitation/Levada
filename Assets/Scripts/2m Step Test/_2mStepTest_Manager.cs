@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class _2mStepTest_Manager : MonoBehaviour
 {
@@ -98,6 +99,7 @@ public class _2mStepTest_Manager : MonoBehaviour
 
     // GUI
     public Button NextButton;
+    public InputActionProperty HmdNextButton;
     public Button AbortButton;
     public Text GuitText;
     public GameObject DarkBackground;
@@ -218,7 +220,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             current_player = players[ComplexityListener.hike_level].position;
 
         }
-        if (Input.GetButtonUp("Fire1")|| Input.GetKeyUp(KeyCode.A))
+        if (Input.GetButtonUp("Fire1")|| Input.GetKeyUp(KeyCode.A) || HmdNextButton.action.WasPressedThisFrame())
         {
             Time.timeScale = 1;
 
@@ -483,7 +485,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             case SubState.Start:
                 GuitText.text = "Instruções:\n\n" +
                                 "Ao sinal sonoro comece a dar passos no lugar (sem correr)\n\n" +
-                                "Levante os joelhos até a altura indicada de maneira alternada\n\n";
+                                "Levante os joelhos de maneira alternada\n\n";
                 _subState = SubState.Idle;
                 break;
 
