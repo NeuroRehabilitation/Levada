@@ -44058,7 +44058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 1603842451}
   endMarker: []
-  speed: 4.2
+  speed: 3
   player: {fileID: 413258150}
   target: 0
   next: 0
@@ -165913,7 +165913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1410663827631593
 GameObject:
   m_ObjectHideFlags: 0
