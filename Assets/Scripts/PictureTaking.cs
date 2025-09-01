@@ -25,13 +25,23 @@ public class PictureTaking : MonoBehaviour
         captureButton.action.Disable();
     }
 
+    void Awake()
+    {
+        handTransform.GetChild(0).gameObject.SetActive(false);
+    }
+
     void Update()
     {
         if (captureButton.action.WasPressedThisFrame())
         {
+            handTransform.GetChild(0).gameObject.SetActive(true);
+        }
+        else if (captureButton.action.WasReleasedThisFrame())
+        {
             Debug.Log("capture button was pressed");
             //TakeScreenshot();
             StartCoroutine(CaptureFromHandView());
+            handTransform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
@@ -92,31 +102,31 @@ public class PictureTaking : MonoBehaviour
     }
 
     private IEnumerator SimulateSnapEffect()
-{
-    Renderer renderer = flashOverlay.GetComponent<Renderer>();
-    if (renderer != null)
     {
-        Material overlayMat = renderer.material;
-
-        Color originalColor = overlayMat.color;
-        float flashAlpha = 1f;
-        float fadeDuration = 0.2f;
-
-        overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, flashAlpha);
-        yield return new WaitForSeconds(0.05f);
-
-        float timer = 0f;
-        while (timer < fadeDuration)
+        Renderer renderer = flashOverlay.GetComponent<Renderer>();
+        if (renderer != null)
         {
-            float alpha = Mathf.Lerp(flashAlpha, 0f, timer / fadeDuration);
-            overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
-            timer += Time.deltaTime;
-            yield return null;
-        }
+            Material overlayMat = renderer.material;
 
-        overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+            Color originalColor = overlayMat.color;
+            float flashAlpha = 1f;
+            float fadeDuration = 0.2f;
+
+            overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, flashAlpha);
+            yield return new WaitForSeconds(0.05f);
+
+            float timer = 0f;
+            while (timer < fadeDuration)
+            {
+                float alpha = Mathf.Lerp(flashAlpha, 0f, timer / fadeDuration);
+                overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            overlayMat.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+        }
     }
-}
 
     private void CreateDepthMap(int width, int height, GameObject tempCamGO, Camera tempCam, string baseFilename)
     {
