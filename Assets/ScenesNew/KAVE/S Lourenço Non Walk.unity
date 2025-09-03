@@ -44695,6 +44695,26 @@ PrefabInstance:
       propertyPath: m_TrackingType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1580836407381204724, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: m_PositionInput.m_Reference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580836407381204724, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: m_PositionInput.m_UseReference
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580836407381204724, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: m_PositionInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRHMD>/centerEyePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580836407977364427, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: isKave
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1580836407977364431, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
       propertyPath: m_ValidColorGradient.key0.b
@@ -44793,7 +44813,12 @@ PrefabInstance:
     - target: {fileID: 1580836408053841402, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
       propertyPath: m_CameraYOffset
-      value: 1.75
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580836408053841402, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1580836408053841404, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
@@ -44803,7 +44828,7 @@ PrefabInstance:
     - target: {fileID: 1580836408328656984, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1580836408328656984, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
@@ -134224,7 +134249,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.099715285, g: 0.099715285, b: 0.1997113, a: 1}
+    - _EdgeWaterColor: {r: 0.09968383, g: 0.09968383, b: 0.19967851, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}

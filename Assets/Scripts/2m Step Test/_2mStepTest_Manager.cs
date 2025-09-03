@@ -624,8 +624,8 @@ public class _2mStepTest_Manager : MonoBehaviour
 
             //if (!isLongWalkTest)
             {
-                /*height = CalculateKneeHeight() + (1 * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
-                minHeight = CalculateKneeHeight() + (0.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
+                height = CalculateKneeHeight() + (1 * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
+                /*minHeight = CalculateKneeHeight() + (0.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
                 maxHeight = CalculateKneeHeight() + (1.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW*/
                 height = CalculateMidThighHeight();
                 //height += height / 6; 

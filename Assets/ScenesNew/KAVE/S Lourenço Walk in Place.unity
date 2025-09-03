@@ -58024,7 +58024,7 @@ PrefabInstance:
     - target: {fileID: 7639407095884599356, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: m_CameraYOffset
-      value: -0.25
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7639407095884599357, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
@@ -58099,7 +58099,7 @@ PrefabInstance:
     - target: {fileID: 7639407096389454094, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7639407096389454094, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
