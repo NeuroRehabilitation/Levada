@@ -8,64 +8,70 @@ public class IdleManager : MonoBehaviour
     public GameObject sphereRight;
     public GameObject cube;
     public GameObject waypoints;
+    public Transform player;
 
     private bool isIdle = false;
     private bool wasIdle = false;
-
-    void Awake()
-    {
-        SetOpacity(sphereLeft, 0);
-        SetOpacity(sphereRight, 0);
-        SetOpacity(cube, 0);
-    }
+    Vector3 playerOldPosition;
 
     void Update()
     {
         //Toggle UI
         if (Input.GetKeyDown(KeyCode.L))
         {
-            bool currentlyVisible = waypoints.GetNamedChild("Sphere").gameObject.GetComponent<Renderer>().enabled;
+            bool currentlyVisible = cube.activeSelf;
             if (currentlyVisible)
             {
                 sphereLeft.SetActive(false);
                 sphereRight.SetActive(false);
                 cube.SetActive(false);
-                foreach (Transform child in waypoints.transform)
-                {
-                    child.gameObject.GetComponent<Renderer>().enabled = false;
-                    SetOpacity(child.gameObject, 0f);
-                }
+                waypoints.SetActive(false);
             }
             else
             {
                 sphereLeft.SetActive(true);
                 sphereRight.SetActive(true);
                 cube.SetActive(true);
+                waypoints.SetActive(true);
                 foreach (Transform child in waypoints.transform)
                 {
-                    child.gameObject.GetComponent<Renderer>().enabled = true;
-                    SetOpacity(child.gameObject, 0.5f);
+                    SetOpacity(child.gameObject, 0);
                 }
-                SetOpacity(sphereLeft, 0.5f);
-                SetOpacity(sphereRight, 0.5f);
-                SetOpacity(cube, 0.5f);
+                SetOpacity(sphereLeft, 0);
+                SetOpacity(sphereRight, 0);
+                SetOpacity(cube, 0);
             }
         }
 
-        if (isIdle && !wasIdle)
+        checkMovement(player, playerOldPosition);
+
+        if (!isIdle && wasIdle)
         {
-            StartCoroutine(FadeToOpacity(sphereLeft, 0f, 2f));
-            StartCoroutine(FadeToOpacity(sphereRight, 0f, 2f));
-            StartCoroutine(FadeToOpacity(cube, 0f, 2f));
+            float fadeDuration = 4f;
+            float targetAlpha = 0f;
+            StartCoroutine(FadeToOpacity(sphereLeft, targetAlpha, fadeDuration));
+            StartCoroutine(FadeToOpacity(sphereRight, targetAlpha, fadeDuration));
+            StartCoroutine(FadeToOpacity(cube, targetAlpha, fadeDuration));
+            foreach (Transform child in waypoints.transform)
+            {
+                StartCoroutine(FadeToOpacity(child.gameObject, targetAlpha, fadeDuration));
+            }
         }
-        else if (!isIdle && wasIdle)
+        else if (isIdle && !wasIdle)
         {
-            StartCoroutine(FadeToOpacity(sphereLeft, 0.5f, 2f));
-            StartCoroutine(FadeToOpacity(sphereRight, 0.5f, 2f));
-            StartCoroutine(FadeToOpacity(cube, 0.5f, 2f));
+            float fadeDuration = 4f;
+            float targetAlpha = 0.5f;
+            StartCoroutine(FadeToOpacity(sphereLeft, targetAlpha, fadeDuration));
+            StartCoroutine(FadeToOpacity(sphereRight, targetAlpha, fadeDuration));
+            StartCoroutine(FadeToOpacity(cube, targetAlpha, fadeDuration));
+            foreach (Transform child in waypoints.transform)
+            {
+                StartCoroutine(FadeToOpacity(child.gameObject, targetAlpha, fadeDuration));
+            }
         }
 
         wasIdle = isIdle;
+        playerOldPosition = player.transform.position;
     }
 
     private void SetOpacity(GameObject obj, float opacity)
@@ -83,8 +89,6 @@ public class IdleManager : MonoBehaviour
     {
         Renderer renderer = obj.GetComponent<Renderer>();
         if (renderer == null) yield break;
-
-        SetMaterialToFade(renderer.material);
 
         if (!renderer.enabled && targetAlpha > 0f)
             renderer.enabled = true;
@@ -111,15 +115,18 @@ public class IdleManager : MonoBehaviour
         }
     }
 
-    private void SetMaterialToFade(Material mat)
+    private void checkMovement(Transform player, Vector3 oldPosition)
     {
-        mat.SetFloat("_Mode", 2);
-        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-        mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-        mat.SetInt("_ZWrite", 0);
-        mat.DisableKeyword("_ALPHATEST_ON");
-        mat.EnableKeyword("_ALPHABLEND_ON");
-        mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        mat.renderQueue = 3000;
+        Vector3 playerPosition = player.transform.position;
+        if (playerPosition != oldPosition)
+        {
+            isIdle = false;
+            playerOldPosition = playerPosition;
+        }
+        else
+        {
+            isIdle = true;
+        }
+
     }
 }

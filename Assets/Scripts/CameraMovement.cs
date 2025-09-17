@@ -8,6 +8,7 @@ public class CameraMovement : MonoBehaviour
     public Transform handTransform;
     public GameObject cameraCube;
     public Camera miniCamera;
+    public bool centerHandToDisplay;
 
     void Update()
     {
@@ -17,7 +18,7 @@ public class CameraMovement : MonoBehaviour
         miniCamera.transform.position = cameraCube.transform.position;
         miniCamera.transform.rotation = cameraCube.transform.rotation;
 
-        CenterHandToDisplay();
+        if (centerHandToDisplay) CenterHandToDisplay();
     }
 
     private void CenterHandToDisplay()
