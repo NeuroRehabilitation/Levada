@@ -3219,6 +3219,41 @@ PrefabInstance:
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 487010626}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: showCameraButton.m_Action.m_Id
+      value: cc73dc4f-5834-4d41-a5c3-fd083369b007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: showCameraButton.m_Action.m_Name
+      value: Capture Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: showCameraButton.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: captureButton.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{RightHand}/triggerPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: showCameraButton.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: bc893d9c-fc43-4e00-91e0-2c9080b5c90a
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: showCameraButton.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{RightHand}/gripPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: showCameraButton.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Capture Button
+      objectReference: {fileID: 0}
     - target: {fileID: 2644256920207022982, guid: 2658476504347f545b1789ebb184bcf7,
         type: 3}
       propertyPath: m_XROrigin
@@ -58126,6 +58161,12 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8456453729375800377, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 3475118261464492563, guid: 9f3369e30fbd31f4bb596b1a99babe83,
+        type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 70a6cea0e4292d243a8191adaa06998e, type: 3}
@@ -61836,7 +61877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &627770790
 Transform:
   m_ObjectHideFlags: 0
@@ -70640,6 +70681,54 @@ MonoBehaviour:
   m_Script: {fileID: 813796822, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &772991042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 772991044}
+  - component: {fileID: 772991043}
+  m_Layer: 0
+  m_Name: IdleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &772991043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772991042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4b06a634fb5dd4f93b26e1fa9ebd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereLeft: {fileID: 1886854140}
+  sphereRight: {fileID: 2014029912}
+  cube: {fileID: 1721099412}
+  waypoints: {fileID: 1112100024}
+--- !u!4 &772991044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772991042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.065004, y: -4.085805, z: -0.6061964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773070554
 GameObject:
   m_ObjectHideFlags: 0
@@ -70802,7 +70891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &779827710
 Transform:
   m_ObjectHideFlags: 0
@@ -70811,7 +70900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779827709}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: 1.2, z: 2}
+  m_LocalPosition: {x: -2.5, y: 0.58, z: 2}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -82276,7 +82365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &936091412
 Transform:
   m_ObjectHideFlags: 0
@@ -96996,7 +97085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1144651544
 Transform:
   m_ObjectHideFlags: 0
@@ -111384,6 +111473,10 @@ PrefabInstance:
     - target: {fileID: 1561513328158364, guid: c57e4b5188efde84a9b45909789642ea, type: 3}
       propertyPath: m_Name
       value: Abstract Feedback Scale Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561513328158364, guid: c57e4b5188efde84a9b45909789642ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4700750006978562, guid: c57e4b5188efde84a9b45909789642ea, type: 3}
       propertyPath: m_RootOrder
@@ -140053,6 +140146,10 @@ PrefabInstance:
     - target: {fileID: 1561513328158364, guid: c57e4b5188efde84a9b45909789642ea, type: 3}
       propertyPath: m_Name
       value: Abstract Feedback Scale Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561513328158364, guid: c57e4b5188efde84a9b45909789642ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4700750006978562, guid: c57e4b5188efde84a9b45909789642ea, type: 3}
       propertyPath: m_RootOrder

@@ -7,21 +7,25 @@ using UnityEngine.SceneManagement;
 public class PictureTaking : MonoBehaviour
 {
 
+    public InputActionProperty showCameraButton;
     public InputActionProperty captureButton;
     public Transform handTransform;
     public GameObject flashOverlay;
 
 
     private Shader depthShader;
+    private bool canTakePicture = false;
 
 
     void OnEnable()
     {
+        showCameraButton.action.Enable();
         captureButton.action.Enable();
     }
 
     void OnDisable()
     {
+        showCameraButton.action.Disable();
         captureButton.action.Disable();
     }
 
@@ -32,25 +36,23 @@ public class PictureTaking : MonoBehaviour
 
     void Update()
     {
-        if (captureButton.action.WasPressedThisFrame())
+        if (showCameraButton.action.WasPressedThisFrame())
         {
             handTransform.GetChild(0).gameObject.SetActive(true);
+            canTakePicture = true;
         }
-        else if (captureButton.action.WasReleasedThisFrame())
+        else if (showCameraButton.action.WasReleasedThisFrame())
+        {
+            handTransform.GetChild(0).gameObject.SetActive(false);
+            canTakePicture = false;
+        }
+
+        if (canTakePicture && captureButton.action.WasPressedThisFrame())
         {
             Debug.Log("capture button was pressed");
-            //TakeScreenshot();
             StartCoroutine(CaptureFromHandView());
-            handTransform.GetChild(0).gameObject.SetActive(false);
         }
     }
-
-    /*void TakeScreenshot()
-    {
-        string screenshotPath = Application.persistentDataPath + "/Screenshot_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-        ScreenCapture.CaptureScreenshot(screenshotPath);
-        Debug.Log("Screenshot saved to: " + screenshotPath);
-    }*/
 
     private IEnumerator CaptureFromHandView()
     {
