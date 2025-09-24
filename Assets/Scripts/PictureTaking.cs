@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
 
 public class PictureTaking : MonoBehaviour
 {
 
     public InputActionProperty showCameraButton;
     public InputActionProperty captureButton;
-    public Transform handTransform;
+    public GameObject hand;
     public GameObject flashOverlay;
 
 
     private Shader depthShader;
     private bool canTakePicture = false;
+    private bool isHMD = false;
 
 
     void OnEnable()
@@ -31,19 +34,32 @@ public class PictureTaking : MonoBehaviour
 
     void Awake()
     {
-        handTransform.GetChild(0).gameObject.SetActive(false);
+        hand.transform.GetChild(0).gameObject.SetActive(false);
+        if(hand.GetComponent<XRInteractorLineVisual>().enabled)
+            isHMD = true;
     }
 
     void Update()
     {
+        Debug.Log("is hmd" + isHMD);
         if (showCameraButton.action.WasPressedThisFrame())
         {
-            handTransform.GetChild(0).gameObject.SetActive(true);
+            hand.transform.GetChild(0).gameObject.SetActive(true);
+            if (isHMD)
+            {
+                hand.GetComponent<XRRayInteractor>().enabled = false;
+                hand.GetComponent<XRInteractorLineVisual>().enabled = false;
+            }
             canTakePicture = true;
         }
         else if (showCameraButton.action.WasReleasedThisFrame())
         {
-            handTransform.GetChild(0).gameObject.SetActive(false);
+            hand.transform.GetChild(0).gameObject.SetActive(false);
+            if (isHMD)
+            {
+                hand.GetComponent<XRRayInteractor>().enabled = true;
+                hand.GetComponent<XRInteractorLineVisual>().enabled = true;
+            }
             canTakePicture = false;
         }
 
@@ -75,8 +91,8 @@ public class PictureTaking : MonoBehaviour
     private void TakePicture(int width, int height, GameObject tempCamGO, Camera tempCam, string baseFilename)
     {
 
-        tempCamGO.transform.position = handTransform.position;
-        tempCamGO.transform.rotation = handTransform.rotation;
+        tempCamGO.transform.position = hand.transform.position;
+        tempCamGO.transform.rotation = hand.transform.rotation;
 
         tempCam.fieldOfView = 60f; //FOV
 
@@ -177,13 +193,13 @@ public class PictureTaking : MonoBehaviour
             foreach (TreeInstance tree in data.treeInstances)
             {
                 Vector3 worldTreePos = Vector3.Scale(tree.position, data.size) + terrainPosition;
-                float distance = Vector3.Distance(handTransform.position, worldTreePos);
+                float distance = Vector3.Distance(hand.transform.position, worldTreePos);
 
                 if (distance <= detectionDistance)
                 {
-                    Vector3 directionToTree = worldTreePos - handTransform.position;
+                    Vector3 directionToTree = worldTreePos - hand.transform.position;
                     directionToTree.y = 0;
-                    Vector3 forwardFlat = handTransform.forward;
+                    Vector3 forwardFlat = hand.transform.forward;
                     forwardFlat.y = 0;
 
                     float angle = Vector3.Angle(forwardFlat.normalized, directionToTree.normalized);
@@ -197,7 +213,7 @@ public class PictureTaking : MonoBehaviour
                             if (prefab != null) treeName = prefab.name;
                         }
 
-                        Vector3 relativePosition = handTransform.InverseTransformPoint(worldTreePos);
+                        Vector3 relativePosition = hand.transform.InverseTransformPoint(worldTreePos);
 
                         detectedObjects.Add(new DetectedObject
                         {
@@ -235,18 +251,18 @@ public class PictureTaking : MonoBehaviour
                                 y * cellSizeZ + terrainPosition.z
                             );
 
-                            float distance = Vector3.Distance(handTransform.position, worldDetailPos);
+                            float distance = Vector3.Distance(hand.transform.position, worldDetailPos);
                             if (distance <= detectionDistance)
                             {
-                                Vector3 directionToDetail = worldDetailPos - handTransform.position;
+                                Vector3 directionToDetail = worldDetailPos - hand.transform.position;
                                 directionToDetail.y = 0;
-                                Vector3 forwardFlat = handTransform.forward;
+                                Vector3 forwardFlat = hand.transform.forward;
                                 forwardFlat.y = 0;
 
                                 float angle = Vector3.Angle(forwardFlat.normalized, directionToDetail.normalized);
                                 if (angle <= coneAngle)
                                 {
-                                    Vector3 relativePosition = handTransform.InverseTransformPoint(worldDetailPos);
+                                    Vector3 relativePosition = hand.transform.InverseTransformPoint(worldDetailPos);
 
                                     detectedObjects.Add(new DetectedObject
                                     {
@@ -272,9 +288,9 @@ public class PictureTaking : MonoBehaviour
         {
             timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
             scene = SceneManager.GetActiveScene().name,
-            position = handTransform.position,
-            eulerRotation = handTransform.rotation.eulerAngles,
-            forwardVector = handTransform.forward,
+            position = hand.transform.position,
+            eulerRotation = hand.transform.rotation.eulerAngles,
+            forwardVector = hand.transform.forward,
             detectedObjects = detectedNames.ToArray()
         };
 

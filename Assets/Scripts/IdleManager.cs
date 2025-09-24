@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+
 
 public class IdleManager : MonoBehaviour
 {
@@ -11,7 +13,9 @@ public class IdleManager : MonoBehaviour
     public Transform player;
 
     private bool isIdle = false;
-    private bool wasIdle = false;
+    private float currentTargetAlpha = -1f;
+    private Coroutine fadeCoroutine = null;
+    private Dictionary<GameObject, Coroutine> objectFadeCoroutines = new Dictionary<GameObject, Coroutine>(); // Track one fade coroutine per object to avoid overlap
     Vector3 playerOldPosition;
 
     void Update()
@@ -29,59 +33,47 @@ public class IdleManager : MonoBehaviour
             }
             else
             {
-                sphereLeft.SetActive(true);
-                sphereRight.SetActive(true);
-                cube.SetActive(true);
+                float alpha = currentTargetAlpha < 0f ? 0.5f : currentTargetAlpha;
+                SetObjectActiveWithAlpha(sphereLeft, true, alpha);
+                SetObjectActiveWithAlpha(sphereRight, true, alpha);
+                SetObjectActiveWithAlpha(cube, true, alpha);
                 waypoints.SetActive(true);
                 foreach (Transform child in waypoints.transform)
                 {
-                    SetOpacity(child.gameObject, 0);
+                    SetObjectActiveWithAlpha(child.gameObject, true, alpha);
                 }
-                SetOpacity(sphereLeft, 0);
-                SetOpacity(sphereRight, 0);
-                SetOpacity(cube, 0);
             }
         }
 
         checkMovement(player, playerOldPosition);
 
-        if (!isIdle && wasIdle)
+        float fadeDuration = 4f;
+        float targetAlpha = isIdle ? 0.5f : 0f;
+
+        if (currentTargetAlpha != targetAlpha)
         {
-            float fadeDuration = 4f;
-            float targetAlpha = 0f;
-            StartCoroutine(FadeToOpacity(sphereLeft, targetAlpha, fadeDuration));
-            StartCoroutine(FadeToOpacity(sphereRight, targetAlpha, fadeDuration));
-            StartCoroutine(FadeToOpacity(cube, targetAlpha, fadeDuration));
-            foreach (Transform child in waypoints.transform)
+            currentTargetAlpha = targetAlpha;
+            if (fadeCoroutine != null)
             {
-                StartCoroutine(FadeToOpacity(child.gameObject, targetAlpha, fadeDuration));
+                StopCoroutine(fadeCoroutine);
             }
-        }
-        else if (isIdle && !wasIdle)
-        {
-            float fadeDuration = 4f;
-            float targetAlpha = 0.5f;
-            StartCoroutine(FadeToOpacity(sphereLeft, targetAlpha, fadeDuration));
-            StartCoroutine(FadeToOpacity(sphereRight, targetAlpha, fadeDuration));
-            StartCoroutine(FadeToOpacity(cube, targetAlpha, fadeDuration));
-            foreach (Transform child in waypoints.transform)
-            {
-                StartCoroutine(FadeToOpacity(child.gameObject, targetAlpha, fadeDuration));
-            }
+            fadeCoroutine = StartCoroutine(HandleIdleTransition(targetAlpha, fadeDuration));
         }
 
-        wasIdle = isIdle;
         playerOldPosition = player.transform.position;
     }
 
-    private void SetOpacity(GameObject obj, float opacity)
+    private void SetObjectActiveWithAlpha(GameObject obj, bool active, float alpha)
     {
+        obj.SetActive(active);
+        // SetOpacity is defined below, so just call it
         Renderer renderer = obj.GetComponent<Renderer>();
         if (renderer != null)
         {
             Color color = renderer.material.color;
-            color.a = Mathf.Clamp01(opacity);
+            color.a = Mathf.Clamp01(alpha);
             renderer.material.color = color;
+            renderer.enabled = alpha > 0f;
         }
     }
 
@@ -113,6 +105,8 @@ public class IdleManager : MonoBehaviour
         {
             renderer.enabled = false;
         }
+
+        objectFadeCoroutines.Remove(obj);
     }
 
     private void checkMovement(Transform player, Vector3 oldPosition)
@@ -128,5 +122,27 @@ public class IdleManager : MonoBehaviour
             isIdle = true;
         }
 
+    }
+
+    private IEnumerator HandleIdleTransition(float targetAlpha, float fadeDuration)
+    {
+        var objects = new List<GameObject> { sphereLeft, sphereRight, cube };
+        foreach (Transform child in waypoints.transform)
+        {
+            objects.Add(child.gameObject);
+        }
+
+        foreach (var obj in objects)
+        {
+            // Start or restart fade coroutine for each object
+            if (objectFadeCoroutines.TryGetValue(obj, out var runningCoroutine) && runningCoroutine != null)
+            {
+                StopCoroutine(runningCoroutine);
+            }
+            objectFadeCoroutines[obj] = StartCoroutine(FadeToOpacity(obj, targetAlpha, fadeDuration));
+        }
+
+        yield return new WaitForSeconds(fadeDuration);
+        fadeCoroutine = null;
     }
 }

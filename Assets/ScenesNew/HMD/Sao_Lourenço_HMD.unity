@@ -66562,6 +66562,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &589278008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1580836407977364401, guid: 4ea0bb72eada6db43a4075fe79a31804,
+    type: 3}
+  m_PrefabInstance: {fileID: 589278006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &589652179
 GameObject:
   m_ObjectHideFlags: 0
@@ -107312,7 +107318,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.09849038, g: 0.09849038, b: 0.1984418, a: 1}
+    - _EdgeWaterColor: {r: 0.09848978, g: 0.09848978, b: 0.19844115, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -159583,6 +159589,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 589278008}
     - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
         type: 3}
       propertyPath: flashOverlay
