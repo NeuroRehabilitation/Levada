@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using Windows.Kinect;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
+using Windows.Kinect;
 
 public class _2mStepTest_Manager : MonoBehaviour
 {
@@ -216,7 +217,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             current_player = players[ComplexityListener.hike_level].position;
 
         }
-        if (Input.GetButtonUp("Fire1")|| Input.GetKeyUp(KeyCode.A))
+        if (Mouse.current.leftButton.wasReleasedThisFrame || Keyboard.current.aKey.wasReleasedThisFrame)
         {
             Time.timeScale = 1;
 
@@ -224,7 +225,7 @@ public class _2mStepTest_Manager : MonoBehaviour
 
 
         }
-        if (Input.GetButtonUp ("Fire2")|| Input.GetKeyUp(KeyCode.S)) {
+        if (Mouse.current.rightButton.wasReleasedThisFrame  || Keyboard.current.sKey.wasReleasedThisFrame) {
 
             Time.timeScale = 1;
             OnAbortButton();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -88,7 +89,7 @@ public class MainMenu : MonoBehaviour
 
         //}
         
-        if (Input.GetKeyUp(KeyCode.F)) // Input.GetButtonUp("Fire4")||
+        if (Keyboard.current.fKey.wasReleasedThisFrame) // Input.GetButtonUp("Fire4")||
         {
             PlayerPrefs.Save();
             //PlayerPrefs.SetString("environment_selection", "levada_canal");
@@ -102,7 +103,7 @@ public class MainMenu : MonoBehaviour
             Debug.Log(isnonVR+"nonVR");
 
         }
-        if (Input.GetKeyUp(KeyCode.E)) // Input.GetButtonUp("Fire4")||
+        if (Keyboard.current.eKey.wasReleasedThisFrame) // Input.GetButtonUp("Fire4")||
         {
             PlayerPrefs.Save();
             //PlayerPrefs.SetString("environment_selection", "levada_canal");
@@ -116,7 +117,7 @@ public class MainMenu : MonoBehaviour
             Debug.Log(isnonVR + "nonVR");
 
         }
-        else if (Input.GetKeyUp(KeyCode.A)) // Input.GetButtonUp("Fire4")||
+        else if (Keyboard.current.aKey.wasReleasedThisFrame) // Input.GetButtonUp("Fire4")||
         {
             PlayerPrefs.Save();
             //PlayerPrefs.SetString("environment_selection", "levada_canal");
@@ -130,7 +131,7 @@ public class MainMenu : MonoBehaviour
             Debug.Log(isnonVR + "nonVR");
 
         }
-        else if (Input.GetKeyUp(KeyCode.C)) // Input.GetButtonUp("Fire4")||
+        else if (Keyboard.current.cKey.wasReleasedThisFrame) // Input.GetButtonUp("Fire4")||
         {
             PlayerPrefs.Save();
             //PlayerPrefs.SetString("environment_selection", "levada_canal");
@@ -144,7 +145,7 @@ public class MainMenu : MonoBehaviour
             Debug.Log(isnonVR + "nonVR");
 
         }
-        else if (Input.GetKeyUp(KeyCode.G))
+        else if (Keyboard.current.gKey.wasReleasedThisFrame)
         {
 
             calPanel.SetActive(true);

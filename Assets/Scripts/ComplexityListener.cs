@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class ComplexityListener : MonoBehaviour
@@ -26,7 +27,7 @@ public class ComplexityListener : MonoBehaviour
         }
         */
 
-        if (Input.GetButtonUp("Fire2") || Input.GetKeyUp(KeyCode.S))
+        if (Keyboard.current.sKey.wasReleasedThisFrame)
         {
             hike_level = 1;
             Debug.Log("env selection"+ env_selection);
@@ -45,7 +46,7 @@ public class ComplexityListener : MonoBehaviour
 
         }
         */
-        else if (Input.GetButtonUp("Fire4") || Input.GetKeyUp(KeyCode.F))
+        else if (Keyboard.current.fKey.wasReleasedThisFrame)
         {
 
 
