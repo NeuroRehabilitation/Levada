@@ -33,7 +33,7 @@ public class IdleManager : MonoBehaviour
             }
             else
             {
-                float alpha = currentTargetAlpha < 0f ? 0.5f : currentTargetAlpha;
+                float alpha = currentTargetAlpha < 0f ? 0.25f : currentTargetAlpha;
                 SetObjectActiveWithAlpha(sphereLeft, true, alpha);
                 SetObjectActiveWithAlpha(sphereRight, true, alpha);
                 SetObjectActiveWithAlpha(cube, true, alpha);
@@ -48,7 +48,7 @@ public class IdleManager : MonoBehaviour
         checkMovement(player, playerOldPosition);
 
         float fadeDuration = 4f;
-        float targetAlpha = isIdle ? 0.5f : 0f;
+        float targetAlpha = isIdle ? 0.25f : 0f;
 
         if (currentTargetAlpha != targetAlpha)
         {
