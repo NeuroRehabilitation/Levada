@@ -45001,7 +45001,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1129721159}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1129721163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
@@ -95558,6 +95558,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_PositionInput.m_Action.m_Id
+      value: 639925cf-bf98-4085-b7f4-e1a123efbb58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_Id
+      value: 7dfbb638-159a-49ed-b738-4e82d3da2fcc
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_Name
+      value: Rotation Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_ExpectedControlType
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_PositionInput.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_PositionInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 4f4073ef-63e0-469f-aa4a-c512997d8128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 30a17979-83d6-4f27-b026-7936eec0d19f
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRHMD>/deviceRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211296, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Rotation Input
+      objectReference: {fileID: 0}
     - target: {fileID: 7639407096731211326, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: near clip plane
@@ -95588,6 +95638,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1129721159}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1129721162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7718060520813502935, guid: 70a6cea0e4292d243a8191adaa06998e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1129721159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1129721163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7639407095884599355, guid: 70a6cea0e4292d243a8191adaa06998e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1129721159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1129721164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129721163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1130097612
 GameObject:
   m_ObjectHideFlags: 0
@@ -140942,6 +141018,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 1129721162}
     - target: {fileID: 2644256919658413997, guid: 2658476504347f545b1789ebb184bcf7,
         type: 3}
       propertyPath: flashOverlay

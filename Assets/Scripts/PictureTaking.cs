@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
-using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PictureTaking : MonoBehaviour
 {
@@ -17,7 +16,7 @@ public class PictureTaking : MonoBehaviour
 
     private Shader depthShader;
     private bool canTakePicture = false;
-    private bool isHMD = false;
+    private bool isNonWalk = false;
 
 
     void OnEnable()
@@ -36,16 +35,15 @@ public class PictureTaking : MonoBehaviour
     {
         hand.transform.GetChild(0).gameObject.SetActive(false);
         if(hand.GetComponent<XRInteractorLineVisual>().enabled)
-            isHMD = true;
+            isNonWalk = true;
     }
 
     void Update()
     {
-        Debug.Log("is hmd" + isHMD);
         if (showCameraButton.action.WasPressedThisFrame())
         {
             hand.transform.GetChild(0).gameObject.SetActive(true);
-            if (isHMD)
+            if (isNonWalk)
             {
                 hand.GetComponent<XRRayInteractor>().enabled = false;
                 hand.GetComponent<XRInteractorLineVisual>().enabled = false;
@@ -55,7 +53,7 @@ public class PictureTaking : MonoBehaviour
         else if (showCameraButton.action.WasReleasedThisFrame())
         {
             hand.transform.GetChild(0).gameObject.SetActive(false);
-            if (isHMD)
+            if (isNonWalk)
             {
                 hand.GetComponent<XRRayInteractor>().enabled = true;
                 hand.GetComponent<XRInteractorLineVisual>().enabled = true;
