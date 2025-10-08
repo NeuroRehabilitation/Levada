@@ -74,6 +74,7 @@ public class Manager : MonoBehaviour
     "S Lourenço Non Walk Test"
 };
 
+    private Logger logger = GameObject.Find("Logger").GetComponent<Logger>();
 
     void Awake()
     {
@@ -168,11 +169,15 @@ public class Manager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name != "HMD or KAVE")
             {
+                logger.Log("Exited scene", "Info");
                 SceneManager.LoadScene("HMD or KAVE");
                 //FOV_Image.enabled = false;
             }
             else
+            {
+                logger.Log("Quit application", "Info");
                 Quit();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

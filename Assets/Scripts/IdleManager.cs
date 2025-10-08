@@ -66,7 +66,6 @@ public class IdleManager : MonoBehaviour
     private void SetObjectActiveWithAlpha(GameObject obj, bool active, float alpha)
     {
         obj.SetActive(active);
-        // SetOpacity is defined below, so just call it
         Renderer renderer = obj.GetComponent<Renderer>();
         if (renderer != null)
         {
