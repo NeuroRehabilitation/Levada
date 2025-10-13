@@ -74,10 +74,12 @@ public class Manager : MonoBehaviour
     "S Lourenço Non Walk Test"
 };
 
-    private Logger logger = GameObject.Find("Logger").GetComponent<Logger>();
+    private Logger logger;
 
     void Awake()
     {
+        logger = GameObject.Find("Logger").GetComponent<Logger>();
+        
         if (instance == null)
         {
             instance = this;

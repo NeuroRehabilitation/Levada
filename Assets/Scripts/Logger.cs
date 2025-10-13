@@ -83,5 +83,5 @@ public class LogEntry
     public float totalTime;
     public Vector3 playerPosition;
     public Vector3 playerRotation;
-    public string lastWaypoint = null;
+    public string lastWaypoint = "N/A";
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class IdleManager : MonoBehaviour
 {
-    public GameObject sphereLeft;
-    public GameObject sphereRight;
+    public GameObject kneeLeft;
+    public GameObject kneeRight;
     public GameObject cube;
     public GameObject waypoints;
     public Transform player;
@@ -26,16 +26,16 @@ public class IdleManager : MonoBehaviour
             bool currentlyVisible = cube.activeSelf;
             if (currentlyVisible)
             {
-                sphereLeft.SetActive(false);
-                sphereRight.SetActive(false);
+                kneeLeft.SetActive(false);
+                kneeRight.SetActive(false);
                 cube.SetActive(false);
                 waypoints.SetActive(false);
             }
             else
             {
                 float alpha = currentTargetAlpha < 0f ? 0.25f : currentTargetAlpha;
-                SetObjectActiveWithAlpha(sphereLeft, true, alpha);
-                SetObjectActiveWithAlpha(sphereRight, true, alpha);
+                SetObjectActiveWithAlpha(kneeLeft, true, alpha);
+                SetObjectActiveWithAlpha(kneeRight, true, alpha);
                 SetObjectActiveWithAlpha(cube, true, alpha);
                 waypoints.SetActive(true);
                 foreach (Transform child in waypoints.transform)
@@ -125,7 +125,7 @@ public class IdleManager : MonoBehaviour
 
     private IEnumerator HandleIdleTransition(float targetAlpha, float fadeDuration)
     {
-        var objects = new List<GameObject> { sphereLeft, sphereRight, cube };
+        var objects = new List<GameObject> { kneeLeft, kneeRight, cube };
         foreach (Transform child in waypoints.transform)
         {
             objects.Add(child.gameObject);
