@@ -39111,6 +39111,51 @@ MonoBehaviour:
   m_Script: {fileID: 813796822, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &234524816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 234524817}
+  - component: {fileID: 234524818}
+  m_Layer: 0
+  m_Name: Ray Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &234524817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234524816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1602478, y: 1.9199219, z: 1.0899811}
+  m_LocalScale: {x: 7.02, y: 6.43, z: 0.099999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 292769680}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &234524818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234524816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &238159891
 GameObject:
   m_ObjectHideFlags: 0
@@ -44723,6 +44768,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1580836407977364427, guid: 4ea0bb72eada6db43a4075fe79a31804,
         type: 3}
+      propertyPath: rayTarget
+      value: 
+      objectReference: {fileID: 234524816}
+    - target: {fileID: 1580836407977364427, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: vRManager
+      value: 
+      objectReference: {fileID: 1584263107}
+    - target: {fileID: 1580836407977364427, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      propertyPath: rayTargetDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580836407977364427, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
       propertyPath: centerHandToDisplay
       value: 1
       objectReference: {fileID: 0}
@@ -44863,6 +44923,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1533395643}
+    - targetCorrespondingSourceObject: {fileID: 1580836408053841401, guid: 4ea0bb72eada6db43a4075fe79a31804,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 234524817}
   m_SourcePrefab: {fileID: 100100000, guid: 4ea0bb72eada6db43a4075fe79a31804, type: 3}
 --- !u!114 &292769677 stripped
 MonoBehaviour:
@@ -134312,7 +134376,7 @@ Material:
     - _AmbientColor: {r: 1, g: 0.57649666, b: 0.3069946, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 0}
     - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeWaterColor: {r: 0.099675305, g: 0.099675305, b: 0.1996696, a: 1}
+    - _EdgeWaterColor: {r: 0.09967355, g: 0.09967355, b: 0.19966775, a: 1}
     - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
     - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
     - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
@@ -175021,6 +175085,12 @@ PrefabInstance:
 --- !u!4 &1584263106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4713917693847640, guid: 4b36acedff2723247a0529070e34260a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1584263105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1584263107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791488749721130, guid: 4b36acedff2723247a0529070e34260a,
     type: 3}
   m_PrefabInstance: {fileID: 1584263105}
   m_PrefabAsset: {fileID: 0}
