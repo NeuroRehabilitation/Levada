@@ -1,0 +1,6 @@
+outs:
+- md5: 705d06b65d8246338310260b00e321f1.dir
+  size: 369793885
+  nfiles: 1169
+  hash: md5
+  path: DiggerData
