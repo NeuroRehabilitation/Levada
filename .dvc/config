@@ -1,0 +1,4 @@
+[core]
+    remote = levada_assets
+['remote "levada_assets"']
+    url = gdrive://1n0E52KD4CWqNhatr6TcmdkqLG7lrINBe
