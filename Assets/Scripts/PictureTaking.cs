@@ -284,7 +284,7 @@ public class PictureTaking : MonoBehaviour
     {
         PictureMetadata metadata = new PictureMetadata
         {
-            timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            timestamp = ((System.DateTimeOffset)System.DateTime.Now).ToUnixTimeMilliseconds(),
             scene = SceneManager.GetActiveScene().name,
             position = hand.transform.position,
             eulerRotation = hand.transform.rotation.eulerAngles,
@@ -305,7 +305,7 @@ public class PictureTaking : MonoBehaviour
 [System.Serializable]
 public class PictureMetadata
 {
-    public string timestamp;
+    public long timestamp;
     public string scene;
     public Vector3 position;
     public Vector3 eulerRotation;

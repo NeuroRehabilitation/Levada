@@ -3716,6 +3716,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1870817690}
+  kinectBodySource: {fileID: 0}
+  kinectTransform: {fileID: 0}
+  kinectLoggingEnabled: 1
+  autoSelectFirstTrackedBody: 1
+  kinectBodyIndex: 0
+  logEveryNFrames: 1
 --- !u!4 &416187634
 Transform:
   m_ObjectHideFlags: 0
@@ -12446,9 +12452,9 @@ MonoBehaviour:
   numberText: {fileID: 762714800}
   availableHours:
   - 7
-  - 10
+  - 8
   - 13
-  - 16
+  - 16.5
 --- !u!1 &1371302939
 GameObject:
   m_ObjectHideFlags: 0

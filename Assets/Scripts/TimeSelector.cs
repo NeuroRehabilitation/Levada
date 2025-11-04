@@ -8,7 +8,7 @@ public class TimeSelector : MonoBehaviour
     public Button rightButton;
     public TextMeshProUGUI numberText;
 
-    [SerializeField] private float[] availableHours = { 7f, 10f, 13f, 16f };
+    [SerializeField] private float[] availableHours = { 7f, 8f, 13f, 16.5f };
     private int currentIndex = 0;
 
     void Start()
@@ -38,6 +38,9 @@ public class TimeSelector : MonoBehaviour
     void UpdateDisplay()
     {
         Settings.SelectedTime = availableHours[currentIndex];
-        numberText.text = availableHours[currentIndex].ToString("00") + ":00h";
+        if(currentIndex == 3)
+            numberText.text = (availableHours[currentIndex] - 1).ToString("00") + ":30h";
+        else
+            numberText.text = availableHours[currentIndex].ToString("00") + ":00h";
     }
 }
