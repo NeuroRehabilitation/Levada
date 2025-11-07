@@ -21,7 +21,7 @@ git clone --branch <branch-name> --single-branch git@github.com:NeuroRehabilitat
 
 ### 3. Setup Google Drive Acess
 
-1. Download ServiceAccount.json from [Neeurorehab Shared Folder](https://drive.google.com/drive/folders/1n0E52KD4CWqNhatr6TcmdkqLG7lrINBe?usp=sharing) 
+1. Download ServiceAccount.json from [Neurorehab Shared Folder](https://drive.google.com/drive/folders/1n0E52KD4CWqNhatr6TcmdkqLG7lrINBe?usp=sharing) 
 2. Copy the Downloaded file to **path/to/LevadaCloneRepo/.dvc**
 
 ### 4. Pull Large Files
