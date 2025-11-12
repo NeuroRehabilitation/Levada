@@ -15,6 +15,9 @@ public class Logger : MonoBehaviour
     public bool autoSelectFirstTrackedBody = true;
     [Range(0, 5)]
     public int kinectBodyIndex = 0;
+    [Header("XR Controller logging")]
+    public bool xrControllerLoggingEnabled = true;
+    public GameObject rightHandControllerObject;
 
     private List<LogEntry> logEntries = new List<LogEntry>();
     private string logFilePath;
@@ -60,9 +63,37 @@ public class Logger : MonoBehaviour
             sceneName = SceneManager.GetActiveScene().name,
             timeInScene = Time.time - sceneStartTime,
             transforms = CaptureAllTransforms(),
-            kinectJoints = kinectLoggingEnabled ? CaptureKinectJointPositions() : null
+            kinectJoints = kinectLoggingEnabled ? CaptureKinectJointPositions() : null,
+            xrControllerState = xrControllerLoggingEnabled ? CaptureXRControllerState() : null,
+            playerDirection = CapturePlayerDirection()
         };
         if (player.name == "Cube")
+        {
+            AI aiComponent = player.GetComponent<AI>();
+            if (aiComponent != null)
+            {
+                entry.lastWaypoint = (aiComponent.next - 1).ToString();
+            }
+        }
+        logEntries.Add(entry);
+        SaveToJson();
+    }
+
+    public void LogXRController(XRControllerState controllerState)
+    {
+        LogEntry entry = new LogEntry
+        {
+            timestamp = ((System.DateTimeOffset)System.DateTime.Now).ToUnixTimeMilliseconds(),
+            message = "XR Controller State Update",
+            logType = "XRController",
+            sceneName = SceneManager.GetActiveScene().name,
+            timeInScene = Time.time - sceneStartTime,
+            transforms = CaptureAllTransforms(),
+            kinectJoints = kinectLoggingEnabled ? CaptureKinectJointPositions() : null,
+            xrControllerState = controllerState,
+            playerDirection = CapturePlayerDirection()
+        };
+        if (player != null && player.name == "Cube")
         {
             AI aiComponent = player.GetComponent<AI>();
             if (aiComponent != null)
@@ -84,7 +115,10 @@ public class Logger : MonoBehaviour
                 position = player.transform.position,
                 rotation = player.transform.rotation,
                 localPosition = player.transform.localPosition,
-                localRotation = player.transform.localRotation
+                localRotation = player.transform.localRotation,
+                forward = player.transform.forward,
+                right = player.transform.right,
+                up = player.transform.up
             }
         };
 
@@ -113,7 +147,10 @@ public class Logger : MonoBehaviour
                 position = child.position,
                 rotation = child.rotation,
                 localPosition = child.localPosition,
-                localRotation = child.localRotation
+                localRotation = child.localRotation,
+                forward = child.forward,
+                right = child.right,
+                up = child.up
             });
 
             if (child.childCount > 0)
@@ -206,6 +243,52 @@ public class Logger : MonoBehaviour
         return list;
     }
 
+    private XRControllerState CaptureXRControllerState()
+    {
+        if (rightHandControllerObject == null)
+        {
+            var foundController = GameObject.Find("RightHand Controller");
+            if (foundController != null)
+            {
+                rightHandControllerObject = foundController;
+            }
+        }
+        
+        if (rightHandControllerObject == null)
+        {
+            return null;
+        }
+
+        var controllerLogger = rightHandControllerObject.GetComponent("XRControllerLogger");
+        if (controllerLogger == null)
+        {
+            return null;
+        }
+
+        var method = controllerLogger.GetType().GetMethod("GetCurrentState");
+        if (method != null)
+        {
+            return method.Invoke(controllerLogger, null) as XRControllerState;
+        }
+
+        return null;
+    }
+
+    private PlayerDirectionData CapturePlayerDirection()
+    {
+        if (player == null)
+        {
+            return null;
+        }
+
+        return new PlayerDirectionData
+        {
+            forward = player.transform.forward,
+            right = player.transform.right,
+            up = player.transform.up
+        };
+    }
+
     [System.Serializable]
     private class LogWrapper
     {
@@ -225,6 +308,8 @@ public class LogEntry
     public List<TransformData> transforms;
     public string lastWaypoint = "N/A";
     public List<JointData> kinectJoints;
+    public XRControllerState xrControllerState;
+    public PlayerDirectionData playerDirection;
 }
 
 [System.Serializable]
@@ -235,6 +320,9 @@ public class TransformData
     public Quaternion rotation;
     public Vector3 localPosition;
     public Quaternion localRotation;
+    public Vector3 forward;
+    public Vector3 right;
+    public Vector3 up;
 }
 
 [System.Serializable]
@@ -244,4 +332,32 @@ public class JointData
     public string trackingState;
     public Vector3 sensorPosition;
     public Vector3 worldPosition;
+}
+
+[System.Serializable]
+public class XRControllerState
+{
+    public Vector3 position;
+    public Quaternion rotation;
+    public Vector3 forward;
+    public Vector3 right;
+    public Vector3 up;
+    public float gripValue;
+    public float triggerValue;
+    public Vector3 trackedPosition;
+    public Quaternion trackedRotation;
+    public Vector3 rayOrigin;
+    public Vector3 rayDirection;
+    public bool isRayHitting;
+    public Vector3 rayHitPoint;
+    public float rayHitDistance;
+    public string rayHitObject;
+}
+
+[System.Serializable]
+public class PlayerDirectionData
+{
+    public Vector3 forward;
+    public Vector3 right;
+    public Vector3 up;
 }

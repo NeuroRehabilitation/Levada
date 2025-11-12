@@ -98704,6 +98704,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1181110708}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1181110711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114214513488835666, guid: 07d6efb0d2019a84eb0160b937db36f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1181110708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc342d9a82b638848b0c3cb32a0513be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1181147108
 GameObject:
   m_ObjectHideFlags: 0
@@ -141141,6 +141153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 413258149}
+  logEveryNFrames: 1
+  kinectBodySource: {fileID: 1181110711}
+  kinectTransform: {fileID: 1181110710}
+  kinectLoggingEnabled: 1
+  autoSelectFirstTrackedBody: 1
+  kinectBodyIndex: 0
 --- !u!4 &1764870457
 Transform:
   m_ObjectHideFlags: 0

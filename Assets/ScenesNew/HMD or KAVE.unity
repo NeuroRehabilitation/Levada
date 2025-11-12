@@ -3716,12 +3716,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1870817690}
+  logEveryNFrames: 1
   kinectBodySource: {fileID: 0}
   kinectTransform: {fileID: 0}
-  kinectLoggingEnabled: 1
-  autoSelectFirstTrackedBody: 1
+  kinectLoggingEnabled: 0
+  autoSelectFirstTrackedBody: 0
   kinectBodyIndex: 0
-  logEveryNFrames: 1
 --- !u!4 &416187634
 Transform:
   m_ObjectHideFlags: 0

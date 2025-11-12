@@ -287,7 +287,7 @@ public class PictureTaking : MonoBehaviour
             timestamp = ((System.DateTimeOffset)System.DateTime.Now).ToUnixTimeMilliseconds(),
             scene = SceneManager.GetActiveScene().name,
             position = hand.transform.position,
-            eulerRotation = hand.transform.rotation.eulerAngles,
+            rotation = hand.transform.rotation,
             forwardVector = hand.transform.forward,
             detectedObjects = detectedNames.ToArray()
         };
@@ -308,7 +308,7 @@ public class PictureMetadata
     public long timestamp;
     public string scene;
     public Vector3 position;
-    public Vector3 eulerRotation;
+    public Quaternion rotation;
     public Vector3 forwardVector;
     public DetectedObject[] detectedObjects;
 }
