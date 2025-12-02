@@ -314,9 +314,11 @@ public class _2mStepTest_Manager : MonoBehaviour
                 break;
 
             case SubState.Idle:
+                _nextSubState = SubState.Next;
                 break;
 
             case SubState.Next:
+                OnRestartButton();
                 break;
 
             default:

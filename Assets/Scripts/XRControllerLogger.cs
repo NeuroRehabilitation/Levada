@@ -126,9 +126,8 @@ public class XRControllerLogger : MonoBehaviour
         if (state.isRayHitting)
         {
             message += $" | Ray Hit: {state.rayHitObject} at distance {state.rayHitDistance:F2}";
+            //Debug.Log(message);
         }
-
-        Debug.Log(message);
 
         if (mainLogger != null)
         {

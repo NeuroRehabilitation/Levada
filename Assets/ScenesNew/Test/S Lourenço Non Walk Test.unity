@@ -217236,6 +217236,8 @@ MonoBehaviour:
   kinectLoggingEnabled: 0
   autoSelectFirstTrackedBody: 0
   kinectBodyIndex: 0
+  xrControllerLoggingEnabled: 1
+  rightHandControllerObject: {fileID: 292769681}
 --- !u!4 &1966410735
 Transform:
   m_ObjectHideFlags: 0

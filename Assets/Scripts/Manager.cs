@@ -78,8 +78,6 @@ public class Manager : MonoBehaviour
 
     void Awake()
     {
-        logger = GameObject.Find("Logger").GetComponent<Logger>();
-        
         if (instance == null)
         {
             instance = this;
@@ -105,6 +103,18 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+
+        logger = GameObject.Find("Logger").GetComponent<Logger>();
+
+        if (logger == null)
+        {
+            Debug.Log("Manager: No Logger component found in scene.");
+        }
+        else
+        {
+            Debug.Log("Logger component found.");
+        }
+
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         if (Scenes.Count > 0) { Shuffle(); }
@@ -154,6 +164,11 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+
+        if (logger == null)
+        {
+            logger = GameObject.Find("Logger").GetComponent<Logger>();
+        }
 
         if (isRunning && !timerStarted)
         {
