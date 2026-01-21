@@ -1745,6 +1745,7 @@ MonoBehaviour:
   startWay: 0
   isReset: 0
   fracJourney: 0
+  stepDurationSeconds: 1
 --- !u!65 &188222726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3716,12 +3717,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1870817690}
-  logEveryNFrames: 1
   kinectBodySource: {fileID: 0}
   kinectTransform: {fileID: 0}
   kinectLoggingEnabled: 0
   autoSelectFirstTrackedBody: 0
   kinectBodyIndex: 0
+  xrControllerLoggingEnabled: 1
+  rightHandControllerObject: {fileID: 0}
+  logEveryNFrames: 1
+  saveEveryNFrames: 60
+  maxEntriesBeforeSave: 100
+  useAsyncWrite: 1
 --- !u!4 &416187634
 Transform:
   m_ObjectHideFlags: 0

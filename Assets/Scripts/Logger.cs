@@ -58,7 +58,7 @@ public class Logger : MonoBehaviour
         logEntries.Clear();
 
         string logDirectory = Application.persistentDataPath;
-        string timestamp = System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         logFilePath = Path.Combine(logDirectory, $"log_{sceneName}_{timestamp}.json");
 
         Debug.Log("Log file path: " + logFilePath);
@@ -93,7 +93,7 @@ public class Logger : MonoBehaviour
             _logStream.WriteLine("{\"logs\":[");
             _isFirstEntry = true;
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"Failed to initialize log file: {e.Message}");
         }
@@ -126,7 +126,7 @@ public class Logger : MonoBehaviour
                 _logStream = null;
                 Debug.Log($"Log file finalized: {logFilePath}");
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 Debug.LogError($"Failed to finalize log file: {e.Message}");
             }
@@ -158,7 +158,7 @@ public class Logger : MonoBehaviour
     {
         LogEntry entry = new LogEntry
         {
-            timestamp = ((System.DateTimeOffset)System.DateTime.Now).ToUnixTimeMilliseconds(),
+            timestamp = ((DateTimeOffset)DateTime.Now).ToUnixTimeMilliseconds(),
             message = message,
             logType = logType,
             sceneName = sceneName,
@@ -181,7 +181,7 @@ public class Logger : MonoBehaviour
     {
         LogEntry entry = new LogEntry
         {
-            timestamp = ((System.DateTimeOffset)System.DateTime.Now).ToUnixTimeMilliseconds(),
+            timestamp = ((DateTimeOffset)DateTime.Now).ToUnixTimeMilliseconds(),
             message = "XR Controller State Update",
             logType = "XRController",
             sceneName = sceneName,
@@ -209,11 +209,11 @@ public class Logger : MonoBehaviour
                 name = player.name,
                 position = player.transform.position,
                 rotation = player.transform.rotation,
-                localPosition = player.transform.localPosition,
-                localRotation = player.transform.localRotation,
-                forward = player.transform.forward,
-                right = player.transform.right,
-                up = player.transform.up
+                localPosition = player.transform.localPosition
+                //localRotation = player.transform.localRotation,
+                //forward = player.transform.forward,
+                //right = player.transform.right,
+                //up = player.transform.up
             }
         };
 
@@ -236,11 +236,11 @@ public class Logger : MonoBehaviour
                 name = child.name,
                 position = child.position,
                 rotation = child.rotation,
-                localPosition = child.localPosition,
-                localRotation = child.localRotation,
-                forward = child.forward,
-                right = child.right,
-                up = child.up
+                localPosition = child.localPosition
+                //localRotation = child.localRotation,
+                //forward = child.forward,
+                //right = child.right,
+                //up = child.up
             });
 
             if (child.childCount > 0)
@@ -294,7 +294,7 @@ public class Logger : MonoBehaviour
 
             logEntries.Clear();
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"Failed to flush log entries: {e.Message}");
         }
@@ -366,9 +366,9 @@ public class Logger : MonoBehaviour
 
         var list = new List<JointData>(25);
 
-        System.Func<Vector3, Vector3> sensorToUnity = v => new Vector3(-v.x, v.y, v.z);
+        Func<Vector3, Vector3> sensorToUnity = v => new Vector3(-v.x, v.y, v.z);
 
-        foreach (JointType jt in System.Enum.GetValues(typeof(JointType)))
+        foreach (JointType jt in Enum.GetValues(typeof(JointType)))
         {
             Windows.Kinect.Joint j = body.Joints[jt];
             Vector3 sensorPos = new Vector3(j.Position.X, j.Position.Y, j.Position.Z);
@@ -439,7 +439,7 @@ public class Logger : MonoBehaviour
         };
     }
 
-    [System.Serializable]
+    [Serializable]
     private class LogWrapper
     {
         public List<LogEntry> logs;
@@ -447,7 +447,7 @@ public class Logger : MonoBehaviour
 
 }
 
-[System.Serializable]
+[Serializable]
 public class LogEntry
 {
     public long timestamp;
@@ -462,20 +462,20 @@ public class LogEntry
     public PlayerDirectionData playerDirection;
 }
 
-[System.Serializable]
+[Serializable]
 public class TransformData
 {
     public string name;
     public Vector3 position;
     public Quaternion rotation;
     public Vector3 localPosition;
-    public Quaternion localRotation;
-    public Vector3 forward;
-    public Vector3 right;
-    public Vector3 up;
+    //public Quaternion localRotation;
+    //public Vector3 forward;
+    //public Vector3 right;
+    //public Vector3 up;
 }
 
-[System.Serializable]
+[Serializable]
 public class JointData
 {
     public string joint;
@@ -484,14 +484,14 @@ public class JointData
     public Vector3 worldPosition;
 }
 
-[System.Serializable]
+[Serializable]
 public class XRControllerState
 {
     public Vector3 position;
     public Quaternion rotation;
-    public Vector3 forward;
-    public Vector3 right;
-    public Vector3 up;
+    //public Vector3 forward;
+    //public Vector3 right;
+    //public Vector3 up;
     public float gripValue;
     public float triggerValue;
     public Vector3 trackedPosition;
@@ -504,7 +504,7 @@ public class XRControllerState
     public string rayHitObject;
 }
 
-[System.Serializable]
+[Serializable]
 public class PlayerDirectionData
 {
     public Vector3 forward;

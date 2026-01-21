@@ -18,8 +18,6 @@ public class XRControllerLogger : MonoBehaviour
     [Header("Logging Settings")]
     public bool enableLogging = true;
 
-    private float lastLogTime = 0f;
-    private XRControllerState previousState;
     private Logger mainLogger;
 
     void Start()
@@ -32,8 +30,6 @@ public class XRControllerLogger : MonoBehaviour
 
         if (rayInteractor == null)
             rayInteractor = GetComponent<XRRayInteractor>();
-
-        previousState = new XRControllerState();
 
         EnableInputActions();
     }
@@ -54,8 +50,6 @@ public class XRControllerLogger : MonoBehaviour
 
         XRControllerState currentState = CaptureControllerState();
         LogControllerState(currentState);
-        previousState = currentState;
-        lastLogTime = Time.time;
     }
 
     private void EnableInputActions()
@@ -80,9 +74,9 @@ public class XRControllerLogger : MonoBehaviour
 
         state.position = transform.position;
         state.rotation = transform.rotation;
-        state.forward = transform.forward;
-        state.right = transform.right;
-        state.up = transform.up;
+        //state.forward = transform.forward;
+        //state.right = transform.right;
+        //state.up = transform.up;
 
         state.gripValue = gripButton.action != null ? gripButton.action.ReadValue<float>() : 0f;
         state.triggerValue = triggerButton.action != null ? triggerButton.action.ReadValue<float>() : 0f;

@@ -22,7 +22,7 @@ public class KneeFeedback : MonoBehaviour
         }
 
         GetComponent<Image>().fillAmount = Mathf.InverseLerp(minimumY, maximumY, playerKnee.position.y);
-        Debug.Log(GetComponent<Image>().fillAmount);
+        //Debug.Log(GetComponent<Image>().fillAmount);
 
         if (GetComponent<Image>().fillAmount >= 0.5f)
         {

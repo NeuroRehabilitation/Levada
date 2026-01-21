@@ -8,6 +8,7 @@ public class CameraMovement : MonoBehaviour
 {
     public GameObject cameraCube;
     public Camera miniCamera;
+    [Header("CAVE settings")]
     public bool centerHandToDisplay;
     public GameObject vRManager;
     public GameObject rayTarget;

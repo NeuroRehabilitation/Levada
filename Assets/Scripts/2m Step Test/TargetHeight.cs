@@ -14,6 +14,7 @@ public class TargetHeight : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         TestManager.OnTargetHeightTriggerEnter(other);
+        //Debug.Log("Triggered entered");
     }
 
     void OnTriggerExit(Collider other)

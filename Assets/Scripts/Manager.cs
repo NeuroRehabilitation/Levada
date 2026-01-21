@@ -119,11 +119,14 @@ public class Manager : MonoBehaviour
 
         if (Scenes.Count > 0) { Shuffle(); }
 
-        CSV_writer.AddData("Scene", "Valence", "Arousal");
+        if (CSV_writer != null)
+            CSV_writer.AddData("Scene", "Valence", "Arousal");
 
-        SAM.StartStream();
+        if (SAM != null)
+            SAM.StartStream();
         //VAS.StartStream();
-        Markers.StartStream();
+        if (Markers != null)
+            Markers.StartStream();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -134,8 +137,11 @@ public class Manager : MonoBehaviour
 
             LSLInput = GameObject.FindObjectOfType<LSLInput>();
 
-            FOV_Image = FOV.GetComponentInChildren<Image>();
-            FOV_multiplier = imageScaler.current_Multiplier;
+            if (FOV != null)
+                FOV_Image = FOV.GetComponentInChildren<Image>();
+            
+            if (imageScaler != null)
+                FOV_multiplier = imageScaler.current_Multiplier;
 
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
@@ -153,11 +159,12 @@ public class Manager : MonoBehaviour
                 }
             }
 
-
-            LayerMask layerMask = -1; //Layer "Everything"
-
-            mainCamera.GetComponent<Camera>().cullingMask = layerMask;
-            mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
+            if (mainCamera != null)
+            {
+                LayerMask layerMask = -1; //Layer "Everything"
+                mainCamera.GetComponent<Camera>().cullingMask = layerMask;
+                mainCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.Skybox;
+            }
         }
     }
 
@@ -233,10 +240,17 @@ public class Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(() => LSLInput.GameVariable != lastGameVariable);
+            if (LSLInput != null && imageScaler != null)
+            {
+                yield return new WaitUntil(() => LSLInput != null && LSLInput.GameVariable != lastGameVariable);
 
-            imageScaler.current_Multiplier += LSLInput.GameVariable;
-            lastGameVariable = LSLInput.GameVariable;
+                imageScaler.current_Multiplier += LSLInput.GameVariable;
+                lastGameVariable = LSLInput.GameVariable;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 

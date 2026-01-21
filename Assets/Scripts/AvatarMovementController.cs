@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AvatarMovementController : MonoBehaviour
 {
-    public GameObject camObj;
+    /*public GameObject camObj;
     private int prev_step = 0;
     private int current_step = 0;
     int error_secs_counter = 0;
@@ -48,5 +48,5 @@ public class AvatarMovementController : MonoBehaviour
         if (error_secs_counter > 3)// 3 seconds
             cam.enabled = true;
 
-    }
+    }*/
 }

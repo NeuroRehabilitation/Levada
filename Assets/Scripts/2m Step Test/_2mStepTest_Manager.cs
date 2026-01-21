@@ -233,6 +233,8 @@ public class _2mStepTest_Manager : MonoBehaviour
             Time.timeScale = 1;
             OnAbortButton();
         }
+
+        //Debug.Log("Steps Counter: " + stepsCounter);
        
     }
     void FixedUpdate()
@@ -626,7 +628,8 @@ public class _2mStepTest_Manager : MonoBehaviour
 
             //if (!isLongWalkTest)
             {
-                height = CalculateKneeHeight() + (1 * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
+                height = CalculateMidThighHeight(); //OLD
+                //height = CalculateKneeHeight() + (1 * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
                 /*minHeight = CalculateKneeHeight() + (0.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
                 maxHeight = CalculateKneeHeight() + (1.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW*/
                 //height = CalculateMidThighHeight();
@@ -873,13 +876,15 @@ public class _2mStepTest_Manager : MonoBehaviour
             AbstractFeedbackLeft.TurnTopOn();
 
             _test.LeftFootIsUp = true;
-            if (_test.RightFootIsDown)
+            if (_test.RightFootIsDown && !_test.LeftStepIsValid)
             {
                 _test.LeftStepIsValid = true;
                 if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
-                    ;// AbstractFeedbackLeft.PlaySound(1);
-                stepsCounter++;
-
+                {
+                    // AbstractFeedbackLeft.PlaySound(1);
+                }
+                stepsCounter = 1;
+                //stepscounter = 2; Implementar no resto
             }
 
         }
@@ -889,11 +894,13 @@ public class _2mStepTest_Manager : MonoBehaviour
             AbstractFeedbackRight.TurnTopOn();
 
             _test.RightFootIsUp = true;
-            if (_test.LeftFootIsDown)
+            if (_test.LeftFootIsDown && !_test.RightStepIsValid)
             {
                 _test.RightStepIsValid = true;
                 if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
-                    ;//AbstractFeedbackRight.PlaySound(0);
+                {
+                    // AbstractFeedbackRight.PlaySound(0);
+                }
             }
 
             if (_test.LeftStepIsValid && _test.RightStepIsValid && _test.LeftFootIsDown)
@@ -901,7 +908,7 @@ public class _2mStepTest_Manager : MonoBehaviour
                 _test.LeftStepIsValid = false;
                 _test.RightStepIsValid = false;
                 _test.RSteps++;
-                stepsCounter++;
+                stepsCounter = 1;
 
             }
 

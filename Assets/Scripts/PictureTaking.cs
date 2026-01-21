@@ -33,9 +33,17 @@ public class PictureTaking : MonoBehaviour
 
     void Awake()
     {
-        hand.transform.GetChild(0).gameObject.SetActive(false);
-        if(hand.GetComponent<XRInteractorLineVisual>().enabled)
-            isNonWalk = true;
+        if (hand != null && hand.transform.childCount > 0)
+        {
+            hand.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        
+        if (hand != null)
+        {
+            XRInteractorLineVisual lineVisual = hand.GetComponent<XRInteractorLineVisual>();
+            if (lineVisual != null && lineVisual.enabled)
+                isNonWalk = true;
+        }
     }
 
     void Update()
