@@ -78,6 +78,8 @@ public class Manager : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
+
         if (instance == null)
         {
             instance = this;
@@ -172,6 +174,8 @@ public class Manager : MonoBehaviour
     private void Update()
     {
 
+        Debug.Log("FPS: " + (int) (1/Time.unscaledDeltaTime));//fps
+
         if (logger == null)
         {
             logger = GameObject.Find("Logger").GetComponent<Logger>();
@@ -194,6 +198,7 @@ public class Manager : MonoBehaviour
             if (SceneManager.GetActiveScene().name != "HMD or KAVE")
             {
                 logger.Log("Exited scene", "Info");
+                Cursor.visible = true;
                 SceneManager.LoadScene("HMD or KAVE");
                 //FOV_Image.enabled = false;
             }

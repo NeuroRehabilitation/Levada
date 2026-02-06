@@ -8,12 +8,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PictureTaking : MonoBehaviour
 {
 
-    public InputActionProperty showCameraButton;
-    public InputActionProperty captureButton;
     public GameObject hand;
     public GameObject flashOverlay;
 
 
+    private InputAction showCameraButton;
+    private InputAction captureButton;
     private Shader depthShader;
     private bool canTakePicture = false;
     private bool isNonWalk = false;
@@ -21,14 +21,14 @@ public class PictureTaking : MonoBehaviour
 
     void OnEnable()
     {
-        showCameraButton.action.Enable();
-        captureButton.action.Enable();
+        showCameraButton.Enable();
+        captureButton.Enable();
     }
 
     void OnDisable()
     {
-        showCameraButton.action.Disable();
-        captureButton.action.Disable();
+        showCameraButton.Disable();
+        captureButton.Disable();
     }
 
     void Awake()
@@ -44,11 +44,23 @@ public class PictureTaking : MonoBehaviour
             if (lineVisual != null && lineVisual.enabled)
                 isNonWalk = true;
         }
+
+        showCameraButton = new InputAction(
+            name: "GripButton",
+            type: InputActionType.Button,
+            binding: "<XRController>{RightHand}/gripPressed"
+        );
+
+        captureButton = new InputAction(
+            name: "AButton",
+            type: InputActionType.Button,
+            binding: "<XRController>{RightHand}/primaryButton"
+        );
     }
 
     void Update()
     {
-        if (showCameraButton.action.WasPressedThisFrame())
+        if (showCameraButton.WasPressedThisFrame())
         {
             hand.transform.GetChild(0).gameObject.SetActive(true);
             if (isNonWalk)
@@ -58,7 +70,7 @@ public class PictureTaking : MonoBehaviour
             }
             canTakePicture = true;
         }
-        else if (showCameraButton.action.WasReleasedThisFrame())
+        else if (showCameraButton.WasReleasedThisFrame())
         {
             hand.transform.GetChild(0).gameObject.SetActive(false);
             if (isNonWalk)
@@ -69,7 +81,7 @@ public class PictureTaking : MonoBehaviour
             canTakePicture = false;
         }
 
-        if (canTakePicture && captureButton.action.WasPressedThisFrame())
+        if (canTakePicture && captureButton.WasPressedThisFrame())
         {
             Debug.Log("capture button was pressed");
             StartCoroutine(CaptureFromHandView());

@@ -1745,7 +1745,6 @@ MonoBehaviour:
   startWay: 0
   isReset: 0
   fracJourney: 0
-  stepDurationSeconds: 1
 --- !u!65 &188222726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11505,7 +11504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791488749721130, guid: 4b36acedff2723247a0529070e34260a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4713917693847640, guid: 4b36acedff2723247a0529070e34260a, type: 3}
       propertyPath: m_RootOrder

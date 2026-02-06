@@ -24,6 +24,8 @@ public class AI : MonoBehaviour
     public float fracJourney = 0;
     private int maximumWaypoint=116;//135
     private float stepProgress = 0f;
+    private bool isMoving = false;
+    private float moveTimer = 0f;
     void Start() 
 	{
         cube_start_position = transform.position;
@@ -67,32 +69,42 @@ public class AI : MonoBehaviour
 
     }
 
-	/*void wayPointMovement ()
+	void wayPointMovement ()
 	{
-        float distCovered = (Time.time - startTime) * speed;
-         fracJourney = (float)distCovered / journeyLength;
-        transform.position = Vector3.Lerp(startMarker.position, endMarker[next].position, fracJourney);
-//******
-        var targetRotation = Quaternion.LookRotation(endMarker[next+1].position - transform.position);
+        if (!isMoving && checkSteps())
+        {
+            isMoving = true;
+            moveTimer = 0f;
+        }
 
-        // Smoothly rotate towards the target point.
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-//*******
-        //transform.LookAt (endMarker [next].position);
-      //  transform.localRotation = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up);
-        //transform.localRotation = Quaternion.AngleAxis(endMarker [next].rotation.eulerAngles.y, Vector3.up);
+        if (!isMoving)
+            return;
 
-        if (Vector3.Distance(this.transform.position, endMarker[next].position) <= 0f && checkSteps())
-            {
-                startTime = Time.time;
-                startMarker = endMarker[next];
-                journeyLength = Vector3.Distance(endMarker[next].position, endMarker[Next()].position);
-            }
-        
-        
-    }*/
+        moveTimer += Time.deltaTime;
 
-    void wayPointMovement()
+        var targetPos = endMarker[next].position;
+        var step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+
+        if (next + 1 < endMarker.Length)
+        {
+            var targetRotation = Quaternion.LookRotation(endMarker[next + 1].position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
+        }
+
+        if (Vector3.Distance(transform.position, targetPos) <= 0.001f)
+        {
+            startMarker = endMarker[next];
+            journeyLength = Vector3.Distance(startMarker.position, endMarker[Next()].position);
+        }
+
+        if (moveTimer >= 1f)
+        {
+            isMoving = false;
+        }
+    }
+
+    /*void wayPointMovement()
     {
             float increment = Time.deltaTime / Mathf.Max(0.0001f, 1f);
             stepProgress = Mathf.Clamp01(stepProgress + increment);
@@ -116,7 +128,7 @@ public class AI : MonoBehaviour
                 stepProgress = 0f;
                 fracJourney = 0f;
             }
-    }
+    }*/
 
     void Movement ()
 	{
