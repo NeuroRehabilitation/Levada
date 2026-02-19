@@ -11,7 +11,7 @@ public class TargetHeight : MonoBehaviour
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, height, gameObject.transform.position.z);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         TestManager.OnTargetHeightTriggerEnter(other);
         //Debug.Log("Triggered entered");

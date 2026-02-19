@@ -7,7 +7,6 @@ public class AI : MonoBehaviour
 	private Animation anim;
     public Transform startMarker;
     public Transform[] endMarker;
-    public float speed = 1.0F;
 	//public EnemyShoter enemyShot;
 	public Transform player;
 	public bool target=false;
@@ -21,11 +20,11 @@ public class AI : MonoBehaviour
     public bool startWay = false;
     public  bool isReset = false;
     Vector3 cube_start_position;
-    public float fracJourney = 0;
     private int maximumWaypoint=116;//135
-    private float stepProgress = 0f;
     private bool isMoving = false;
-    private float moveTimer = 0f;
+    public float stepDurationSeconds = 1.0f;
+    private float stepActiveUntil = 0f;
+    private float speed = 4.0f;
     void Start() 
 	{
         cube_start_position = transform.position;
@@ -52,6 +51,8 @@ public class AI : MonoBehaviour
         if(_2mStepTest_Manager.stepsCounter == 1) {
 			//prevSteps = currentSteps;
             _2mStepTest_Manager.stepsCounter = 0;
+            float baseTime = Mathf.Max(stepActiveUntil, Time.time);
+            stepActiveUntil = baseTime + Mathf.Max(0.0001f, stepDurationSeconds);
 			return true;
 		} else
 			return false;
@@ -69,7 +70,7 @@ public class AI : MonoBehaviour
 
     }
 
-	void wayPointMovement ()
+	/*void wayPointMovement ()
 	{
         if (!isMoving && checkSteps())
         {
@@ -102,39 +103,54 @@ public class AI : MonoBehaviour
         {
             isMoving = false;
         }
-    }
+    }*/
 
-    /*void wayPointMovement()
+    void wayPointMovement()
     {
-            float increment = Time.deltaTime / Mathf.Max(0.0001f, 1f);
-            stepProgress = Mathf.Clamp01(stepProgress + increment);
+        checkSteps();
 
-            fracJourney = stepProgress;
-            transform.position = Vector3.Lerp(startMarker.position, endMarker[next].position, stepProgress);
-            //******
-            var targetRotation = Quaternion.LookRotation(endMarker[next + 1].position - transform.position);
+        isMoving = Time.time < stepActiveUntil;
 
-            // Smoothly rotate towards the target point.
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-            //*******
-            //transform.LookAt (endMarker [next].position);
-            //  transform.localRotation = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up);
-            //transform.localRotation = Quaternion.AngleAxis(endMarker [next].rotation.eulerAngles.y, Vector3.up);
+        if (!isMoving)
+            return;
 
-            if (Vector3.Distance(this.transform.position, endMarker[next].position) <= 0f && checkSteps())
+        float remainingMove = speed * Time.deltaTime;
+
+        while (remainingMove > 0f)
+        {
+            Vector3 targetPos = endMarker[next].position;
+            float distanceToTarget = Vector3.Distance(transform.position, targetPos);
+
+            if (distanceToTarget <= remainingMove)
             {
+                transform.position = targetPos;
+                remainingMove -= distanceToTarget;
+
                 startMarker = endMarker[next];
                 journeyLength = Vector3.Distance(endMarker[next].position, endMarker[Next()].position);
-                stepProgress = 0f;
-                fracJourney = 0f;
+
+                if (next > maximumWaypoint)
+                    break;
             }
-    }*/
+            else
+            {
+                Vector3 direction = (targetPos - transform.position).normalized;
+                transform.position += direction * remainingMove;
+                remainingMove = 0f;
+            }
+
+            int lookIndex = Mathf.Min(next + 1, endMarker.Length - 1);
+            Vector3 lookTarget = endMarker[lookIndex].position;
+            Quaternion targetRotation = Quaternion.LookRotation(lookTarget - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation,Time.deltaTime);
+        }
+    }
 
     void Movement ()
 	{
         if (next > maximumWaypoint)//135
         {
-            next = 1;
+            /*next = 1;
             //fracJourney = 1f;
             isReset = true;
             gameObject.transform.position = new Vector3(endMarker[1].position.x, endMarker[1].position.y, endMarker[1].position.z);
@@ -143,7 +159,7 @@ public class AI : MonoBehaviour
             journeyLength = Vector3.Distance(startMarker.position, endMarker[next].position);
             //currentSteps = 0;
             //prevSteps = currentSteps;
-            isReset = false;
+            isReset = false;*/
 
         }
         else {
@@ -151,7 +167,10 @@ public class AI : MonoBehaviour
                 wayPointMovement();
         }
         
-                
+        if(next == 1)
+        {
+            transform.position = endMarker[1].position;
+        } 
 			
 	}
    

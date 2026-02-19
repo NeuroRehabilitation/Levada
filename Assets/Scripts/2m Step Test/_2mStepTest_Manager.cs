@@ -27,7 +27,7 @@ public class _2mStepTest_Manager : MonoBehaviour
     private static float tresholdModifier = 0.0f;
     private float smoothLeftKneeY;
     private float smoothRightKneeY;
-    private const float kneeSmoothFactor = 0.1f;
+    private const float kneeSmoothFactor = 0.3f;
 
 
     private string [] type_test = {"easy", "medium", "hard" };
@@ -56,11 +56,12 @@ public class _2mStepTest_Manager : MonoBehaviour
     public BoxCollider TargetHeightCollider;
     public BoxCollider FloorLevelCollider;
     private TargetHeight _targetHeight;
-    //private FloorLevel _floorLevel;
+    private FloorLevel _floorLevel;
     private JointOrientationControl2M _subjectAvatarOrientationControl;
     public BodySourceViewer2M BodySourceViewer;
     private Test _test;
     public static float height;
+    public static float floor_height;
     public static float maxHeight = 10;
     public static float minHeight = 0;
 
@@ -72,10 +73,10 @@ public class _2mStepTest_Manager : MonoBehaviour
         public int RSteps;
         public bool LeftFootIsUp;
         public bool LeftFootIsDown;
-        public bool LeftStepIsValid;
+        //public bool LeftStepIsValid;
         public bool RightFootIsUp;
         public bool RightFootIsDown;
-        public bool RightStepIsValid;
+        //public bool RightStepIsValid;
     }
 
     private _2mStepTest_Logger _logger = new _2mStepTest_Logger();
@@ -164,8 +165,8 @@ public class _2mStepTest_Manager : MonoBehaviour
     {
         Cursor.visible = false;
 
-        left_ball.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-        right_ball.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        left_ball.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+        right_ball.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 
         if(GameBLESender.Instance != null)
             GameBLESender.Instance.Init();
@@ -206,7 +207,7 @@ public class _2mStepTest_Manager : MonoBehaviour
         stepsCounter = 0;
 		InitializeVariables();
         _targetHeight = TargetHeightCollider.GetComponent<TargetHeight>();
-        //_floorLevel = FloorLevelCollider.GetComponent<FloorLevel>();
+        _floorLevel = FloorLevelCollider.GetComponent<FloorLevel>();
 
         // get the sensor object
         _kinectSensor = KinectSensor.GetDefault();
@@ -240,6 +241,12 @@ public class _2mStepTest_Manager : MonoBehaviour
             GameBLESender.Instance.SendString("GameVariable,Height,float," + height + "," + minHeight +","+maxHeight);
 
         _targetHeight.SetHeight(height);
+        if (_state == State.Test && _subState == SubState.Update)
+        {
+            floor_height = CalculateFloorHeight();
+            //Debug.Log("Floor Height: " + floor_height);
+        }
+        _floorLevel.SetHeight(floor_height);
 
        // Debug.Log("Height = " + height);
 
@@ -252,7 +259,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             current_player = players[ComplexityListener.hike_level].position;
 
         }
-        if (/*Input.GetButtonUp("Fire1")||*/ Input.GetKeyUp(KeyCode.A) || HmdNextButton.action.WasPressedThisFrame())
+        if (Input.GetButtonUp("Fire1")|| Input.GetKeyUp(KeyCode.A) || HmdNextButton.action.WasPressedThisFrame())
         {
             Time.timeScale = 1;
             
@@ -297,11 +304,15 @@ public class _2mStepTest_Manager : MonoBehaviour
         if (_subjectAvatarOrientationControl != null)
         {
             float rawLeftKnee = _subjectAvatarOrientationControl.AvatarBones[13].transform.position.y;
-
             float rawRightKnee = _subjectAvatarOrientationControl.AvatarBones[17].transform.position.y;
+
 
             smoothLeftKneeY = Mathf.Lerp(smoothLeftKneeY, rawLeftKnee, kneeSmoothFactor);
             smoothRightKneeY = Mathf.Lerp(smoothRightKneeY, rawRightKnee, kneeSmoothFactor);
+
+            /*float weightFactor = 0.8f;
+            smoothLeftKneeY = weightFactor * smoothLeftKneeY + (1 - weightFactor) * rawLeftKnee;
+            smoothRightKneeY = weightFactor * smoothRightKneeY + (1 - weightFactor) * rawRightKnee;*/
         }
 
 
@@ -693,6 +704,8 @@ public class _2mStepTest_Manager : MonoBehaviour
                 //height = CalculateMidThighHeight() + tresholdModifier;
                 //Debug.Log("Height: " + height);
                 height = CalculateKneeHeight() + (1 * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
+                //height = CalculateKneeHeight();
+                floor_height = CalculateFloorHeight(); 
                 /*minHeight = CalculateKneeHeight() + (0.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW
                 maxHeight = CalculateKneeHeight() + (1.5f * (CalculateHipHeight() - CalculateKneeHeight()) / 6); //NEW*/
                 //height = CalculateMidThighHeight();
@@ -704,6 +717,7 @@ public class _2mStepTest_Manager : MonoBehaviour
                 //Debug.Log("Max Height: " + maxHeight);
                 //float height = CalculateMidThighHeight();
                 _targetHeight.SetHeight(height);
+                _floorLevel.SetHeight(floor_height);
                 //Debug.Log(height);
             }
 
@@ -862,7 +876,7 @@ public class _2mStepTest_Manager : MonoBehaviour
         _subjectBodyIndex = -1;
         _2mTimer = 0;
         _subjectAvatarOrientationControl = null;
-        _test = new Test {RSteps = 0, LeftFootIsDown = true, LeftFootIsUp = false, LeftStepIsValid = true, RightFootIsDown = true, RightFootIsUp = false, RightStepIsValid = false};
+        _test = new Test {RSteps = 0, LeftFootIsDown = true, LeftFootIsUp = false, /*LeftStepIsValid = true,*/ RightFootIsDown = true, RightFootIsUp = false, /*RightStepIsValid = false*/};
 
         // State
         _gesturePause = true;
@@ -907,45 +921,52 @@ public class _2mStepTest_Manager : MonoBehaviour
 
     private float CalculateKneeHeight()
     {
-        float Kneeheight = 0f;
-
         float leftKnee = _subjectAvatarOrientationControl.AvatarBones[13].transform.position.y;
 
         float rightKnee = _subjectAvatarOrientationControl.AvatarBones[17].transform.position.y;
 
-        Kneeheight = leftKnee < rightKnee ? leftKnee : rightKnee;
+        float Kneeheight = leftKnee < rightKnee ? leftKnee : rightKnee;
 
         return Kneeheight;
     }
 
     private float CalculateHipHeight()
     {
-        float Hipheight = 0f;
-
         float leftHip = _subjectAvatarOrientationControl.AvatarBones[12].transform.position.y;
 
         float rightHip = _subjectAvatarOrientationControl.AvatarBones[16].transform.position.y;
 
-        Hipheight = leftHip > rightHip ? leftHip : rightHip;
+        float Hipheight = leftHip > rightHip ? leftHip : rightHip;
 
         return Hipheight;
     }
 
+    private float CalculateFloorHeight()
+    {
+        float leftFoot = _subjectAvatarOrientationControl.AvatarBones[15].transform.position.y - 0.01f;
+
+        float rightFoot = _subjectAvatarOrientationControl.AvatarBones[19].transform.position.y - 0.01f;
+
+        float Floorheight = leftFoot < rightFoot ? leftFoot : rightFoot;
+
+        return Floorheight;
+    }
+
     public void OnTargetHeightTriggerEnter(Collider collidingObject)
     {
-        //Debug.Log("OnTargetHeightTriggerEnter: " + collidingObject.gameObject.name);
+        //Debug.Log("OnTargetHeightTriggerEnter: " + collidingObject.gameObject.name + " | LeftFootIsDown: " + _test.LeftFootIsDown + " | RightFootIsDown: " + _test.RightFootIsDown + " | LeftFootIsUp: " + _test.LeftFootIsUp + " | RightFootIsUp: " + _test.RightFootIsUp);
         if (_state != State.Test || _subState != SubState.Update) return;
 
-        bool isButtonPressed = movementButton != null && movementButton.IsPressed();
+        /*bool isButtonPressed = movementButton != null && movementButton.IsPressed();
         bool isGripPressed = gripButton != null && gripButton.IsPressed();
 
         //AnkleLeft 14
-        if (collidingObject.gameObject.name == "sphere_left" && !isButtonPressed && !isGripPressed)
+        if (collidingObject.gameObject.name == "sphere_left" && !isButtonPressed && !isGripPressed && _test.RightFootIsDown && _test.LeftFootIsUp)
         {
             AbstractFeedbackLeft.TurnTopOn();
 
-            _test.LeftFootIsUp = true;
-            if (_test.RightFootIsDown && !_test.LeftStepIsValid)
+            //_test.LeftFootIsUp = true;
+            if (!_test.LeftStepIsValid)
             {
                 _test.LeftStepIsValid = true;
                 if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
@@ -964,12 +985,12 @@ public class _2mStepTest_Manager : MonoBehaviour
 
         }
         //AnkleRight 18
-        else if (collidingObject.gameObject.name == "sphere_right" && !isButtonPressed && !isGripPressed)
+        else if (collidingObject.gameObject.name == "sphere_right" && !isButtonPressed && !isGripPressed && _test.LeftFootIsDown && _test.RightFootIsUp)
         {
             AbstractFeedbackRight.TurnTopOn();
 
-            _test.RightFootIsUp = true;
-            if (_test.LeftFootIsDown && !_test.RightStepIsValid)
+            //_test.RightFootIsUp = true;
+            if (!_test.RightStepIsValid)
             {
                 _test.RightStepIsValid = true;
                 if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
@@ -987,7 +1008,7 @@ public class _2mStepTest_Manager : MonoBehaviour
 
             }
 
-        }
+        }*/
 
 
     }
@@ -1000,13 +1021,15 @@ public class _2mStepTest_Manager : MonoBehaviour
         if (collidingObject.gameObject.name == "sphere_left")
         {
             AbstractFeedbackLeft.TurnTopOff();
-            _test.LeftFootIsUp = false;
+            /*_test.LeftFootIsUp = false;
+            Debug.Log("Left Foot is up");*/
         }
         //AnkleRight 18
         else if (collidingObject.gameObject.name == "sphere_right")
         {
             AbstractFeedbackRight.TurnTopOff();
-            _test.RightFootIsUp = false;
+            /*_test.RightFootIsUp = false;
+            Debug.Log("Right Foot is up");*/
         }
     }
 
@@ -1019,12 +1042,16 @@ public class _2mStepTest_Manager : MonoBehaviour
         {
             AbstractFeedbackLeft.TurnBottomOn();
             _test.LeftFootIsDown = true;
+            _test.LeftFootIsUp = false;
+            //Debug.Log("Left Foot is down");
         }
         //FootRight 19
         else if (collidingObject.gameObject.transform.parent.gameObject == _subjectAvatarOrientationControl.AvatarBones[19])
         {
             AbstractFeedbackRight.TurnBottomOn();
             _test.RightFootIsDown = true;
+            _test.RightFootIsUp = false;
+            //Debug.Log("Right Foot is down");
         }
     }
 
@@ -1037,12 +1064,69 @@ public class _2mStepTest_Manager : MonoBehaviour
         {
             AbstractFeedbackLeft.TurnBottomOff();
             _test.LeftFootIsDown = false;
+            _test.LeftFootIsUp = true;
+            //Debug.Log("Left Foot is up");
         }
         //FootRight 19
         else if (collidingObject.gameObject.transform.parent.gameObject == _subjectAvatarOrientationControl.AvatarBones[19])
         {
             AbstractFeedbackRight.TurnBottomOff();
             _test.RightFootIsDown = false;
+            _test.RightFootIsUp = true;
+            //Debug.Log("Right Foot is up");
+        }
+
+        bool isButtonPressed = movementButton != null && movementButton.IsPressed();
+        bool isGripPressed = gripButton != null && gripButton.IsPressed();
+
+        //AnkleLeft 14
+        if (!isButtonPressed && !isGripPressed && _test.RightFootIsDown && _test.LeftFootIsUp)
+        {
+            AbstractFeedbackLeft.TurnTopOn();
+
+            //_test.LeftFootIsUp = true;
+            //if (!_test.LeftStepIsValid)
+            //{
+                //_test.LeftStepIsValid = true;
+                if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
+                {
+                    // AbstractFeedbackLeft.PlaySound(0);
+                }
+
+                //_test.LeftStepIsValid = true;
+                if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
+                {
+                    // AbstractFeedbackLeft.PlaySound(1);
+                }
+                stepsCounter = 1;
+                //stepscounter = 2; Implementar no resto
+            //}
+
+        }
+        //AnkleRight 18
+        else if (!isButtonPressed && !isGripPressed && _test.LeftFootIsDown && _test.RightFootIsUp)
+        {
+            AbstractFeedbackRight.TurnTopOn();
+
+            //_test.RightFootIsUp = true;
+            //if (!_test.RightStepIsValid)
+            //{
+                //_test.RightStepIsValid = true;
+                if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
+                {
+                    // AbstractFeedbackRight.PlaySound(0);
+                }
+            //}
+
+            //if (_test.LeftStepIsValid && _test.RightStepIsValid && _test.LeftFootIsDown)
+            //{
+                //_test.LeftStepIsValid = false;
+                //_test.RightStepIsValid = false;
+                _test.RSteps++;
+                stepsCounter = 1;
+
+            //}
+
         }
     }
 
@@ -1074,8 +1158,8 @@ public class _2mStepTest_Manager : MonoBehaviour
 
         AbstractFeedbackRight.SetTopMarker(knee);
         AbstractFeedbackRight.SetBottomMarker(foot);
-        left_ball.transform.position = new Vector3(left_ball.transform.position.x, _subjectAvatarOrientationControl.AvatarBones[13].transform.position.y, left_ball.transform.position.z);
-        right_ball.transform.position = new Vector3(right_ball.transform.position.x, _subjectAvatarOrientationControl.AvatarBones[17].transform.position.y, right_ball.transform.position.z);
+        left_ball.transform.position = new Vector3(left_ball.transform.position.x, smoothLeftKneeY/*_subjectAvatarOrientationControl.AvatarBones[13].transform.position.y*/, left_ball.transform.position.z);
+        right_ball.transform.position = new Vector3(right_ball.transform.position.x, smoothRightKneeY/*_subjectAvatarOrientationControl.AvatarBones[17].transform.position.y*/, right_ball.transform.position.z);
     }
 
     void OnDestroy()

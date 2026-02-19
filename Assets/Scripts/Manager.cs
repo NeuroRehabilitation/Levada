@@ -78,7 +78,6 @@ public class Manager : MonoBehaviour
 
     void Awake()
     {
-        Application.targetFrameRate = 60;
 
         if (instance == null)
         {
@@ -141,7 +140,7 @@ public class Manager : MonoBehaviour
 
             if (FOV != null)
                 FOV_Image = FOV.GetComponentInChildren<Image>();
-            
+
             if (imageScaler != null)
                 FOV_multiplier = imageScaler.current_Multiplier;
 
@@ -174,7 +173,7 @@ public class Manager : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log("FPS: " + (int) (1/Time.unscaledDeltaTime));//fps
+        //Debug.Log("FPS: " + (int)(1 / Time.unscaledDeltaTime));//fps
 
         if (logger == null)
         {
@@ -195,11 +194,16 @@ public class Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (SceneManager.GetActiveScene().name != "HMD or KAVE")
+            if (SceneManager.GetActiveScene().name != "HMD or KAVE" && SceneManager.GetActiveScene().name != "Menu")
             {
                 logger.Log("Exited scene", "Info");
                 Cursor.visible = true;
                 SceneManager.LoadScene("HMD or KAVE");
+                bool sceneExists = SceneUtility.GetBuildIndexByScenePath("HMD or KAVE") != -1;
+                if (sceneExists)
+                    SceneManager.LoadScene("HMD or KAVE");
+                else
+                    SceneManager.LoadScene("Menu");
                 //FOV_Image.enabled = false;
             }
             else
