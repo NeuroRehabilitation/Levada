@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRControllerLogger : MonoBehaviour
@@ -49,7 +50,10 @@ public class XRControllerLogger : MonoBehaviour
         if (!enableLogging) return;
 
         XRControllerState currentState = CaptureControllerState();
-        LogControllerState(currentState);
+        if (SceneManager.GetActiveScene().name != "HMD or KAVE")
+        {
+            LogControllerState(currentState);
+        }
     }
 
     private void EnableInputActions()
@@ -83,7 +87,7 @@ public class XRControllerLogger : MonoBehaviour
 
         if (positionAction.action != null)
             state.trackedPosition = positionAction.action.ReadValue<Vector3>();
-        
+
         if (rotationAction.action != null)
             state.trackedRotation = rotationAction.action.ReadValue<Quaternion>();
 
@@ -91,7 +95,7 @@ public class XRControllerLogger : MonoBehaviour
         {
             state.rayOrigin = transform.position;
             state.rayDirection = transform.forward;
-            
+
             // Check if ray is hitting something
             if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
             {

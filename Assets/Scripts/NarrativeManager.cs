@@ -1,14 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NarrativeManager : MonoBehaviour
 {
-    [SerializeField] private AudioClip firstBlockInformative;
-    [SerializeField] private AudioClip firstBlockRestorative;
-    [SerializeField] private AudioClip secondBlockInformative;
-    [SerializeField] private AudioClip secondBlockRestorative;
-    [SerializeField] private AudioClip thirdBlockInformative;
-    [SerializeField] private AudioClip thirdBlockRestorative;
+    [SerializeField] private AudioClip[] Informative;
+    [SerializeField] private AudioClip[] Restorative;
+    private KeyCode[] keys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9 };
 
     private AudioSource audioSource;
 
@@ -18,15 +16,20 @@ public class NarrativeManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        keyToClip = new Dictionary<KeyCode, AudioClip>
+        if(keyToClip == null)
         {
-            { KeyCode.Alpha1, firstBlockInformative },
-            { KeyCode.Alpha2, firstBlockRestorative },
-            { KeyCode.Alpha3, secondBlockInformative },
-            { KeyCode.Alpha4, secondBlockRestorative },
-            { KeyCode.Alpha5, thirdBlockInformative },
-            { KeyCode.Alpha6, thirdBlockRestorative }
-        };
+            keyToClip = new Dictionary<KeyCode, AudioClip>();
+        }
+
+        for(int i = 0; i < Informative.Length; i++)
+        {
+            keyToClip.Add(keys[i], Informative[i]);        
+        }
+
+        for(int j = 0; j < Restorative.Length; j++)
+        {
+            keyToClip.Add(keys[j + Informative.Length], Restorative[j]);
+        }
     }
 
     private void PlayClip(AudioClip clip)
@@ -54,6 +57,11 @@ public class NarrativeManager : MonoBehaviour
                 PlayClip(entry.Value);
                 break;
             }
+        }
+
+        if(audioSource.isPlaying == false)
+        {
+            audioSource.clip = null;
         }
     }
 }

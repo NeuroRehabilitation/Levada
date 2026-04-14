@@ -10,6 +10,7 @@ public class PictureTaking : MonoBehaviour
 
     public GameObject hand;
     public GameObject flashOverlay;
+    [SerializeField] private AudioClip captureSound;
 
 
     private InputAction showCameraButton;
@@ -17,6 +18,7 @@ public class PictureTaking : MonoBehaviour
     private Shader depthShader;
     private bool canTakePicture = false;
     private bool isNonWalk = false;
+    private bool isCapturing = false;
 
 
     void OnEnable()
@@ -81,7 +83,7 @@ public class PictureTaking : MonoBehaviour
             canTakePicture = false;
         }
 
-        if (canTakePicture && captureButton.WasPressedThisFrame())
+        if (canTakePicture && captureButton.WasPressedThisFrame() && !isCapturing)
         {
             Debug.Log("capture button was pressed");
             StartCoroutine(CaptureFromHandView());
@@ -90,6 +92,7 @@ public class PictureTaking : MonoBehaviour
 
     private IEnumerator CaptureFromHandView()
     {
+        isCapturing = true;
         yield return new WaitForEndOfFrame();
 
         int width = Screen.width;
@@ -102,8 +105,12 @@ public class PictureTaking : MonoBehaviour
 
         TakePicture(width, height, tempCamGO, tempCam, baseFilename);
         CreateDepthMap(width, height, tempCamGO, tempCam, baseFilename);
-
+        
         saveToJson(DetectObjects(), baseFilename);
+
+        // Clean up after all operations complete
+        Destroy(tempCamGO);
+        isCapturing = false;
     }
 
     private void TakePicture(int width, int height, GameObject tempCamGO, Camera tempCam, string baseFilename)
@@ -127,12 +134,12 @@ public class PictureTaking : MonoBehaviour
         tempCam.targetTexture = null;
         RenderTexture.active = null;
         Destroy(rt);
-        Destroy(tempCamGO);
 
         StartCoroutine(SimulateSnapEffect());
 
-        string screenshotPath = Application.persistentDataPath + "/" + baseFilename + ".png";
-        System.IO.File.WriteAllBytes(screenshotPath, screenshot.EncodeToPNG());
+        string screenshotPath = Application.persistentDataPath + "/" + baseFilename + ".jpg";
+        System.IO.File.WriteAllBytes(screenshotPath, screenshot.EncodeToJPG());
+        Destroy(screenshot);
 
         Debug.Log("Screenshot saved from hand view to: " + screenshotPath);
     }
@@ -152,6 +159,10 @@ public class PictureTaking : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
 
             float timer = 0f;
+            if (captureSound != null)
+            {
+                AudioSource.PlayClipAtPoint(captureSound, hand.transform.position, 0.3f);
+            }
             while (timer < fadeDuration)
             {
                 float alpha = Mathf.Lerp(flashAlpha, 0f, timer / fadeDuration);
@@ -186,8 +197,8 @@ public class PictureTaking : MonoBehaviour
         depthMap.ReadPixels(new Rect(0, 0, width, height), 0, 0);
         depthMap.Apply();
 
-        string depthPath = Application.persistentDataPath + "/" + baseFilename + "_depth.png";
-        System.IO.File.WriteAllBytes(depthPath, depthMap.EncodeToPNG());
+        string depthPath = Application.persistentDataPath + "/" + baseFilename + "_depth.jpg";
+        System.IO.File.WriteAllBytes(depthPath, depthMap.EncodeToJPG());
 
         RenderTexture.active = null;
         depthRT.Release();
@@ -198,7 +209,7 @@ public class PictureTaking : MonoBehaviour
     private List<DetectedObject> DetectObjects()
     {
         float detectionDistance = 10f;
-        float coneAngle = 65f;
+        float coneAngle = 45f;
         List<DetectedObject> detectedObjects = new List<DetectedObject>();
 
         Terrain terrain = Terrain.activeTerrain;

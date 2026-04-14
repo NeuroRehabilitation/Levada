@@ -73,10 +73,10 @@ public class _2mStepTest_Manager : MonoBehaviour
         public int RSteps;
         public bool LeftFootIsUp;
         public bool LeftFootIsDown;
-        //public bool LeftStepIsValid;
+        public bool LeftStepIsValid;
         public bool RightFootIsUp;
         public bool RightFootIsDown;
-        //public bool RightStepIsValid;
+        public bool RightStepIsValid;
     }
 
     private _2mStepTest_Logger _logger = new _2mStepTest_Logger();
@@ -876,7 +876,7 @@ public class _2mStepTest_Manager : MonoBehaviour
         _subjectBodyIndex = -1;
         _2mTimer = 0;
         _subjectAvatarOrientationControl = null;
-        _test = new Test {RSteps = 0, LeftFootIsDown = true, LeftFootIsUp = false, /*LeftStepIsValid = true,*/ RightFootIsDown = true, RightFootIsUp = false, /*RightStepIsValid = false*/};
+        _test = new Test {RSteps = 0, LeftFootIsDown = true, LeftFootIsUp = false, LeftStepIsValid = true, RightFootIsDown = true, RightFootIsUp = false, RightStepIsValid = true};
 
         // State
         _gesturePause = true;
@@ -1043,6 +1043,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             AbstractFeedbackLeft.TurnBottomOn();
             _test.LeftFootIsDown = true;
             _test.LeftFootIsUp = false;
+            StartCoroutine(SetValidStepAfterDelay(0.35f));
             //Debug.Log("Left Foot is down");
         }
         //FootRight 19
@@ -1051,6 +1052,7 @@ public class _2mStepTest_Manager : MonoBehaviour
             AbstractFeedbackRight.TurnBottomOn();
             _test.RightFootIsDown = true;
             _test.RightFootIsUp = false;
+            StartCoroutine(SetValidStepAfterDelay(0.35f));
             //Debug.Log("Right Foot is down");
         }
     }
@@ -1085,8 +1087,9 @@ public class _2mStepTest_Manager : MonoBehaviour
             AbstractFeedbackLeft.TurnTopOn();
 
             //_test.LeftFootIsUp = true;
-            //if (!_test.LeftStepIsValid)
-            //{
+            if (_test.LeftStepIsValid)
+            {
+                _test.LeftStepIsValid = false;
                 //_test.LeftStepIsValid = true;
                 if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
                 {
@@ -1100,7 +1103,7 @@ public class _2mStepTest_Manager : MonoBehaviour
                 }
                 stepsCounter = 1;
                 //stepscounter = 2; Implementar no resto
-            //}
+            }
 
         }
         //AnkleRight 18
@@ -1109,8 +1112,9 @@ public class _2mStepTest_Manager : MonoBehaviour
             AbstractFeedbackRight.TurnTopOn();
 
             //_test.RightFootIsUp = true;
-            //if (!_test.RightStepIsValid)
-            //{
+            if (_test.RightStepIsValid)
+            {
+                _test.RightStepIsValid = false;
                 //_test.RightStepIsValid = true;
                 if (TestDetails.TestDesc.Feedback != TestDetails.FeedbackType.Control)
                 {
@@ -1124,10 +1128,17 @@ public class _2mStepTest_Manager : MonoBehaviour
                 //_test.RightStepIsValid = false;
                 _test.RSteps++;
                 stepsCounter = 1;
-
-            //}
+            }
 
         }
+    }
+
+    IEnumerator SetValidStepAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        //Debug.Log("Step is now valid again");
+        _test.LeftStepIsValid = true;
+        _test.RightStepIsValid = true;
     }
 
     private void SetMarkers()

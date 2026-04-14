@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class CameraMovement : MonoBehaviour
@@ -20,6 +21,24 @@ public class CameraMovement : MonoBehaviour
     private Vector3 _lastHitPoint;
     private int maxAlignments = 10;
     private int alignCount = 0;
+    private InputAction resetButton;
+
+    void Awake()
+    {
+        resetButton = new InputAction(
+            name: "ResetButton",
+            type: InputActionType.Button,
+            binding: "<XRController>{RightHand}/secondaryButton"
+        );
+    }
+
+    void Start()
+    {
+        if (resetButton != null)
+        {
+            resetButton.Enable();
+        }
+    }
 
     void Update()
     {
@@ -62,7 +81,7 @@ public class CameraMovement : MonoBehaviour
             rayTarget.transform.rotation = Quaternion.LookRotation(-selectedCamera.transform.forward, selectedCamera.transform.up);
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) || (resetButton != null && resetButton.triggered))
         {
             alignCount = 0;
             rayTarget.GetComponent<BoxCollider>().enabled = true;

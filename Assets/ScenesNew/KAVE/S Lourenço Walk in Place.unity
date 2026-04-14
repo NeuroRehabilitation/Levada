@@ -31942,7 +31942,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh114250
+  m_Name: pb_Mesh1206808
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -33221,7 +33221,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh123156
+  m_Name: pb_Mesh1215712
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -44351,7 +44351,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413258149}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 69a3056b42c091c4483495ccb047f046, type: 3}
@@ -44454,14 +44454,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 1603842451}
   endMarker: []
-  speed: 1
   player: {fileID: 413258150}
   target: 0
   next: 0
   way_points: {fileID: 1112100024}
   startWay: 0
   isReset: 0
-  fracJourney: 0
+  stepDurationSeconds: 1
 --- !u!65 &413258153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45380,7 +45379,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh124914
+  m_Name: pb_Mesh1217472
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -58724,6 +58723,11 @@ PrefabInstance:
       propertyPath: m_TrackingType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7639407096731211324, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7639407096731211326, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: m_TargetDisplay
@@ -58732,6 +58736,16 @@ PrefabInstance:
     - target: {fileID: 7639407096731211326, guid: 70a6cea0e4292d243a8191adaa06998e,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719442097874007769, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719442098142885720, guid: 70a6cea0e4292d243a8191adaa06998e,
+        type: 3}
+      propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456453729375800377, guid: 70a6cea0e4292d243a8191adaa06998e,
@@ -71811,7 +71825,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779827709}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &779827713
 Behaviour:
   m_ObjectHideFlags: 0
@@ -99297,7 +99311,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118670
+  m_Name: pb_Mesh1211228
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -137966,7 +137980,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh116480
+  m_Name: pb_Mesh1209038
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -140152,7 +140166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94f1107abfd8029468341ded92606cd0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -211414,7 +211428,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6357972046327506900}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2c20a7793b8880a4787fd7a24036663f, type: 3}
@@ -212561,7 +212575,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8b4d965444b581a498c5a63ae9362347, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.55
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -212652,7 +212666,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6357972046327506900}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: be625333d762b6641bfccf09ce8b6b40, type: 3}

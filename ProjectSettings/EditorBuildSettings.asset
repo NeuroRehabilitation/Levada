@@ -57,17 +57,26 @@ EditorBuildSettings:
     path: "Assets/ScenesNew/KAVE/S Louren\xE7o Walk in Place.unity"
     guid: 3709d8acf64863e4a9b7067557bd7a3c
   - enabled: 1
-    path: Assets/ScenesNew/Test/25 Fontes Walk In Place HMD Test.unity
-    guid: accbff90f4aefbf4eb39f40fbe1ba3b1
-  - enabled: 1
-    path: Assets/ScenesNew/Test/Caldeirao_Verde_HMD Test.unity
-    guid: c9e02fc2c7f4dfc4baa83104be64ec8c
-  - enabled: 1
     path: Assets/ScenesNew/Test/Pico Areeiro - Ruivo Walk in Place Test.unity
     guid: 77c8534282e099c418e69f4139981086
   - enabled: 1
     path: "Assets/ScenesNew/Test/S Louren\xE7o Non Walk Test.unity"
     guid: a0301d4da909d7745aa8ff865c938bf7
+  - enabled: 1
+    path: Assets/ScenesNew/Test/25 Fontes Walk In Place HMD Test.unity
+    guid: accbff90f4aefbf4eb39f40fbe1ba3b1
+  - enabled: 1
+    path: Assets/ScenesNew/Test/Caldeirao_Verde_HMD Test.unity
+    guid: c9e02fc2c7f4dfc4baa83104be64ec8c
+  - enabled: 0
+    path: Assets/Scenes Narrative/Menu.unity
+    guid: 45a11ea2bd239834692296f233f80bd5
+  - enabled: 0
+    path: "Assets/Scenes Narrative/S Louren\xE7o Narrative Walk.unity"
+    guid: 4b98b1f224f1b6643a42bb3af2bf491c
+  - enabled: 0
+    path: "Assets/Scenes Narrative/Sao_Louren\xE7o_Narrative Non Walk.unity"
+    guid: 032cd1513072d6f45ae9845b3bfe991b
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 368d66e37d6251a42ac60714f63cdd79,
       type: 2}

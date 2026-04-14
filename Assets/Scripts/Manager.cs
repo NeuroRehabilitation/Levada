@@ -66,14 +66,6 @@ public class Manager : MonoBehaviour
     private bool timerStarted = false;
     private bool startedLSL = false;
 
-    private List<string> testScenes = new List<string>
-{
-    "25 Fontes Walk In Place HMD Test",
-    "Caldeirao_Verde_HMD Test",
-    "Pico Areeiro - Ruivo Walk in Place Test",
-    "S Lourenço Non Walk Test"
-};
-
     private Logger logger;
 
     void Awake()
@@ -210,17 +202,6 @@ public class Manager : MonoBehaviour
             {
                 logger.Log("Quit application", "Info");
                 Quit();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            string currentScene = SceneManager.GetActiveScene().name;
-            int index = testScenes.IndexOf(currentScene);
-
-            if (index >= 0 && index < testScenes.Count - 1)
-            {
-                SceneManager.LoadScene(testScenes[index + 1]);
             }
         }
 

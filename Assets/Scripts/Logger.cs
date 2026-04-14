@@ -136,7 +136,8 @@ public class Logger : MonoBehaviour
     void Update()
     {
         _frameCounter++;
-        if (logEveryNFrames <= 1 || (_frameCounter % Mathf.Max(1, logEveryNFrames) == 0))
+        if( SceneManager.GetActiveScene().name == "HMD or KAVE") return;
+        else if (logEveryNFrames <= 1 || (_frameCounter % Mathf.Max(1, logEveryNFrames) == 0))
         {
             LogPlayerState();
         }

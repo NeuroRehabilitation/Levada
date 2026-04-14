@@ -51,8 +51,7 @@ public class AI : MonoBehaviour
         if(_2mStepTest_Manager.stepsCounter == 1) {
 			//prevSteps = currentSteps;
             _2mStepTest_Manager.stepsCounter = 0;
-            float baseTime = Mathf.Max(stepActiveUntil, Time.time);
-            stepActiveUntil = baseTime + Mathf.Max(0.0001f, stepDurationSeconds);
+            stepActiveUntil = Time.time + Mathf.Max(0.0001f, stepDurationSeconds);
 			return true;
 		} else
 			return false;
