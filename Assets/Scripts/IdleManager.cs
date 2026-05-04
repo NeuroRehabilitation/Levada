@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-
+//This code is not used in the current version of the project, but is kept for potential future use as it contains a simple idle detection system and fading UI elements in and out based on player movement.
 public class IdleManager : MonoBehaviour
 {
     public GameObject kneeLeft;
