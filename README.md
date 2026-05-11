@@ -54,4 +54,4 @@ Walking in place can be done by either rasing the knees or by swinging the feet 
 - L: Toggle Movement way points and UI that fade in and out depending on movement (only in walk in place)(Can be useful to understand how movement works)
 
 # Created files location:
-All pictures, as well as other created log files should be located at C:\Users\*user*\AppData\LocalLow\NeuroRehabLab\Virtual Levada Plus
+All pictures, as well as other created log files should be located at C:\Users\user\AppData\LocalLow\NeuroRehabLab\Virtual Levada Plus
