@@ -36,10 +36,10 @@ Finally, on top there are controls to set the time of day for each scene.
 In both CAVE/KAVE and HMD scenes, the HMD needs to be turned on since the right-hand controler will allways be used. For the CAVE/KAVE this can be achieved by placing a piece of paper in front of the motion sensor, and placing the HMD on top of a chair and pointing to the front screen of the CAVE/KAVE. It's important for the Wi-fi of the HMD to be turned on in the CAVE/KAVE scenes for the traking of the controller to work well. If done correctly, in the scenes, a white controller will appear on the front screen, and it will mirror the movements of the real controler.
 
 # Controls for the user:
-Hold grip button: Shows mini hand camera for picture taking
-A button: Takes a picture if grip is also being held
-Trigger button: Teleport to where the green laser is pointing (only on non walk scenarios)
-B button: Recenter virtual controller on the front screen (only for CAVE/KAVE)
+- Hold grip button: Shows mini hand camera for picture taking
+- A button: Takes a picture if grip is also being held
+- Trigger button: Teleport to where the green laser is pointing (only on non walk scenarios)
+- B button: Recenter virtual controller on the front screen (only for CAVE/KAVE)
 
 # Controls for walking in place:
 When entering a walking scenario, a menu with instructions will appear expecting and initial input. This can be done by pressing the A key on the keyboard.
