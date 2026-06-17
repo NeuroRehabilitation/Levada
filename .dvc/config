@@ -1,6 +1,4 @@
 [core]
     remote = levada_assets
 ['remote "levada_assets"']
-    url = gdrive://1n0E52KD4CWqNhatr6TcmdkqLG7lrINBe
-    gdrive_use_service_account = true
-    gdrive_service_account_json_file_path = ServiceAccount.json
+    url = Z:/
