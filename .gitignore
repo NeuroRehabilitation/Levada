@@ -75,12 +75,3 @@ crashlytics-build.properties
 
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-
-# Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
-Assets/DiggerData.dvc.meta
-Assets/DiggerData.meta
-Assets/Prefabs.dvc.meta
-Assets/Standard Assets.dvc.meta
-Assets/ToOrganize.dvc.meta

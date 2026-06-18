@@ -1,0 +1,4 @@
+[core]
+    remote = levada_storage
+['remote "levada_storage"']
+    url = Z:/

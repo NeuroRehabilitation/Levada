@@ -1,0 +1,6 @@
+outs:
+- md5: ce7c7a6bdb60034d6d7288d91c3884e6.dir
+  size: 6206331092
+  nfiles: 3265
+  hash: md5
+  path: Prefabs
