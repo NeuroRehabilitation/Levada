@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9c5eee343014c4c80afed57a988e957c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154144
+  packageName: 3D WebView for Windows and macOS (Web Browser)
+  packageVersion: 4.15.2
+  assetPath: Assets/Vuplex/WebView/Core/Scripts/FileSelectionEventArgs.cs
+  uploadId: 932348

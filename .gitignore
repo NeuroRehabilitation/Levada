@@ -80,3 +80,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# DVC: local cache, temp files and credentials
+/.dvc/cache/
+/.dvc/tmp/
+/.dvc/config.local
+/.dvc/*ServiceAccount*.json

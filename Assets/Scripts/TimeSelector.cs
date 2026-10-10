@@ -37,10 +37,13 @@ public class TimeSelector : MonoBehaviour
 
     void UpdateDisplay()
     {
-        Settings.SelectedTime = availableHours[currentIndex];
-        if(currentIndex == 3)
-            numberText.text = (availableHours[currentIndex] - 1).ToString("00") + ":30h";
-        else
-            numberText.text = availableHours[currentIndex].ToString("00") + ":00h";
+        float time = availableHours[currentIndex];
+        Settings.SelectedTime = time;
+
+        // Works for any value in the list, e.g. 16.5 -> "16:30h", 9.25 -> "09:15h"
+        int hours = Mathf.FloorToInt(time);
+        int minutes = Mathf.RoundToInt((time - hours) * 60f);
+        if (minutes == 60) { hours++; minutes = 0; }
+        numberText.text = hours.ToString("00") + ":" + minutes.ToString("00") + "h";
     }
 }

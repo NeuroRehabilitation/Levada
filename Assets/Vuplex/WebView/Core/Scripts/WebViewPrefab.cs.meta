@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f5e34c9f38a6c46db8c1b510a6090e8c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154144
+  packageName: 3D WebView for Windows and macOS (Web Browser)
+  packageVersion: 4.15.2
+  assetPath: Assets/Vuplex/WebView/Core/Scripts/WebViewPrefab.cs
+  uploadId: 932348

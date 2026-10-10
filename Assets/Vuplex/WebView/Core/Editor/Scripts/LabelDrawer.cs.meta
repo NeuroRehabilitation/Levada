@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f7cc4d471c1d54e75b87468526b602cd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154144
+  packageName: 3D WebView for Windows and macOS (Web Browser)
+  packageVersion: 4.15.2
+  assetPath: Assets/Vuplex/WebView/Core/Editor/Scripts/LabelDrawer.cs
+  uploadId: 932348
