@@ -41,7 +41,7 @@ public class DisableXRDisplay : MonoBehaviour
         }
 
         var displays = new List<XRDisplaySubsystem>();
-        SubsystemManager.GetInstances(displays);
+        SubsystemManager.GetSubsystems(displays);
 
         if (!isHMD)
         {

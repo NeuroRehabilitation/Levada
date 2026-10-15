@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class PictureTaking : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class PictureTaking : MonoBehaviour
         
         if (hand != null)
         {
-            XRInteractorLineVisual lineVisual = hand.GetComponent<XRInteractorLineVisual>();
+            UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual lineVisual = hand.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual>();
             if (lineVisual != null && lineVisual.enabled)
                 isNonWalk = true;
         }
@@ -67,8 +67,8 @@ public class PictureTaking : MonoBehaviour
             hand.transform.GetChild(0).gameObject.SetActive(true);
             if (isNonWalk)
             {
-                hand.GetComponent<XRRayInteractor>().enabled = false;
-                hand.GetComponent<XRInteractorLineVisual>().enabled = false;
+                hand.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>().enabled = false;
+                hand.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual>().enabled = false;
             }
             canTakePicture = true;
         }
@@ -77,8 +77,8 @@ public class PictureTaking : MonoBehaviour
             hand.transform.GetChild(0).gameObject.SetActive(false);
             if (isNonWalk)
             {
-                hand.GetComponent<XRRayInteractor>().enabled = true;
-                hand.GetComponent<XRInteractorLineVisual>().enabled = true;
+                hand.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>().enabled = true;
+                hand.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual>().enabled = true;
             }
             canTakePicture = false;
         }

@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class XRControllerLogger : MonoBehaviour
 {
     [Header("Controller References")]
-    public XRRayInteractor rayInteractor;
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rayInteractor;
     [Header("Input Actions - Buttons")]
     public InputActionProperty gripButton;
     public InputActionProperty triggerButton;
@@ -30,7 +30,7 @@ public class XRControllerLogger : MonoBehaviour
         }
 
         if (rayInteractor == null)
-            rayInteractor = GetComponent<XRRayInteractor>();
+            rayInteractor = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>();
 
         EnableInputActions();
     }
